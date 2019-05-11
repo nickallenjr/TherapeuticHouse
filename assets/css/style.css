@@ -1,0 +1,200 @@
+body, html {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+div.loading {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: #ffffff;
+	z-index: 2;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	grid-template-columns: 500px auto 500px;
+	grid-template-rows: auto 0px;
+	transition: opacity 1s;
+}
+
+div.loading.hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+h1.title {
+	font-family: 'Great Vibes', cursive;
+	font-size: 100px;
+	visibility: hidden;
+	padding-top: 5px;
+}
+
+#leftTitle {
+	color: #400F3C;
+	margin: auto;
+}
+
+#rightTitle {
+	color: #C5915C;
+	margin: auto;
+	margin-left: 60px;
+}
+
+#diamondDiv {
+	animation-name: scale;
+	animation-duration: 5s;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+}
+
+@keyframes scale {
+	0% {transform: scale(0);}
+	100% {transform: scale(4);}
+}
+
+#diamondLogo {
+	width: 60px;
+	height: 100px;
+	animation-name: rotation;
+	animation-duration: 1s;
+	animation-iteration-count: 3;
+	animation-timing-function: linear;
+}
+
+@keyframes rotation {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
+}
+
+#header {
+	background-image: url("../images/woman.jpg");
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+
+/*.headerImg {
+	position: absolute;
+	top: 0;
+}
+
+.headerTitle {
+	position: relative;
+	top: 1em;
+	left: 1em;
+}*/
+
+/*Make logo rotate or something when hovered over
+#logo:hover {
+
+}
+*/
+
+#navi {
+	display: grid;
+	grid-template-columns: 40px auto auto auto auto auto auto;
+	padding-right: 50px;
+	padding-left: 50px;
+	position: fixed;
+	background-color: transparent;
+	width: 100%;
+	top: 0;
+}
+
+div#navi img {
+	width: 50px;
+	height: 80px;
+}
+
+div#navi p {
+	margin: 0;
+}
+
+.naviTitles {
+	grid-column: 2 / 4;
+}
+
+.naviTitle1 {
+	font-family: 'Great Vibes', cursive;
+	color: #ffffff;
+	font-size: 47px;
+	padding-left: 11px;
+	padding-top: 16px;
+}
+
+.naviTitle2 {
+	color: #C5915C;
+}
+
+div#navi a {
+	margin: auto;
+	text-decoration: none;
+	font-family: "Great Vibes", cursive;
+	font-size: 2em;
+	color: #ffffff;
+}
+
+
+
+/*Code for scrolling text*/
+
+.storyblock {
+	width: 300px;
+	height: 240px;
+	position: relative;
+	background-color: transparent;
+	top: 700px;
+	left: 0px;
+}
+
+.story {
+	margin: 0;
+	color: white;
+	font-size: xx-large;
+	text-align: center;
+}
+
+/*Code for Masonry grid*/
+#masonGrid {
+	display: grid;
+	grid-template-columns: 300px 300px 300px;
+	/*grid-template-rows: auto auto auto;*/
+	justify-content: center;
+	padding-top: 200px;
+	grid-gap: 33px;
+}
+
+.masonDiv {
+	margin: 20px;
+}
+
+.imgDiv {
+	text-align: center;
+}
+.masonImg {
+	width: 300px;
+	height: 227px;
+	text-align: center;
+}
+
+.masonImg2 {
+	width: 300px;
+	height: 153px;
+	text-align: center;
+}
+
+.masonImg3 {
+	width: 300px;
+	height: 199px;
+	text-align: center;
+}
+
+div.grid-item > button {
+
+}

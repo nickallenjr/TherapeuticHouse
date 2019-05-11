@@ -1,0 +1,19 @@
+{
+  "name": "therapeutichouse",
+  "version": "1.0.0",
+  "description": "Website for therapeutic healing",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickallenjr/TherapeuticHouse.git"
+  },
+  "author": "Nicholas Allen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nickallenjr/TherapeuticHouse/issues"
+  },
+  "homepage": "https://github.com/nickallenjr/TherapeuticHouse#readme"
+}
