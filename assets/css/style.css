@@ -145,28 +145,34 @@ div#navi a {
 /*Code for scrolling text*/
 
 .storyblock {
-	width: 300px;
+	width: 600px;
 	height: 240px;
 	position: relative;
 	background-color: transparent;
 	top: 700px;
-	left: 0px;
+	left: 100px;
 }
 
 .story {
 	margin: 0;
 	color: white;
-	font-size: xx-large;
-	text-align: center;
+	font-size: 120px;
+	text-align: left;
+	font-family: "Oswald", sans-serif;
+}
+
+.smallHeaderText {
+	font-family: "Lato", sans-serif;
+	font-size: 50px;
+	color: white;
 }
 
 /*Code for Masonry grid*/
 #masonGrid {
 	display: grid;
 	grid-template-columns: 300px 300px 300px;
-	/*grid-template-rows: auto auto auto;*/
 	justify-content: center;
-	padding-top: 200px;
+	padding-top: 100px;
 	grid-gap: 33px;
 }
 

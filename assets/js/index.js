@@ -2,7 +2,7 @@
 
 setTimeout(function() {
 	document.querySelector("div.loading").classList.add("hidden")
-}, 1000)
+}, 4000)
 
 const title = document.querySelectorAll(".title");
 const tl = new TimelineMax();
@@ -56,9 +56,9 @@ mousedOver('naviLinks4', '#contactLink');
 
 
 //Code for scrolling text before letting page scroll
-var controller = new ScrollMagic.Controller();
-var timeline = new TimelineMax();
-timeline.add(TweenMax.fromTo(".storyblock", 2, {top:1000}, {top:-1000}))
+const controller = new ScrollMagic.Controller();
+const timeline = new TimelineMax();
+timeline.add(TweenMax.fromTo(".storyblock", 2, {top:1200}, {top:200}))
 
 new ScrollMagic.Scene({
 	duration: 1500,
@@ -67,3 +67,5 @@ new ScrollMagic.Scene({
 .setPin("#header")
 .setTween(timeline)
 .addTo(controller);
+
+
