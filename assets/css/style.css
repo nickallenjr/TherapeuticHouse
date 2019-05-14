@@ -61,7 +61,7 @@ h1.title {
 	height: 100px;
 	animation-name: rotation;
 	animation-duration: 1s;
-	animation-iteration-count: 3;
+	animation-iteration-count: 2.5;
 	animation-timing-function: linear;
 }
 
@@ -76,7 +76,6 @@ h1.title {
 	width: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;
-
 }
 
 /*.headerImg {
@@ -151,6 +150,11 @@ div#navi a {
 	background-color: transparent;
 	top: 700px;
 	left: 100px;
+}
+
+.through {
+	font-family: 'Great Vibes', sans-serif;
+	font-size: 170px;
 }
 
 .story {
