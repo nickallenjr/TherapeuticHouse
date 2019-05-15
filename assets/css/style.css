@@ -144,25 +144,25 @@ div#navi a {
 /*Code for scrolling text*/
 
 .storyblock {
-	width: 600px;
+	width: 50%;
 	height: 240px;
 	position: relative;
 	background-color: transparent;
 	top: 700px;
-	left: 100px;
+	left: 5%;
 }
 
 .through {
 	font-family: 'Great Vibes', sans-serif;
-	font-size: 170px;
+	font-size: 60px;
 }
 
 .story {
 	margin: 0;
 	color: white;
-	font-size: 120px;
+	font-size: 60px;
 	text-align: left;
-	font-family: "Oswald", sans-serif;
+	font-family: "Lato", sans-serif;
 }
 
 .smallHeaderText {

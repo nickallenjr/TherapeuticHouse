@@ -1,0 +1,114 @@
+body, html {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#navi {
+	display: grid;
+	grid-template-columns: 40px auto auto auto auto auto auto;
+	padding-right: 50px;
+	padding-left: 50px;
+	position: fixed;
+	background-color: transparent;
+	width: 100%;
+	top: 0;
+}
+
+div#navi img {
+	width: 50px;
+	height: 80px;
+}
+
+div#navi p {
+	margin: 0;
+}
+
+.naviTitles {
+	grid-column: 2 / 4;
+}
+
+.naviTitle1 {
+	font-family: 'Great Vibes', cursive;
+	color: #ffffff;
+	font-size: 47px;
+	padding-left: 11px;
+	padding-top: 16px;
+}
+
+.naviTitle2 {
+	color: #C5915C;
+}
+
+div#navi a {
+	margin: auto;
+	text-decoration: none;
+	font-family: "Great Vibes", cursive;
+	font-size: 2em;
+	color: #ffffff;
+}
+
+#header {
+	background-color: #400F3C;
+	height: 20%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.allServices {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-template-rows: auto auto;
+	justify-content: space-around;
+	align-items: center;
+	margin: 10%;
+}
+
+.arrow {
+	width: 20px;
+	height: 30px;
+}
+
+.services {
+	margin: 10%;
+}
+
+.serviceTitle {
+	font-family: "Lato", sans-serif;
+}
+
+.serviceDescrip {
+	font-family: "Playfair Display", serif;
+}
+
+.links {
+	cursor: pointer;
+}
+
+a.links > span {
+	font-size: 20px;
+	font-family: "Lato", sans-serif;
+}
+
+#infoDiv {
+	position: fixed;
+	bottom: 0px;
+	width: 50%;
+	height: 1px;
+	left: 25%;
+	background-color: white;
+	border-color: #400f3c;
+	border-style: groove;
+	border-width: 6px;
+	display: none
+}
+
+.exit {
+	position: relative;
+	left: 10px;
+	width: 30px;
+	height: 50px;
+}

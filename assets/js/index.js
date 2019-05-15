@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	setTimeout(function() {
 		document.querySelector("div.loading").classList.add("hidden")
-	}, 4000)
+	}, 100)
 
 	const title = document.querySelectorAll(".title");
 	const tl = new TimelineMax();
