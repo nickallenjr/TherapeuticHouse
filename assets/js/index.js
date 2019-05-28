@@ -91,6 +91,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		.addTo(controller);
 	};
 
+	const lightTl = new TimelineMax({repeat:-1, yoyo:true})
+	lightTl.fromTo("#lighting1", 1, {opacity:0, y:-10}, {opacity:1, y:0})
+	.fromTo("#lighting2", 1, {opacity:0, y:-10}, {opacity:1, y:0}, "-=1")
 	
 
 });

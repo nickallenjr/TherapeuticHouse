@@ -1,82 +1,92 @@
-body, html {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	height: 100%;
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }
 
 div.loading {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background-color: #ffffff;
-	z-index: 2;
-	display: grid;
-	justify-content: center;
-	align-content: center;
-	grid-template-columns: 500px auto 500px;
-	grid-template-rows: auto 0px;
-	transition: opacity 1s;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    z-index: 2;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: 500px auto 500px;
+    grid-template-rows: auto 0px;
+    transition: opacity 1s;
 }
 
 div.loading.hidden {
-	opacity: 0;
-	pointer-events: none;
+    opacity: 0;
+    pointer-events: none;
 }
 
 h1.title {
-	font-family: 'Great Vibes', cursive;
-	font-size: 100px;
-	visibility: hidden;
-	padding-top: 5px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 100px;
+    visibility: hidden;
+    padding-top: 5px;
 }
 
 #leftTitle {
-	color: #400F3C;
-	margin: auto;
+    color: #400F3C;
+    margin: auto;
 }
 
 #rightTitle {
-	color: #C5915C;
-	margin: auto;
-	margin-left: 60px;
+    color: #C5915C;
+    margin: auto;
+    margin-left: 60px;
 }
 
 #diamondDiv {
-	animation-name: scale;
-	animation-duration: 5s;
-	animation-iteration-count: 1;
-	animation-timing-function: linear;
+    animation-name: scale;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
 }
 
 @keyframes scale {
-	0% {transform: scale(0);}
-	100% {transform: scale(4);}
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(4);
+    }
 }
 
 #diamondLogo {
-	width: 60px;
-	height: 100px;
-	animation-name: rotation;
-	animation-duration: 1s;
-	animation-iteration-count: 2.5;
-	animation-timing-function: linear;
+    width: 60px;
+    height: 100px;
+    animation-name: rotation;
+    animation-duration: 1s;
+    animation-iteration-count: 2.5;
+    animation-timing-function: linear;
 }
 
 @keyframes rotation {
-	0% {transform: rotate(0deg);}
-	100% {transform: rotate(360deg);}
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 #header {
-	background-image: url("../images/woman.jpg");
-	height: 100%;
-	width: 100%;
-	background-repeat: no-repeat;
-	background-size: cover;
+    background-image: url("../images/woman.jpg");
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 
 /*.headerImg {
 	position: absolute;
@@ -89,6 +99,7 @@ h1.title {
 	left: 1em;
 }*/
 
+
 /*Make logo rotate or something when hovered over
 #logo:hover {
 
@@ -96,115 +107,335 @@ h1.title {
 */
 
 #navi {
-	display: grid;
-	grid-template-columns: 40px auto auto auto auto auto auto;
-	padding-right: 50px;
-	padding-left: 50px;
-	position: fixed;
-	background-color: transparent;
-	width: 100%;
-	top: 0;
+    display: grid;
+    grid-template-columns: 40px auto auto auto auto auto auto;
+    padding-right: 50px;
+    padding-left: 50px;
+    position: fixed;
+    background-color: transparent;
+    width: 100%;
+    top: 0;
 }
 
 div#navi img {
-	width: 50px;
-	height: 80px;
+    width: 50px;
+    height: 80px;
 }
 
 div#navi p {
-	margin: 0;
+    margin: 0;
 }
 
 .naviTitles {
-	grid-column: 2 / 4;
+    grid-column: 2 / 4;
 }
 
 .naviTitle1 {
-	font-family: 'Great Vibes', cursive;
-	color: #ffffff;
-	font-size: 47px;
-	padding-left: 11px;
-	padding-top: 16px;
+    font-family: 'Great Vibes', cursive;
+    color: #ffffff;
+    font-size: 47px;
+    padding-left: 11px;
+    padding-top: 16px;
 }
 
 .naviTitle2 {
-	color: #C5915C;
+    color: #C5915C;
 }
 
 div#navi a {
-	margin: auto;
-	text-decoration: none;
-	font-family: "Great Vibes", cursive;
-	font-size: 2em;
-	color: #ffffff;
+    margin: auto;
+    text-decoration: none;
+    font-family: "Great Vibes", cursive;
+    font-size: 2em;
+    color: #ffffff;
 }
-
 
 
 /*Code for scrolling text*/
 
 .storyblock {
-	width: 50%;
-	height: 240px;
-	position: relative;
-	background-color: transparent;
-	top: 700px;
-	left: 5%;
+    width: 50%;
+    height: 240px;
+    position: relative;
+    background-color: transparent;
+    top: 700px;
+    left: 5%;
 }
 
 .through {
-	font-family: 'Great Vibes', sans-serif;
-	font-size: 60px;
+    font-family: 'Great Vibes', sans-serif;
+    font-size: 60px;
 }
 
 .story {
-	margin: 0;
-	color: white;
-	font-size: 60px;
-	text-align: left;
-	font-family: "Lato", sans-serif;
+    margin: 0;
+    color: white;
+    font-size: 60px;
+    text-align: left;
+    font-family: "Lato", sans-serif;
 }
 
 .smallHeaderText {
-	font-family: "Lato", sans-serif;
-	font-size: 50px;
-	color: white;
+    font-family: "Lato", sans-serif;
+    font-size: 50px;
+    color: white;
 }
 
-/*Code for Masonry grid*/
-#masonGrid {
-	display: grid;
-	grid-template-columns: 300px 300px 300px;
-	justify-content: center;
-	padding-top: 100px;
-	grid-gap: 33px;
+/*Are you magnetized header*/
+.mainDiv {
+    background-image: url("../images/greywhite.jpg");
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto;
+    grid-row-gap: 200px;
+    padding-bottom: 100px;
 }
 
-.masonDiv {
-	margin: 20px;
+#magnetDiv {
+    width: 500px;
+    height: 300px;
+    margin: auto;
 }
 
-.imgDiv {
-	text-align: center;
-}
-.masonImg {
-	width: 300px;
-	height: 227px;
-	text-align: center;
+.areYou {
+    font-family: "Lato", sans-serif;
+    text-align: center;
+    font-size: 50px;
 }
 
-.masonImg2 {
-	width: 300px;
-	height: 153px;
-	text-align: center;
+/*Code for homepage content*/
+#content {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    width: 75%;
+    margin: auto;
+    grid-column-gap: 50px;
 }
 
-.masonImg3 {
-	width: 300px;
-	height: 199px;
-	text-align: center;
+.magnetPics {
+    width: 500px;
+    height: 300px;
 }
 
-div.grid-item > button {
+.title1Div {
+    text-align: center;
+}
 
+.title1 {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+    font-size: 25px;
+    padding-bottom: 10px;
+    color: #712E71
+}
+
+.title1::after {
+    content: "";
+    width: 80%;
+    height: 3px;
+    background: #712E71;
+    bottom: 0;
+    position: absolute;
+    left: 10%;
+}
+
+.text1 {
+    text-align: center;
+}
+
+.daniPic {
+    width: 100%;
+    height: 100%;
+}
+
+.btmHeader {
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+    grid-template-rows: 560px;
+
+}
+
+.midHeaderDiv {
+    background-image: url("../images/purplebox.jpg");
+    display: grid;
+    grid-template-rows: 30% 20% 5% 20% 20%;
+    grid-row-gap: 10px;
+}
+
+div.midHeaderDiv button {
+    background-color: #ffffff;
+    border-radius: 3px;
+    color: #400F3C;
+    cursor: pointer;
+    width: 240px;
+    height: 60px;
+    border: aliceblue;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+}
+
+.icon1 {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+
+.newsTitle {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+    font-size: 25px;
+    padding-bottom: 10px;
+    color: rgb(255, 255, 255);
+    height: 50px;
+}
+
+.newsTitle::after {
+    content: "";
+    width: 80%;
+    height: 3px;
+    background: rgb(255, 255, 255);
+    bottom: 0;
+    position: absolute;
+    left: 10%;
+}
+.newsText {
+    font-family: "Lato", sans-serif;
+    color: #ffffff;
+    text-align: center;
+}
+
+#formGroup {
+    margin: 10%;
+}
+button {
+    margin: auto;
+}
+
+.aboveFooter {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    height: 430px;
+}
+
+.title2 {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+    font-size: 25px;
+    padding-bottom: 10px;
+    color: #712E71
+}
+
+.title2::after {
+    content: "";
+    width: 80%;
+    height: 3px;
+    background: #712E71;
+    bottom: 0;
+    position: absolute;
+    left: 10%;
+}
+
+.aboveDiv {
+    margin-bottom: 0px;
+    margin: auto
+}
+
+.aboveDivText {
+    width: 30%;
+    margin: auto;
+}
+
+.aboveDivButton {
+    margin-top: 0px;
+    margin: auto
+}
+
+div.aboveDivButton button {
+    background-color: #40043c;
+    border-radius: 3px;
+    color: #ffffff;
+    cursor: pointer;
+    width: 240px;
+    height: 60px;
+    border: aliceblue;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+}
+
+.grid-container10 {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto auto;
+    grid-template-columns: auto auto auto;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    background-color: #400F3C;
+    color: #ffffff;
+    height: 300px;
+}
+
+.grid-item20 {
+    display: grid;
+    grid-template-rows: auto 10% 30%;
+}
+
+.logo {
+    width: 70px;
+    height: 100px;
+    margin: auto;
+}
+
+.legalText {
+    margin-bottom: 0px;
+}
+
+.grid-item22 {
+    margin: auto;
+    text-align: center;
+}
+
+.legal {
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+}
+
+.footertitle {
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+}
+
+.grid-item21 {
+    margin: auto;
+}
+
+.grid-container11 {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.grid-container11 div {
+    font-family: "Lato", sans-serif;
+    font-size: 1em;
+    margin: auto;
+}
+
+.grid-container11 a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.socialImgs {
+    width: 30px;
+    height: 30px;
 }

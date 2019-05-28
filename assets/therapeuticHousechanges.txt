@@ -1,0 +1,41 @@
+//Home
+Healing through magnetism.
+scroll down "are you magnetised"
+put video where the hands with magnets are.
+then have info about magnitism
+then put learn more underneath
+on homepage only have magnetism
+
+//Misc
+Try to build a self input for clients to add their own events without me
+
+//Services
+put all other services on the services page
+put images underneath each service
+play ear candling video when clickling learn more
+
+//Misc
+home cooking demos and massages remove from services.
+
+//About
+get bios and new photos.
+experiment with colors on about page
+
+//Services
+prices are subject to change
+Timeframes for services
+ear candling 40mins
+reflexology 1 hour for both
+chakra 1 hour
+Make window popup from center of page maybe use scale
+
+//Misc
+subscribe to newsletter and make events page or section.
+
+//Contact Page
+link instagram page
+take atlanta address off contact
+
+//Misc
+add podcast to website
+

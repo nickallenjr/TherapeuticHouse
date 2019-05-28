@@ -1,153 +1,221 @@
-body, html {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	height: 100%;
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }
 
 #navi {
-	display: grid;
-	grid-template-columns: 40px auto auto auto auto auto auto;
-	padding-right: 50px;
-	padding-left: 50px;
-	position: fixed;
-	background-color: transparent;
-	width: 100%;
-	top: 0;
+    display: grid;
+    grid-template-columns: 40px auto auto auto auto auto auto;
+    padding-right: 50px;
+    padding-left: 50px;
+    position: fixed;
+    background-color: transparent;
+    width: 100%;
+    top: 0;
 }
 
 div#navi img {
-	width: 50px;
-	height: 80px;
+    width: 50px;
+    height: 80px;
 }
 
 div#navi p {
-	margin: 0;
+    margin: 0;
 }
 
 .naviTitles {
-	grid-column: 2 / 4;
+    grid-column: 2 / 4;
 }
 
 .naviTitle1 {
-	font-family: 'Great Vibes', cursive;
-	color: #ffffff;
-	font-size: 47px;
-	padding-left: 11px;
-	padding-top: 16px;
+    font-family: 'Great Vibes', cursive;
+    color: #ffffff;
+    font-size: 47px;
+    padding-left: 11px;
+    padding-top: 16px;
 }
 
 .naviTitle2 {
-	color: #C5915C;
+    color: #C5915C;
 }
 
 div#navi a {
-	margin: auto;
-	text-decoration: none;
-	font-family: "Great Vibes", cursive;
-	font-size: 2em;
-	color: #ffffff;
+    margin: auto;
+    text-decoration: none;
+    font-family: "Great Vibes", cursive;
+    font-size: 2em;
+    color: #ffffff;
 }
 
 #header {
-	background-color: #400F3C;
-	height: 20%;
-	width: 100%;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
+    background-color: #400F3C;
+    height: 20%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .header1 {
-	text-align: center;
-	padding-top: 20px;
+    text-align: center;
+    padding-top: 20px;
 }
 
 .headTitle2 {
-	font-family: 'Playfair Display', serif;
-	text-align: center;
-	font-size: 50px;
-	color: #c5915c;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 50px;
+    color: #c5915c;
 }
 
 .bigGrid {
-	display: grid;
-	grid-template-columns: auto;
-	justify-content: center;
-	align-items: center;
-	max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .title {
-	font-family: "Lato", sans-serif;
-	text-align: center;
-	color: #C5915C;
+    font-family: "Lato", sans-serif;
+    text-align: center;
+    color: #C5915C;
 }
 
 .para {
-	font-family: "Playfair Display", serif;
-	text-align: center;
+    font-family: "Playfair Display", serif;
+    text-align: center;
 }
 
 .meetUs {
-	display: grid;
-	grid-template-columns: auto auto;
-	grid-template-rows: auto auto;
-	justify-content: center;
-	max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .meetDiv {
-	grid-column: 1 / 3;
+    grid-column: 1 / 3;
 }
 
 .infoGrid {
-	display: grid;
-	grid-template-columns: auto auto;
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
 .aboutInfoDiv1 {
-	text-align: center;
+    text-align: center;
 }
 
 .aboutInfoDiv2 {
-	text-align: center;
+    text-align: center;
 }
 
 .aboutImg1 {
-	width: 50%;
-	box-shadow: 10px 10px 5px #c5915c;
+    width: 50%;
+    box-shadow: 10px 10px 5px #c5915c;
 }
 
 .aboutImg2 {
-	width: 50%;
-	box-shadow: 10px 10px 5px #c5915c;
+    width: 50%;
+    box-shadow: 10px 10px 5px #c5915c;
 }
 
 .jobTitle {
-	font-family: "Great Vibes", cursive;
-	text-align: center;
-	font-size: 50px;
+    font-family: "Great Vibes", cursive;
+    text-align: center;
+    font-size: 50px;
 }
 
 .dash {
-	color: #c5915c;
+    color: #c5915c;
 }
 
 .aboutWordsTitle {
-	font-family: "Lato", sans-serif;
-	font-size: ;
-	text-align: center;
-
+    font-family: "Lato", sans-serif;
+    font-size: ;
+    text-align: center;
 }
 
 .aboutWords {
-	font-family: "Playfair Display", serif;
-	margin-left: 150px;
-	margin-right: 150px;
-	text-align: center; 
+    font-family: "Playfair Display", serif;
+    margin-left: 150px;
+    margin-right: 150px;
+    text-align: center;
+}
+
+.grid-container10 {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto auto;
+    grid-template-columns: auto auto auto;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    background-color: #400F3C;
+    color: #ffffff;
+    height: 300px;
+}
+
+.grid-item20 {
+    display: grid;
+    grid-template-rows: auto 10% 30%;
+}
+
+.logo {
+    width: 70px;
+    height: 100px;
+    margin: auto;
+}
+
+.legalText {
+    margin-bottom: 0px;
+}
+
+.grid-item22 {
+    margin: auto;
+    text-align: center;
+}
+
+.legal {
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+}
+
+.footertitle {
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+}
+
+.grid-item21 {
+    margin: auto;
+}
+
+.grid-container11 {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.grid-container11 div {
+    font-family: "Lato", sans-serif;
+    font-size: 1em;
+    margin: auto;
+}
+
+.grid-container11 a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.socialImgs {
+    width: 30px;
+    height: 30px;
 }
