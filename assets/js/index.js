@@ -1,10 +1,18 @@
 document.addEventListener("DOMContentLoaded", function(event) {
     //do work
 
+    let loadingCounter = 0;
 
-    setTimeout(function() {
-        document.querySelector("div.loading").classList.add("hidden")
-    }, 4000)
+    if (loadingCounter <= 0) {
+        setTimeout(function() {
+            document.querySelector("div.loading").classList.add("hidden")
+        }, 4000);
+        loadingCounter++;
+        console.log(loadingCounter);
+    } else {
+        return;
+    }
+
 
     const title = document.querySelectorAll(".title");
     const tl = new TimelineMax();
@@ -18,10 +26,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     const nav = document.getElementById("navi");
 
     window.addEventListener('scroll', function() {
-        const winTop = window.pageYOffset
+        const winTop = window.pageYOffset;
+        console.log(winTop);
 
         if (winTop > 0) {
-            TweenMax.to(nav, 1, { position: "fixed", backgroundColor: "#ffffff", top: 0, zIndex: 2 });
+            TweenMax.to(nav, 1, { position: "fixed", backgroundColor: "#ffffff", top: 0, zIndex: 1 });
             TweenMax.to(".naviLinks", 1, { color: "#400F3C" });
             TweenMax.to(".naviTitle1", 1, { color: "#400F3C" });
         } else {

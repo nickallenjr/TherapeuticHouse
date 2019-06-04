@@ -115,6 +115,7 @@ h1.title {
     background-color: transparent;
     width: 100%;
     top: 0;
+    z-index: 1;
 }
 
 div#navi img {
