@@ -52,7 +52,7 @@ div#navi a {
 
 #header {
     background-color: #400F3C;
-    height: 20%;
+    height: 9%;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -74,11 +74,15 @@ div#navi a {
 .bigGrid {
     display: grid;
     grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-row-gap: 100px;
     justify-content: center;
     align-items: center;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .title {
@@ -95,11 +99,15 @@ div#navi a {
 .meetUs {
     display: grid;
     grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto;
     justify-content: center;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin-left: auto;
     margin-right: auto;
+    background: url("../images/IMG_6625.jpg");
+    background-position: top;
+    background-size: cover;
+    height: 100%;
 }
 
 .meetDiv {
@@ -108,7 +116,8 @@ div#navi a {
 
 .infoGrid {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 15% 70% 15%;
+    align-items: center;
 }
 
 .aboutInfoDiv1 {
@@ -119,37 +128,53 @@ div#navi a {
     text-align: center;
 }
 
-.aboutImg1 {
-    width: 50%;
-    box-shadow: 10px 10px 5px #c5915c;
-}
-
-.aboutImg2 {
-    width: 50%;
-    box-shadow: 10px 10px 5px #c5915c;
-}
-
 .jobTitle {
     font-family: "Great Vibes", cursive;
     text-align: center;
     font-size: 50px;
+    color: #ffffff;
 }
 
-.dash {
-    color: #c5915c;
-}
-
-.aboutWordsTitle {
+.aboutWordsTitle1 {
     font-family: "Lato", sans-serif;
     font-size: ;
-    text-align: center;
+    text-align: left;
+    color: #ffffff;
+}
+
+.aboutWordsTitle2 {
+    font-family: "Lato", sans-serif;
+    font-size: ;
+    text-align: right;
+    color: #ffffff;
 }
 
 .aboutWords {
     font-family: "Playfair Display", serif;
-    margin-left: 150px;
-    margin-right: 150px;
     text-align: center;
+    color: #ffffff;
+}
+
+.melName {
+    font-family: "Parisienne", cursive;
+    position: relative;
+    left: 70px;
+    font-size: 90px;
+    color: #a599b5;
+    top: -50px;
+}
+
+.daniName {
+    font-family: "Parisienne", cursive;
+    position: relative;
+    left: -90px;
+    font-size: 90px;
+    color: #B47EB3;
+    top: -50px;
+}
+
+.aboutImg {
+    width: 100%;
 }
 
 .grid-container10 {

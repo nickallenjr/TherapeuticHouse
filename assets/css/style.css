@@ -80,7 +80,7 @@ h1.title {
 }
 
 #header {
-    background-image: url("../images/woman.jpg");
+    background-image: url("../images/IMG_6569.jpg");
     height: 100%;
     width: 100%;
     background-repeat: no-repeat;
@@ -162,26 +162,25 @@ div#navi a {
     left: 5%;
 }
 
-.through {
-    font-family: 'Great Vibes', sans-serif;
-    font-size: 60px;
-}
-
 .story {
     margin: 0;
     color: white;
     font-size: 60px;
     text-align: left;
-    font-family: "Lato", sans-serif;
+    font-family: "Great Vibes", sans-serif;
 }
 
 .smallHeaderText {
-    font-family: "Lato", sans-serif;
-    font-size: 50px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
     color: white;
+    width: 40%;
 }
 
+
 /*Are you magnetized header*/
+
 .mainDiv {
     background-image: url("../images/greywhite.jpg");
     display: grid;
@@ -192,18 +191,28 @@ div#navi a {
 }
 
 #magnetDiv {
-    width: 500px;
-    height: 300px;
-    margin: auto;
+    display: grid;
+    grid-template-rows: auto;
+    align-content: center;
+    justify-content: center;
+    padding-top: 120px;
 }
 
 .areYou {
-    font-family: "Lato", sans-serif;
+    font-family: "Oswald", sans-serif;
     text-align: center;
-    font-size: 50px;
+    font-size: 100px;
+    color: #712e71;
 }
 
+.mainImg {
+    width: 500px;
+    height: 100%;
+}
+
+
 /*Code for homepage content*/
+
 #content {
     display: grid;
     grid-template-columns: auto auto;
@@ -256,7 +265,6 @@ div#navi a {
     display: grid;
     grid-template-columns: 33% 34% 33%;
     grid-template-rows: 560px;
-
 }
 
 .midHeaderDiv {
@@ -305,6 +313,7 @@ div.midHeaderDiv button {
     position: absolute;
     left: 10%;
 }
+
 .newsText {
     font-family: "Lato", sans-serif;
     color: #ffffff;
@@ -314,6 +323,7 @@ div.midHeaderDiv button {
 #formGroup {
     margin: 10%;
 }
+
 button {
     margin: auto;
 }

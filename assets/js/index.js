@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		console.log(screenSize)
 		const controller = new ScrollMagic.Controller();
 		const timeline = new TimelineMax();
-		timeline.add(TweenMax.fromTo(".storyblock", 2, {top:screenSize}, {top:200}))
+		timeline.add(TweenMax.fromTo(".storyblock", 2, {top:screenSize}, {top:150}))
 
 		new ScrollMagic.Scene({
 			duration: 1500,
