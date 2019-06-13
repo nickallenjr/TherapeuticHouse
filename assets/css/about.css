@@ -158,7 +158,7 @@ div#navi a {
 .melName {
     font-family: "Parisienne", cursive;
     position: relative;
-    left: 70px;
+    left: 20px;
     font-size: 90px;
     color: #a599b5;
     top: -50px;
@@ -167,7 +167,7 @@ div#navi a {
 .daniName {
     font-family: "Parisienne", cursive;
     position: relative;
-    left: -90px;
+    left: -140px;
     font-size: 90px;
     color: #B47EB3;
     top: -50px;

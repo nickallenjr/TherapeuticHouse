@@ -106,6 +106,9 @@ h1.title {
 }
 */
 
+
+/*Navigation Header*/
+
 #navi {
     display: grid;
     grid-template-columns: 40px auto auto auto auto auto auto;
@@ -120,23 +123,22 @@ h1.title {
 
 div#navi img {
     width: 50px;
-    height: 80px;
+    height: 60px;
 }
 
 div#navi p {
-    margin: 0;
+    margin: auto;
 }
 
 .naviTitles {
     grid-column: 2 / 4;
+    padding-left: 10px;
 }
 
 .naviTitle1 {
     font-family: 'Great Vibes', cursive;
     color: #ffffff;
     font-size: 47px;
-    padding-left: 11px;
-    padding-top: 16px;
 }
 
 .naviTitle2 {
@@ -149,6 +151,74 @@ div#navi a {
     font-family: "Great Vibes", cursive;
     font-size: 2em;
     color: #ffffff;
+}
+
+
+/*SideBar navigation*/
+
+.fas {
+    font-size: 40px;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    color: ghostwhite;
+    cursor: pointer;
+    display: none !important;
+}
+
+.sidenav {
+    visibility: hidden;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgb(255, 255, 255), rgb(77, 0, 92));
+    overflow-x: hidden;
+    padding-top: 60px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 35px;
+    color: #400F3C;
+    display: block;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+.sideBarLinks {
+    font-family: "Great Vibes", sans-serif;
+}
+
+@media only screen and (max-width:1000px) {
+    .sidenav {
+        visibility: visible;
+    }
+    .fa-bars {
+        display: block !important;
+        z-index: 2;
+    }
+    #navi {
+        grid-template-columns: 40px auto;
+        justify-content: center;
+    }
+    div#navi a {
+        display: none;
+    }
 }
 
 
@@ -177,6 +247,43 @@ div#navi a {
     font-weight: bolder;
     color: white;
     width: 40%;
+}
+
+.minStoryblock {
+    display: none;
+}
+
+.minStory {
+    display: none;
+    margin: 0;
+    color: #712E71;
+    font-size: 60px;
+    text-align: center;
+    font-family: "Great Vibes", sans-serif;
+}
+
+.minHeaderText {
+    display: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    color: #712E71;
+}
+
+@media only screen and (max-width:1000px) {
+    .storyblock {
+        display: none;
+    }
+    .minStoryblock {
+        display: block
+    }
+    .minStory {
+        display: block;
+    }
+    .minHeaderText {
+        display: block;
+        text-align: center
+    }
 }
 
 
@@ -257,15 +364,33 @@ div#navi a {
     text-align: center;
 }
 
-.daniPic {
-    width: 100%;
-    height: 100%;
+@media only screen and (max-width:1000px) {
+    .mainDiv {
+        grid-row-gap: 100px;
+    }
+    #content {
+        grid-template-columns: auto;
+        grid-template-rows: [top] auto [bottom] auto;
+        grid-row-gap: 20px;
+    }
+    .magnetPicDiv {
+        margin: auto;
+        grid-row: top;
+    }
 }
+
+
+/*Newsletter section*/
 
 .btmHeader {
     display: grid;
     grid-template-columns: 33% 34% 33%;
     grid-template-rows: 560px;
+}
+
+.daniPic {
+    width: 100%;
+    height: 100%;
 }
 
 .midHeaderDiv {
@@ -329,6 +454,18 @@ button {
     margin: auto;
 }
 
+@media only screen and (max-width:1000px) {
+    .btmHeader {
+        grid-template-columns: auto;
+    }
+    .newsPic {
+        display: none
+    }
+}
+
+
+/*Find a location div*/
+
 .aboveFooter {
     display: grid;
     grid-template-rows: auto auto auto;
@@ -382,6 +519,67 @@ div.aboveDivButton button {
     font-family: "Lato", sans-serif;
     font-weight: bold;
 }
+
+@media only screen and (max-width:1000px) {
+    .aboveDivText {
+        width: 80%;
+    }
+}
+
+
+/*Events styling*/
+
+#eventsDiv {
+    display: grid;
+    grid-template-columns: auto min-content;
+}
+
+#eventContainer {
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-column-gap: 20px;
+}
+
+#eventPic {
+    widows: 700px;
+    height: 700px;
+}
+
+#eventpic img {
+    width: 100%;
+    height: 100%;
+}
+
+#eventInfo {
+    font-family: "Lato", sans-serif;
+}
+
+#eventTitle {
+    font-family: "Oswald", sans-serif;
+}
+
+#allPastEvents {
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+#eventContainer2 {
+    display: grid;
+    grid-template-columns: min-content auto;
+}
+
+#pastEventPic {
+    width: 230px;
+    height: 230px;
+}
+
+.pastPic {
+    width: 100%;
+    height: 100%;
+}
+
+
+/*Footer styling*/
 
 .grid-container10 {
     display: -ms-grid;
@@ -449,4 +647,30 @@ div.aboveDivButton button {
 .socialImgs {
     width: 30px;
     height: 30px;
+}
+
+@media only screen and (max-width:800px) {
+    .footer {
+        grid-template-columns: auto;
+        grid-template-rows: [top] auto [bottom] auto
+    }
+    .grid-item22 {
+        display: none
+    }
+    .grid-item20 {
+        display: none;
+    }
+    .grid-item21 {
+        grid-row: top
+    }
+    .grid-container11 {
+        grid-template-columns: auto auto auto auto;
+    }
+    .footertitle {
+        font-size: 60px;
+    }
+    .socialImgs {
+        width: 50px;
+        height: 50px;
+    }
 }

@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:600|Great+Vibes|Oswald:700|Lato:300" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 
 <body>
@@ -18,8 +19,9 @@
         </div>
         <h1 class="title" id="rightTitle">House</h1>
     </div>
-
+    <span onclick="openNav()" id="hamburger" class="fas fa-bars"></span>
     <div id="navi">
+
         <img id="logo" alt="Therapuetic House" src="./assets/images/IMG_6520.svg">
         <div class="naviTitles">
             <p class="naviTitle1">Therapuetic House</p>
@@ -31,11 +33,24 @@
         <a id="naviLinks4" href="./contact.html"><span class="naviLinks" id="contactLink">Contact</span></a>
     </div>
 
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a class="sideBarLinks" href="./index.html">Home</a>
+        <a class="sideBarLinks" href="./about.html">About</a>
+        <a class="sideBarLinks" href="./services.html">Services</a>
+        <a class="sideBarLinks" href="./contact.html">Contact</a>
+    </div>
+
     <div id="header">
         <div class="storyblock">
-            <p class="story">Healing <br> <span class="through">Through</span> <br>Magnetism</p>
+            <p class="story">Healing <br>Through<br>Magnetism</p>
             <p class="smallHeaderText">We provide natural health options and solutions for our clients so they can reach their optimal health.</p>
         </div>
+    </div>
+
+    <div class="minStoryblock">
+        <p class="minStory">Healing Through Magnetism</p>
+        <p class="minHeaderText">We provide natural health options and solutions for our clients so they can reach their optimal health.</p>
     </div>
 
     <div class="mainDiv">
@@ -48,7 +63,7 @@
         </div>
 
         <div class="grid-item1" id="content">
-            <div>
+            <div class="magnetPicDiv">
                 <img class="magnetPics" src="./assets/images/IMG_0312.JPG" alt="Knees">
             </div>
             <div class="title1Div">
@@ -66,13 +81,13 @@
                     maximus in pretium tortor. Sed a augue a diam condimentum luctus. Nunc ultrices, ex in convallis malesuada, nulla felis euismod lectus, at aliquam orci tortor eget urna. Etiam venenatis eu diam vitae blandit. Curabitur odio tellus,
                     ultricies quis accumsan eget</p>
             </div>
-            <div>
+            <div class="magnetPicDiv">
                 <img class="magnetPics" src="./assets/images/IMG_6516.jpg" alt="Hands">
             </div>
         </div>
 
         <div class="grid-item3" id="content">
-            <div>
+            <div class="magnetPicDiv">
                 <img class="magnetPics" src="./assets/images/IMG_6655.jpg" alt="MagnetKnees">
             </div>
             <div class="title1Div">
@@ -85,7 +100,7 @@
     </div>
 
     <div class="btmHeader">
-        <div>
+        <div class="newsPic">
             <img class="daniPic" src="./assets/images/IMG_0309.JPG" alt="dani1">
         </div>
         <div class="midHeaderDiv">
@@ -97,7 +112,7 @@
             </div>
             <button type="submit" class="btn">SUBMIT</button>
         </div>
-        <div>
+        <div class="newsPic">
             <img class="daniPic" src="./assets/images/Dani2.JPG" alt="dani2">
         </div>
     </div>
@@ -113,6 +128,21 @@
             <button>FIND A LOCATION</button>
         </div>
     </div>
+
+    <!-- <div id="eventsDiv">
+        <div id="upcomingDiv">
+            <h1>Upcoming Events</h1>
+            <div id="allUpcomingEvents">
+
+            </div>
+        </div>
+        <div class="pastDiv">
+            <h1>Past Events</h1>
+            <div id="allPastEvents">
+
+            </div>
+        </div>
+    </div> -->
 
     <div class="grid-container10 footer">
         <div class="grid-item20">
@@ -131,7 +161,7 @@
             <h1 class="footertitle">FOLLOW US</h1>
             <div class="grid-container11">
                 <!--All of these will be logos-->
-                <div class="grid-item22">
+                <div class="grid-item26">
                     <a class="sociallinks" href='#'><img class="socialImgs" src="./assets/images/instagram.png" alt="instagram"></a>
                 </div>
                 <div class="grid-item23">
@@ -172,6 +202,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="./assets/text-encoding-master/text-encoding-master/lib/encoding-indexes.js"></script>
+
+    <script src="./assets/text-encoding-lib/ext-encoding-master/lib/encoding.js"></script>
 
     <script type="text/javascript" src="./assets/js/index.js"></script>
 </body>

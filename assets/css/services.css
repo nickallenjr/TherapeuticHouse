@@ -63,7 +63,7 @@ div#navi a {
 
 div#header h1 {
     color: white;
-    padding-top: 200px;
+    padding-top: 150px;
     text-align: center;
     font-family: "Oswald", sans-serif;
     font-size: -webkit-xxx-large;
@@ -179,6 +179,7 @@ a.links>p {
     border-top: 2px solid #400F3C;
     border-left: 2px solid #400F3C;
     border-right: 2px solid #400F3C;
+    overflow-y: scroll;
 }
 
 .exit {

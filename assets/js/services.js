@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             infoDescrip.innerHTML = allServices.descriptions.energy;
         }
 
-        TweenMax.to(infoDiv, 1, { yPercent: 0, height: "90%", display: "block" }, 0.1);
+        TweenMax.to(infoDiv, 1, { yPercent: 0, height: "75%", display: "block" }, 0.1);
         TweenMax.to(".allServices", 1, { filter: "opacity(0.5)" }, 0.1);
     }
 
