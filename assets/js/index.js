@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
     function setCookie(name, value) {
-        document.cookie = name + "=" + value + ";path=/index.html"
+        document.cookie = name + "=" + value + ";"
     };
 
     function getCookie(cname) {
