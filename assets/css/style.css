@@ -6,12 +6,6 @@ html {
     height: 100%;
 }
 
-@media only screen and (max-width: 414px) {
-    body {
-        width: 100vh;
-    }
-}
-
 div.loading {
     position: fixed;
     width: 100%;
@@ -93,6 +87,12 @@ h1.title {
     background-size: cover;
 }
 
+@media only screen and (min-width:375px) {
+    #header {
+        background-position: center;
+    }
+}
+
 
 /*.headerImg {
 	position: absolute;
@@ -159,6 +159,32 @@ div#navi a {
     color: #ffffff;
 }
 
+@media only screen and (min-width:375px) {
+    #navi {
+        display: grid;
+        grid-template-columns: auto;
+    }
+    #logo {
+        display: none;
+    }
+    .naviTitles {
+        grid-column: auto;
+        text-align: -webkit-center;
+        padding-left: 0;
+    }
+    .naviTitle1 {
+        font-size: 35px;
+    }
+    .fa-bars {
+        display: block !important;
+        z-index: 2;
+        visibility: visible;
+    }
+    div#navi a {
+        display: none;
+    }
+}
+
 
 /*SideBar navigation*/
 
@@ -166,10 +192,10 @@ div#navi a {
     font-size: 40px;
     position: fixed;
     left: 10px;
-    top: 10px;
+    top: 2px;
     color: ghostwhite;
     cursor: pointer;
-    display: none !important;
+    display: none;
 }
 
 .sidenav {
@@ -210,20 +236,9 @@ div#navi a {
     font-family: "Great Vibes", sans-serif;
 }
 
-@media only screen and (max-width:1000px) {
+@media only screen and (min-width:375px) {
     .sidenav {
         visibility: visible;
-    }
-    .fa-bars {
-        display: block !important;
-        z-index: 2;
-    }
-    #navi {
-        grid-template-columns: 40px auto;
-        justify-content: center;
-    }
-    div#navi a {
-        display: none;
     }
 }
 
@@ -370,7 +385,7 @@ div#navi a {
     text-align: center;
 }
 
-@media only screen and (max-width:1000px) {
+@media only screen and (min-width:375px) {
     .mainDiv {
         grid-row-gap: 100px;
     }
@@ -382,6 +397,16 @@ div#navi a {
     .magnetPicDiv {
         margin: auto;
         grid-row: top;
+    }
+    #content {
+        width: auto;
+    }
+    .magnetPics {
+        width: 100%;
+        height: 300px
+    }
+    .areYou {
+        font-size: 70px
     }
 }
 
