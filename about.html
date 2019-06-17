@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Parisienne|Sacramento|Great+Vibes|Playfair+Display|Oswald:700|Lato:300" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./assets/css/about.css">
 </head>
 
 <body>
+    <span onclick="openNav()" id="hamburger" class="fas fa-bars"></span>
 
     <div id="navi">
         <img id="logo" alt="Therapuetic House" src="./assets/images/IMG_6520.svg">
@@ -26,51 +28,72 @@
     <div id="header">
     </div>
 
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a class="sideBarLinks" href="./index.html">Home</a>
+        <a class="sideBarLinks" href="./about.html">About</a>
+        <a class="sideBarLinks" href="./services.html">Services</a>
+        <a class="sideBarLinks" href="./contact.html">Contact</a>
+    </div>
 
-    <div class="meetUs">
-        <div class="infoGrid">
-            <div class="aboutBox1">
-                <h2 class="aboutWordsTitle1">MEET</h2>
-                <h2 class="melName">Melodie</h2>
-                <p class="jobTitle">Co-Founder</p>
-                <p class="aboutWords">Although we are a well-oiled machine, our people are far from cogs. The talent we cultivate gets the importance of honing their respective crafts. It helps to better serve both each other and our partners, and it shows in everything –
-                    from what we design and produce, to what we value and believe.</p>
+    <div class="mainContainer">
+        <div class="smallMeetUs">
+            <div id="theGirls" class="daniDiv">
+                <h2 class="girls">Danielle</h2>
+                <img id="pics" class="daniPic" src="./assets/images/IMG_6630.jpg" alt="Dani">
+                <p class="bios1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo a veniam necessitatibus libero quibusdam, eveniet consectetur laborum molestias et aliquid debitis. Cumque error facilis iusto aspernatur laborum minima mollitia iste?</p>
             </div>
-            <div class="mainImgDiv">
-                <!-- <img class="aboutImg" src="./assets/images/IMG_6625.jpg" alt="melAndDani"> -->
+            <div id="theGirls" class="melDiv">
+                <h2 class="girls">Melodie</h2>
+                <img id="pics" class="melPic" src="./assets/images/IMG_6642.jpg" alt="Mel">
+                <p class="bios2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem dignissimos esse repudiandae obcaecati ipsa eveniet aspernatur ex? Impedit architecto tempora tenetur et magni debitis, enim fuga nihil? Qui, quisquam veritatis.</p>
             </div>
-            <div class="aboutBox2">
-                <h2 class="aboutWordsTitle2">MEET</h2>
-                <h2 class="daniName">Danielle</h2>
-                <p class="jobTitle">Co-Founder</p>
-                <p class="aboutWords">Doesn't matter. We're too busy thinking far outside of the constraints of the typical brief. Creativity: it's what drives us. We do our best work when the guardrails are down and we can spread our wings. Designs are cleaner, strategies
-                    sharper, and the world generally becomes a better place.</p>
+        </div>
+
+        <div class="meetUs">
+            <div class="infoGrid">
+                <div class="aboutBox1">
+                    <h2 class="aboutWordsTitle1">MEET</h2>
+                    <h2 class="melName">Melodie</h2>
+                    <p class="jobTitle">Co-Founder</p>
+                    <p class="aboutWords">Although we are a well-oiled machine, our people are far from cogs. The talent we cultivate gets the importance of honing their respective crafts. It helps to better serve both each other and our partners, and it shows in everything
+                        – from what we design and produce, to what we value and believe.</p>
+                </div>
+                <div class="mainImgDiv">
+                    <!-- <img class="aboutImg" src="./assets/images/IMG_6625.jpg" alt="melAndDani"> -->
+                </div>
+                <div class="aboutBox2">
+                    <h2 class="aboutWordsTitle2">MEET</h2>
+                    <h2 class="daniName">Danielle</h2>
+                    <p class="jobTitle">Co-Founder</p>
+                    <p class="aboutWords">Doesn't matter. We're too busy thinking far outside of the constraints of the typical brief. Creativity: it's what drives us. We do our best work when the guardrails are down and we can spread our wings. Designs are cleaner, strategies
+                        sharper, and the world generally becomes a better place.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bigGrid">
+            <div class="theMission">
+                <div class="titleDiv">
+                    <h1 class="title">Our Mission</h1>
+                </div>
+                <div class="missionTitleDiv">
+                    <p class="para">General Media Solutions is based in Salado, Texas, a boutique village in the Heart of Texas which prides itself on all the unique small businesses which call it home. Clients of ours range from local artists and shops to a goat ranch
+                        in Georgia and even political campaigns.</p>
+                </div>
+            </div>
+
+            <div class="theSpecialty">
+                <div class="titleDiv">
+                    <h1 class="title">Our Specialty</h1>
+                </div>
+                <div>
+                    <p class="para">We give small and mid-sized businesses the ability to exponentially expand their web and social media presence! Clients of ours can always say, "I'm calling Our Social Media Department!"</p>
+                </div>
             </div>
         </div>
     </div>
-
-
-    <div class="bigGrid">
-        <div class="theMission">
-            <div class="titleDiv">
-                <h1 class="title">Our Mission</h1>
-            </div>
-            <div class="missionTitleDiv">
-                <p class="para">General Media Solutions is based in Salado, Texas, a boutique village in the Heart of Texas which prides itself on all the unique small businesses which call it home. Clients of ours range from local artists and shops to a goat ranch in
-                    Georgia and even political campaigns.</p>
-            </div>
-        </div>
-
-        <div class="theSpecialty">
-            <div class="titleDiv">
-                <h1 class="title">Our Specialty</h1>
-            </div>
-            <div>
-                <p class="para">We give small and mid-sized businesses the ability to exponentially expand their web and social media presence! Clients of ours can always say, "I'm calling Our Social Media Department!"</p>
-            </div>
-        </div>
-    </div>
-
 
     <div class="grid-container10 footer">
         <div class="grid-item20">
@@ -89,7 +112,7 @@
             <h1 class="footertitle">FOLLOW US</h1>
             <div class="grid-container11">
                 <!--All of these will be logos-->
-                <div class="grid-item22">
+                <div class="grid-item26">
                     <a class="sociallinks" href='#'><img class="socialImgs" src="./assets/images/instagram.png" alt="instagram"></a>
                 </div>
                 <div class="grid-item23">

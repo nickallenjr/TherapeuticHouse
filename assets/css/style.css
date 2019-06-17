@@ -93,6 +93,12 @@ h1.title {
     }
 }
 
+@media only screen and (min-width:768px) {
+    #header {
+        background-position: top;
+    }
+}
+
 
 /*.headerImg {
 	position: absolute;
@@ -182,6 +188,35 @@ div#navi a {
     }
     div#navi a {
         display: none;
+    }
+}
+
+@media only screen and (min-width:768px) {}
+
+@media only screen and (min-width:1024px) {
+    #navi {
+        display: grid;
+        grid-template-columns: 40px auto auto auto auto auto auto;
+    }
+    #logo {
+        display: block;
+    }
+    .naviTitles {
+        grid-column: 2 / 4;
+        padding-left: 0;
+        margin: auto;
+        margin-left: 10px;
+    }
+    .naviTitle1 {
+        font-size: 35px;
+    }
+    .fa-bars {
+        display: none;
+        z-index: 0;
+        visibility: hidden;
+    }
+    div#navi a {
+        display: block;
     }
 }
 
@@ -407,6 +442,62 @@ div#navi a {
     }
     .areYou {
         font-size: 70px
+    }
+}
+
+@media only screen and (min-width:768px) {
+    .mainDiv {
+        grid-row-gap: 100px;
+    }
+    #content {
+        grid-template-columns: auto;
+        grid-template-rows: [top] auto [bottom] auto;
+        grid-row-gap: 20px;
+    }
+    .magnetPicDiv {
+        margin: auto;
+        grid-row: top;
+    }
+    #content {
+        margin: auto;
+    }
+    .magnetPics {
+        width: auto;
+        height: 300px
+    }
+    .areYou {
+        font-size: 70px
+    }
+}
+
+@media only screen and (min-width:1024px) {
+    .mainDiv {
+        grid-row-gap: 200px;
+    }
+    #content {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto;
+        width: 90%;
+        margin: auto;
+        grid-column-gap: 50px;
+    }
+    .magnetPicDiv {
+        margin: auto;
+        grid-row: initial;
+    }
+    #content {
+        margin: auto;
+    }
+    .magnetPics {
+        width: 500px;
+        height: 300px
+    }
+    .areYou {
+        font-size: 100px;
+    }
+    .title1Div {
+        width: 100%
     }
 }
 
