@@ -6,6 +6,9 @@ html {
     height: 100%;
 }
 
+
+/*Navigation Bar CSS*/
+
 #navi {
     display: grid;
     grid-template-columns: 40px auto auto auto auto auto auto;
@@ -48,6 +51,90 @@ div#navi a {
     font-family: "Great Vibes", cursive;
     font-size: 2em;
     color: #ffffff;
+}
+
+
+/*SideBar navigation*/
+
+.fas {
+    font-size: 40px;
+    position: fixed;
+    left: 10px;
+    top: 2px;
+    color: ghostwhite;
+    cursor: pointer;
+    display: none;
+}
+
+.sidenav {
+    visibility: hidden;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgb(255, 255, 255), rgb(77, 0, 92));
+    overflow-x: hidden;
+    padding-top: 60px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 35px;
+    color: #400F3C;
+    display: block;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+.sideBarLinks {
+    font-family: "Great Vibes", sans-serif;
+}
+
+@media only screen and (min-width:375px) {
+    .sidenav {
+        visibility: visible;
+    }
+}
+
+@media only screen and (min-width:375px) {
+    #navi {
+        display: grid;
+        grid-template-columns: auto;
+    }
+    #logo {
+        display: none;
+    }
+    .naviTitles {
+        grid-column: auto;
+        text-align: -webkit-center;
+        padding-left: 0;
+    }
+    .naviTitle1 {
+        font-size: 35px;
+    }
+    .fa-bars {
+        display: block !important;
+        z-index: 3;
+        visibility: visible;
+        top: 20px;
+    }
+    div#navi a {
+        display: none;
+    }
 }
 
 #header {
@@ -179,4 +266,93 @@ div#navi a {
 .socialImgs {
     width: 30px;
     height: 30px;
+}
+
+@media only screen and (min-width:375px) {
+    #header {
+        height: 9%;
+    }
+    .contactDiv {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+    }
+    .formDiv {
+        margin: auto;
+        width: 90%;
+        text-align: -webkit-center;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    #map {
+        height: 400px;
+        margin: 0;
+    }
+    .mapDiv {
+        width: 90%;
+        margin: auto;
+    }
+    .locales {
+        text-align: -webkit-center;
+    }
+    .grid-container10 {
+        grid-template-columns: auto
+    }
+    .grid-item20 {
+        display: none;
+    }
+    .grid-item22 {
+        display: none;
+    }
+}
+
+@media only screen and (min-width:1024px) {
+    .contactDiv {
+        grid-template-columns: 60% 40%;
+        grid-template-rows: auto;
+    }
+    .formDiv {
+        text-align: left;
+    }
+    .locales {
+        text-align: left;
+        margin: 0;
+        padding-top: 50px;
+    }
+    .grid-container10 {
+        grid-template-columns: auto auto auto;
+    }
+    .grid-item20 {
+        display: initial;
+    }
+    .grid-item22 {
+        display: initial;
+    }
+    #navi {
+        display: grid;
+        grid-template-columns: 40px auto auto auto auto auto auto;
+    }
+    #logo {
+        display: block;
+    }
+    .naviTitles {
+        grid-column: 2 / 4;
+        padding-left: 0;
+        margin: auto;
+        margin-left: 10px;
+    }
+    .naviTitle1 {
+        font-size: 35px;
+    }
+    .fa-bars {
+        display: none;
+        z-index: 0;
+        visibility: hidden;
+    }
+    div#navi a {
+        display: block;
+    }
+    div#navi p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
 }
