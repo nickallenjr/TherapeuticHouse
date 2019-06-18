@@ -788,11 +788,4 @@ div.aboveDivButton button {
     .grid-container11 {
         grid-template-columns: auto auto auto auto;
     }
-    .footertitle {
-        font-size: 60px;
-    }
-    .socialImgs {
-        width: 50px;
-        height: 50px;
-    }
 }
