@@ -6,7 +6,9 @@ html {
     height: 100%;
 }
 
+
 /*Navigation Bar CSS*/
+
 #navi {
     display: grid;
     grid-template-columns: 40px auto auto auto auto auto auto;
@@ -50,6 +52,7 @@ div#navi a {
     font-size: 2em;
     color: #ffffff;
 }
+
 
 /*SideBar navigation*/
 
@@ -112,33 +115,27 @@ div#navi a {
         display: grid;
         grid-template-columns: auto;
     }
-
     #logo {
         display: none;
     }
-
     .naviTitles {
         grid-column: auto;
         text-align: -webkit-center;
         padding-left: 0;
     }
-
     .naviTitle1 {
         font-size: 35px;
     }
-
     .fa-bars {
         display: block !important;
         z-index: 3;
         visibility: visible;
         top: 20px;
     }
-
     div#navi a {
         display: none;
     }
 }
-
 
 #header {
     background: linear-gradient(rgba(137, 2, 171, 0.5), rgba(128, 6, 189, 0.5)), url("../images/IMG_6514.jpg");
@@ -434,5 +431,76 @@ a.links>p {
     }
     .grid-item22 {
         display: none;
+    }
+}
+
+@media only screen and (min-width:1024px) {
+    #navi {
+        display: grid;
+        grid-template-columns: 40px auto auto auto auto auto auto;
+    }
+    #logo {
+        display: block;
+    }
+    .naviTitles {
+        grid-column: 2 / 4;
+        padding-left: 0;
+        margin: auto;
+        margin-left: 10px;
+    }
+    .naviTitle1 {
+        font-size: 35px;
+    }
+    .fa-bars {
+        display: none;
+        z-index: 0;
+        visibility: hidden;
+    }
+    div#navi a {
+        display: block;
+    }
+    .infoGrid {
+        grid-template-columns: 20% 60% 20%;
+        height: -webkit-fill-available;
+    }
+    .jobTitle {
+        font-size: 40px
+    }
+    .mainContainer {
+        background: #ffffff;
+    }
+    .grid-container10 {
+        grid-template-columns: auto auto auto;
+    }
+    .grid-item20 {
+        display: grid;
+    }
+    .grid-item22 {
+        display: grid;
+    }
+    #infoDiv {
+        width: 60%;
+        left: 20%;
+    }
+    #serviceImg {
+        width: 60%;
+    }
+    #infoDescrip {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width:1440px) {
+    .daniName {
+        left: -20px;
+    }
+    .meetUs {
+        height: 1000px;
+    }
+    .infoGrid {
+        padding-top: 150px;
+    }
+    .grid-item20 {
+        display: grid;
     }
 }

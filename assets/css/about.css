@@ -405,36 +405,29 @@ div#navi a {
         display: grid;
         grid-template-columns: 40px auto auto auto auto auto auto;
     }
-
     #logo {
         display: block;
     }
-
     .naviTitles {
         grid-column: 2 / 4;
         padding-left: 0;
         margin: auto;
         margin-left: 10px;
     }
-
     .naviTitle1 {
         font-size: 35px;
     }
-
     .fa-bars {
         display: none;
         z-index: 0;
         visibility: hidden;
     }
-
     div#navi a {
         display: block;
     }
-
     .smallMeetUs {
         display: none !important;
     }
-
     .meetUs {
         display: block !important;
         background-size: cover;
@@ -461,10 +454,10 @@ div#navi a {
         grid-template-columns: auto auto auto;
     }
     .grid-item20 {
-        display: initial;
+        display: grid;
     }
     .grid-item22 {
-        display: initial;
+        display: grid;
     }
 }
 
@@ -480,5 +473,8 @@ div#navi a {
     }
     #header {
         height: 11%;
+    }
+    .grid-item20 {
+        display: grid;
     }
 }
