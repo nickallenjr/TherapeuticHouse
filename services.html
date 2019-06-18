@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Playfair+Display|Oswald:700|Lato:300" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./assets/css/services.css">
 </head>
 
 <body>
+    
+    <span onclick="openNav()" id="hamburger" class="fas fa-bars"></span>
 
     <div id="navi">
         <img id="logo" alt="Therapuetic House" src="./assets/images/IMG_6520.svg">
@@ -21,6 +25,14 @@
         <a id="naviLinks2" href="./about.html"><span class="naviLinks" id="aboutLink">About</span></a>
         <a id="naviLinks3" href="./services.html"><span class="naviLinks" id="serviceLink">Services</span></a>
         <a id="naviLinks4" href="./contact.html"><span class="naviLinks" id="contactLink">Contact</span></a>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a class="sideBarLinks" href="./index.html">Home</a>
+        <a class="sideBarLinks" href="./about.html">About</a>
+        <a class="sideBarLinks" href="./services.html">Services</a>
+        <a class="sideBarLinks" href="./contact.html">Contact</a>
     </div>
 
     <div id="header">
@@ -139,7 +151,7 @@
             <h1 class="footertitle">FOLLOW US</h1>
             <div class="grid-container11">
                 <!--All of these will be logos-->
-                <div class="grid-item22">
+                <div class="grid-item26">
                     <a class="sociallinks" href='#'><img class="socialImgs" src="./assets/images/instagram.png" alt="instagram"></a>
                 </div>
                 <div class="grid-item23">

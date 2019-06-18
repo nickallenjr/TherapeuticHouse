@@ -6,6 +6,7 @@ html {
     height: 100%;
 }
 
+/*Navigation Bar CSS*/
 #navi {
     display: grid;
     grid-template-columns: 40px auto auto auto auto auto auto;
@@ -49,6 +50,95 @@ div#navi a {
     font-size: 2em;
     color: #ffffff;
 }
+
+/*SideBar navigation*/
+
+.fas {
+    font-size: 40px;
+    position: fixed;
+    left: 10px;
+    top: 2px;
+    color: ghostwhite;
+    cursor: pointer;
+    display: none;
+}
+
+.sidenav {
+    visibility: hidden;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgb(255, 255, 255), rgb(77, 0, 92));
+    overflow-x: hidden;
+    padding-top: 60px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 35px;
+    color: #400F3C;
+    display: block;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+.sideBarLinks {
+    font-family: "Great Vibes", sans-serif;
+}
+
+@media only screen and (min-width:375px) {
+    .sidenav {
+        visibility: visible;
+    }
+}
+
+@media only screen and (min-width:375px) {
+    #navi {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    #logo {
+        display: none;
+    }
+
+    .naviTitles {
+        grid-column: auto;
+        text-align: -webkit-center;
+        padding-left: 0;
+    }
+
+    .naviTitle1 {
+        font-size: 35px;
+    }
+
+    .fa-bars {
+        display: block !important;
+        z-index: 3;
+        visibility: visible;
+        top: 20px;
+    }
+
+    div#navi a {
+        display: none;
+    }
+}
+
 
 #header {
     background: linear-gradient(rgba(137, 2, 171, 0.5), rgba(128, 6, 189, 0.5)), url("../images/IMG_6514.jpg");
@@ -313,4 +403,36 @@ a.links>p {
 .socialImgs {
     width: 30px;
     height: 30px;
+}
+
+@media only screen and (min-width:375px) {
+    div#header h1 {
+        padding-top: 100px;
+    }
+    div#header p {
+        width: 90%;
+    }
+    .allServices {
+        align-items: start;
+        margin: 5%;
+    }
+    #infoDiv {
+        left: 0;
+        width: 100%;
+    }
+    #serviceImg {
+        width: 100%;
+    }
+    #infoDescrip {
+        width: 100%;
+    }
+    .grid-container10 {
+        grid-template-columns: auto
+    }
+    .grid-item20 {
+        display: none;
+    }
+    .grid-item22 {
+        display: none;
+    }
 }
