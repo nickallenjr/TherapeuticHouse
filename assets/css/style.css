@@ -241,7 +241,8 @@ div#navi a {
     z-index: 1;
     top: 0;
     left: 0;
-    background: linear-gradient(rgb(255, 255, 255), rgb(77, 0, 92));
+    /* background: linear-gradient(rgb(255, 255, 255), rgb(77, 0, 92)); */
+    background: #400F3C;
     overflow-x: hidden;
     padding-top: 60px;
     -webkit-transition: 0.5s;
@@ -252,7 +253,7 @@ div#navi a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 35px;
-    color: #400F3C;
+    color: #ffffff;
     display: block;
     -webkit-transition: 0.3s;
     transition: 0.3s;
@@ -518,7 +519,7 @@ div#navi a {
 .midHeaderDiv {
     background-image: url("../images/purplebox.jpg");
     display: grid;
-    grid-template-rows: 30% 20% 5% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20%;
     grid-row-gap: 10px;
 }
 
@@ -569,7 +570,7 @@ div.midHeaderDiv button {
 }
 
 #formGroup {
-    margin: 10%;
+    margin: 0;
 }
 
 button {
@@ -700,6 +701,15 @@ div.aboveDivButton button {
     height: 100%;
 }
 
+/*Code for mailchimp newsletter*/
+#mc_embed_signup {
+    font-family: "Lato", sans-serif;
+}
+
+#mc_embed_signup_scroll {
+    text-align: -webkit-center;
+    color: white;
+}
 
 /*Footer styling*/
 

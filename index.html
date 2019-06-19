@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -108,9 +109,25 @@
             <h3 class="newsTitle">Join our newsletter</h3>
             <p class="newsText">Subscribe to recieve updates, latest news, and special offers!</p>
             <div id="formGroup" class="form-group">
-                <input type="email" class="form-control" id="formEmail" aria-describedby="emailHelp" placeholder="Your Email Address">
+                <!-- Begin Mailchimp Signup Form -->
+                <div id="mc_embed_signup">
+                    <form
+                        action="https://gmail.us20.list-manage.com/subscribe/post?u=eca7a217719a2011c887ea069&amp;id=8cd668b55d"
+                        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+                        target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll">
+                            <label for="mce-EMAIL">Subscribe</label>
+                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL"
+                                placeholder="email address" required>
+                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                    name="b_eca7a217719a2011c887ea069_8cd668b55d" tabindex="-1" value=""></div>
+                            <div class="clear"><input type="submit" value="Subscribe" name="subscribe"
+                                    id="mc-embedded-subscribe" class="button"></div>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <button type="submit" class="btn">SUBMIT</button>
         </div>
         <div class="newsPic">
             <img class="daniPic" src="./assets/images/Dani2.JPG" alt="dani2">
@@ -125,7 +142,7 @@
             <p class="text1">It's easy to forget everything your body does every day. Your body deserves – and needs – constant fine-tuning and maintenance. Still not convinced? Give us a call or visit one of our locations nearest you for a free consultation</p>
         </div>
         <div class="aboveDivButton">
-            <button>FIND A LOCATION</button>
+            <button onclick="window.location.href = '/contact.html';">FIND A LOCATION</button>
         </div>
     </div>
 
@@ -176,18 +193,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
 
