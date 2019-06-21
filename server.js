@@ -5,14 +5,16 @@
 // 4.Make route for displaying events
 // 5.Setup backend form validation
 
-const express = require("express");
-const fs = require('fs');
-const bodyParser = require("body-parser");
-const expressValidator = require("express-validator");
-const passport = require("passport");
-const mongoose = require("mongoose");
-const cors = require("cors");
-var logger = require("morgan");
+const express = require("express"),
+    fs = require('fs'),
+    bodyParser = require("body-parser"),
+    expressValidator = require("express-validator"),
+    passport = require("passport"),
+    mongoose = require("mongoose"),
+    cors = require("cors"),
+    path = require("path"),
+    logger = require("morgan"),
+    nodeMailer = require("nodemailer");
 
 
 const Event = require("./models/events.js")
@@ -27,11 +29,14 @@ var corsOptions = {
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
+// app.use(express.static("src"));
+
 // Use morgan and body parser with our app
 app.use(logger("dev"));
 app.use(bodyParser.urlencoded({
     extended: false
 }));
+app.use(bodyParser.json());
 
 
 
@@ -48,6 +53,35 @@ db.on("error", function(error) {
 // Once logged in to the db through mongoose, log a success message
 db.once("open", function() {
     console.log("Mongoose connection successful.");
+});
+
+//Route for sending email to client
+app.post('/sendemail', cors(), function(req, res) {
+    console.log(req.body);
+    let transporter = nodeMailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+            // should be replaced with real sender's account
+            user: 'hello@gmail.com',
+            pass: 'test'
+        }
+    });
+    let mailOptions = {
+        // should be replaced with real recipient's account
+        to: 'info@gmail.com',
+        subject: req.body.subject,
+        body: req.body.message
+    };
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message %s sent: %s', info.messageId, info.response);
+    });
+    // res.writeHead(301, { Location: 'index.html' });
+    // res.end();
 });
 
 app.get("/upcomingevents", cors(), function(req, res) {

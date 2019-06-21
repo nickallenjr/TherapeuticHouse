@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     console.log(window.innerWidth)
     let screenSize;
 
-    if (window.innerWidth > 1000) {
+    if (window.innerWidth >= 1440) {
         if (screen.height <= 1080) {
             let screenSize = 1000;
             console.log(screenSize)

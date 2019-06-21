@@ -50,7 +50,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     const allServices = {
         titles: {
-            lhamo: "LHAMO HERBAL PADS",
+            lhamo: {
+                all: "LHAMO HERBAL PADS",
+                overnight: "LHAMO OVERNIGHT PADS",
+                daily: "LHAMO DAILY PADS",
+                panty: "LHAMO PANTILINER PADS"
+            },
             chakra: "CHAKRA ALIGNMENT",
             reflex: "FOOT / HAND REFLEXOLOGY",
             magnet: "MAGNETIZED WATER",
@@ -62,10 +67,29 @@ document.addEventListener("DOMContentLoaded", function(event) {
             energy: "ENERGY CLEANSING"
         },
         pictures: {
-            lhamo: "../assets/images/IMG_6512.jpg"
+            lhamo: {
+                all: "./assets/images/IMG_6512.jpg",
+                overnight: "./assets/images/IMG_6510.jpg",
+                panty: "./assets/images/IMG_6508.jpg",
+                daily: "./assets/images/IMG_6513.jpg"
+            },
+            chakra: "./assets/images/183595.jpg",
+            reflex: "./assets/images/reflex.jpeg",
+            magnet: "./assets/images/IMG_6516.jpg",
+            candle: "./assets/images/candling.png",
+            therapy: "./assets/images/magnet.jpg",
+            teas: "./assets/images/herbaltea.jpg",
+            feng: "./assets/images/fengshui.png",
+            birth: "./assets/images/baby.jpg",
+            energy: "./assets/images/sage.jpg"
         },
         descriptions: {
-            lhamo: "Lhamo Herbal Pads are manufactured using select plant extracts derived from well known standard texts on traditional Chinese herbal medicine (used to train state-licensed practitioners to this day). The use of plant oils and extracts as ointment has been well established component of folk medicine in the West and it persists to this day in certain clinical settings. Our product employs a hybrid approach, combining traditional Chinese herbal formulations with topical application techniques pioneered in the West.",
+            lhamo: {
+                main: "Lhamo Herbal Pads are manufactured using select plant extracts derived from well known standard texts on traditional Chinese herbal medicine (used to train state-licensed practitioners to this day). The use of plant oils and extracts as ointment has been well established component of folk medicine in the West and it persists to this day in certain clinical settings. Our product employs a hybrid approach, combining traditional Chinese herbal formulations with topical application techniques pioneered in the West.",
+                overnight: "",
+                daily: "",
+                panty: "",
+            },
             chakra: "Chakras are spinning wheels of energy and are aligned starting at the base of your spine and move up to the crown of your head. They regulate the energy flow of your body. Depending on which chakra(s) are blocked you may experience symptoms such as low energy, being emotional, feeling stuck/unmotivated, to name few. The benefits range from removing bad energy from the body, unblocks the blockages that could be causing discomfort or pain, and allows energy to flow freely. Remove any blockages that you have to get your energy flowing again. Allow your 7 major chakras to operate holistically creating balance in your life.",
             reflex: "Magnetism has become a means for many people who are seeking relief for nagging pain. Applying magnetism to the hands and feet promotes increased blood flow and oxygen levels to the magnetized area, aligning of cells in the magnetic field.",
             magnet: "Magnetized water activates, cleanses, and detoxifies every part of the body. Drinking magnetized water influences the autonomic nervous system and the toxic deposits within the connective tissues of the body. The body is made up of 70% water, replenish it with water that will assist in the body’s natural way of healing.",
@@ -77,6 +101,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
             energy: "Toxic energy from arguments or illness can accumulate in shared spaces such as living rooms, kitchens and dens. Your home can be clean and organized but still have a heavy feeling. Even if you’re not a trained Zen master, the subtle frequencies of energy can be felt if you pay attention. A cleansed and energized room should feel light, fresh, and inviting when you enter. Like anything in life, getting rid of negative energy takes daily practice, so make sage house cleaning, healing crystals, and other practices an everyday habit for the best results.",
         },
         prices: {
+            lhamo: {
+                overnight: "Overnight Pads: $6.99",
+                daily: "Daily Pads: $6.99",
+                panty: "Pantiliner Pads: $5.99"
+            },
             chakra: "1 HOUR CHAKRA SESSION: $75",
             reflex: {
                 price: "1 HOUR FEET REFLEXOLOGY SESSION: $65",
@@ -94,7 +123,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     //Opening Modal and populating it
 
     let infoTitle = document.getElementById("infoTitle");
+    let infoTitle2 = document.getElementById("infoTitle2");
     let servicePic = document.getElementById("serviceImg");
+    let servicePic2 = document.getElementById("serviceImg2");
+    let infoTitle3 = document.getElementById("infoTitle3");
+    let servicePic3 = document.getElementById("serviceImg3");
+    let infoTitle4 = document.getElementById("infoTitle4");
+    let servicePic4 = document.getElementById("serviceImg4");
     let infoDescrip = document.getElementById("infoDescrip");
     let price = document.getElementById("price");
     let price2 = document.getElementById("price2");
@@ -113,40 +148,58 @@ document.addEventListener("DOMContentLoaded", function(event) {
             infoTitle.innerHTML = allServices.titles.chakra;
             infoDescrip.innerHTML = allServices.descriptions.chakra;
             price.innerHTML = allServices.prices.chakra;
+            servicePic.setAttribute("src", allServices.pictures.chakra);
         } else if (serviceId == "learn2") {
             infoTitle.innerHTML = allServices.titles.reflex;
             infoDescrip.innerHTML = allServices.descriptions.reflex;
             price.innerHTML = allServices.prices.reflex.price;
             price2.innerHTML = allServices.prices.reflex.price2;
+            servicePic.setAttribute("src", allServices.pictures.reflex);
         } else if (serviceId == "learn3") {
             infoTitle.innerHTML = allServices.titles.magnet;
             infoDescrip.innerHTML = allServices.descriptions.magnet;
             price.innerHTML = allServices.prices.magnet.price;
             price2.innerHTML = allServices.prices.magnet.price2;
             price3.innerHTML = allServices.prices.magnet.price3;
+            servicePic.setAttribute("src", allServices.pictures.magnet);
         } else if (serviceId == "learn4") {
             infoTitle.innerHTML = allServices.titles.candle;
             infoDescrip.innerHTML = allServices.descriptions.candle;
             price.innerHTML = allServices.prices.candle;
+            servicePic.setAttribute("src", allServices.pictures.candle);
         } else if (serviceId == "learn5") {
-            infoTitle.innerHTML = allServices.titles.lhamo;
-            infoDescrip.innerHTML = allServices.descriptions.lhamo;
-            servicePic.setAttribute("src", allServices.pictures.lhamo);
+            infoTitle.innerHTML = allServices.titles.lhamo.all;
+            infoTitle2.innerHTML = allServices.titles.lhamo.daily;
+            infoTitle3.innerHTML = allServices.titles.lhamo.overnight;
+            infoTitle4.innerHTML = allServices.titles.lhamo.panty;
+            infoDescrip.innerHTML = allServices.descriptions.lhamo.main;
+            servicePic.setAttribute("src", allServices.pictures.lhamo.all);
+            servicePic2.setAttribute("src", allServices.pictures.lhamo.daily);
+            servicePic3.setAttribute("src", allServices.pictures.lhamo.overnight);
+            servicePic4.setAttribute("src", allServices.pictures.lhamo.panty);
+            price.innerHTML = allServices.prices.lhamo.daily;
+            price2.innerHTML = allServices.prices.lhamo.overnight;
+            price3.innerHTML = allServices.prices.lhamo.panty;
         } else if (serviceId == "learn6") {
             infoTitle.innerHTML = allServices.titles.therapy;
             infoDescrip.innerHTML = allServices.descriptions.therapy;
+            servicePic.setAttribute("src", allServices.pictures.therapy);
         } else if (serviceId == "learn7") {
             infoTitle.innerHTML = allServices.titles.teas;
             infoDescrip.innerHTML = allServices.descriptions.teas;
+            servicePic.setAttribute("src", allServices.pictures.teas);
         } else if (serviceId == "learn8") {
             infoTitle.innerHTML = allServices.titles.feng;
             infoDescrip.innerHTML = allServices.descriptions.feng;
+            servicePic.setAttribute("src", allServices.pictures.feng);
         } else if (serviceId == "learn9") {
             infoTitle.innerHTML = allServices.titles.birth;
             infoDescrip.innerHTML = allServices.descriptions.birth;
+            servicePic.setAttribute("src", allServices.pictures.birth);
         } else if (serviceId == "learn10") {
             infoTitle.innerHTML = allServices.titles.energy;
             infoDescrip.innerHTML = allServices.descriptions.energy;
+            servicePic.setAttribute("src", allServices.pictures.energy);
         }
 
         TweenMax.to(infoDiv, 1, { yPercent: 0, height: "75%", display: "block" }, 0.1);
@@ -206,7 +259,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
         TweenMax.to(".allServices", 1, { filter: "opacity(1)" }, 0.1);
 
         infoTitle.innerHTML = ""
+        infoTitle2.innerHTML = ""
+        infoTitle3.innerHTML = ""
+        infoTitle4.innerHTML = ""
         infoDescrip.innerHTML = ""
+        servicePic.setAttribute("src", "")
+        servicePic2.setAttribute("src", "")
+        servicePic3.setAttribute("src", "")
+        servicePic4.setAttribute("src", "")
         price.innerHTML = ""
         price2.innerHTML = ""
         price3.innerHTML = ""
