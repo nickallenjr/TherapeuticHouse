@@ -852,6 +852,16 @@ div.aboveDivButton button {
     .aboveDivText {
         width: 80%;
     }
+    iframe {
+        width: 374px;
+    }
+}
+
+@media only screen and (min-width:768px) {
+    iframe {
+        margin: auto;
+        width: auto
+    }
 }
 
 @media only screen and (min-width:1024px) {
@@ -878,5 +888,9 @@ div.aboveDivButton button {
     }
     .midHeaderDiv {
         grid-template-rows: 20% 20% 20% 20%;
+    }
+    iframe {
+        margin: auto;
+        width: 80%
     }
 }

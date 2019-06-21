@@ -68,24 +68,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
         return s;
     }
 
-    const formBtn = document.getElementById("formBtn");
-    const form = document.getElementById("formData");
+    // const formBtn = document.getElementById("formBtn");
+    // const form = document.getElementById("formData");
 
-    formBtn.addEventListener("click", function(event) {
-        console.log(serializeArray(form))
-        event.preventDefault();
+    // formBtn.addEventListener("click", function(event) {
+    //     console.log(serializeArray(form))
+    //     event.preventDefault();
 
-        fetch("http://localhost:5000/sendemail", {
-            method: "POST",
-            body: JSON.stringify({
-                name: "nick",
-                email: "nickal@all.xom"
-            }),
-            headers: {
-                "Content-Type": 'application/json'
-            }
-        }).then(function(response) {
-            console.log(response)
-        })
-    }, false)
+    //     fetch("http://localhost:5000/sendemail", {
+    //         method: "POST",
+    //         body: JSON.stringify({
+    //             name: "nick",
+    //             email: "nickal@all.xom"
+    //         }),
+    //         headers: {
+    //             "Content-Type": 'application/json'
+    //         }
+    //     }).then(function(response) {
+    //         console.log(response)
+    //     })
+    // })
 });

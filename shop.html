@@ -44,17 +44,17 @@
     </div>
 
     <div class="largeForm">
-        <form role="form" id="formData" novalidate>
+        <form action="/shop.html" method="GET" id="formData">
             <div class="form-group row">
                 <label for="inputName" class="col-sm-1 col-form-label">Name</label>
                 <div class="col-sm-2">
-                    <input name="name" type="text" class="form-control" id="inputName" placeholder="Name">
+                    <input name="name" type="text" class="form-control" id="inputName" placeholder="Name" required>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputEmail" class="col-sm-1 col-form-label">Email</label>
                 <div class="col-sm-2">
-                    <input name="email" type="email" class="form-control" id="inputEmail" placeholder="Email">
+                    <input required name="email" type="email" class="form-control" id="inputEmail" placeholder="Email">
                 </div>
             </div>
             <div class="form-group row">
@@ -72,15 +72,15 @@
             <div class="row" id="selectRows">
                 <div class="col-sm-3 offset-sm-2 custom-control-inline custom-checkbox">
                     <input name="dailyPads" type="checkbox" class="custom-control-input" id="customCheck1">
-                    <label class="custom-control-label" for="customCheck1">Daily Herbal Pads</label>
+                    <label class="custom-control-label" for="customCheck1">Daily Herbal Pads: $6.99</label>
                 </div>
                 <div class="col-sm-3 custom-control-inline custom-checkbox">
                     <input name="pantiPads" type="checkbox" class="custom-control-input" id="customCheck2">
-                    <label class="custom-control-label" for="customCheck2">Pantiliner Herbal Pads</label>
+                    <label class="custom-control-label" for="customCheck2">Pantiliner Herbal Pads: $5.99</label>
                 </div>
                 <div class="col-sm-3 custom-control-inline custom-checkbox">
                     <input name="overnightPads" type="checkbox" class="custom-control-input" id="customCheck3">
-                    <label class="custom-control-label" for="customCheck3">Overnight Herbal Pads</label>
+                    <label class="custom-control-label" for="customCheck3">Overnight Herbal Pads: $6.99</label>
                 </div>
             </div>
             <div class="row" id="serviceRows">
@@ -169,7 +169,7 @@
             </div>
             <div class="form-group row">
                 <div class="col-sm-10">
-                    <button id="formBtn" type="submit" class="btn btn-primary">Submit</button>
+                    <button id="formBtn" type="submit" class="btn btn-primary">Send</button>
                 </div>
             </div>
         </form>
