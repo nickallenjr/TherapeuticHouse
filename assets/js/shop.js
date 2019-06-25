@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     mousedOver("naviLinks2", "#aboutLink");
     mousedOver("naviLinks3", "#serviceLink");
     mousedOver("naviLinks4", "#contactLink");
+    mousedOver("naviLinks5", "#shopLink");
 
     function serializeArray(form) {
         var field, l, s = [];
@@ -68,24 +69,60 @@ document.addEventListener("DOMContentLoaded", function(event) {
         return s;
     }
 
-    // const formBtn = document.getElementById("formBtn");
-    // const form = document.getElementById("formData");
+    const formBtn = document.getElementById("formBtn"),
+        form = document.getElementById("formData"),
+        nameInput = document.getElementById("inputName"),
+        emailInput = document.getElementById("inputEmail"),
+        phoneInput = document.getElementById("inputPhone");
 
-    // formBtn.addEventListener("click", function(event) {
-    //     console.log(serializeArray(form))
-    //     event.preventDefault();
+    const formData = {}
 
-    //     fetch("http://localhost:5000/sendemail", {
-    //         method: "POST",
-    //         body: JSON.stringify({
-    //             name: "nick",
-    //             email: "nickal@all.xom"
-    //         }),
-    //         headers: {
-    //             "Content-Type": 'application/json'
-    //         }
-    //     }).then(function(response) {
-    //         console.log(response)
-    //     })
-    // })
+    sendMail = async() => {
+        nameInput.setAttribute("class", "form-control");
+        emailInput.setAttribute("class", "form-control");
+        phoneInput.setAttribute("class", "form-control");
+
+        const response = await fetch("http://localhost:5000/order", {
+            method: "POST",
+            body: JSON.stringify(formData),
+            headers: {
+                "Content-Type": 'application/json'
+            }
+        })
+
+        const res = await response.json();
+
+        for (let j = 0; j < 3; j++) {
+            if (res.validate[j].param === "username") {
+                nameInput.setAttribute("class", "is-invalid form-control");
+            } else if (res.validate[j].param === "email") {
+                emailInput.setAttribute("class", "is-invalid form-control");
+            } else if (res.validate[j].param === "phone") {
+                phoneInput.setAttribute("class", "is-invalid form-control");
+            }
+        }
+    }
+
+    formBtn.addEventListener("click", function(event) {
+
+        event.preventDefault();
+
+        const formArray = serializeArray(form);
+
+        formData.username = formArray[0].value;
+        formData.email = formArray[1].value;
+        formData.phone = formArray[2].value;
+
+        if (formArray.length > 3) {
+            for (let i = 3; i < formArray.length; i++) {
+                formData[i] = formArray[i].name;
+            }
+        } else {
+            return
+        };
+
+        console.log(formData);
+
+        sendMail();
+    })
 });

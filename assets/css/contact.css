@@ -329,7 +329,7 @@ div#navi a {
     }
     #navi {
         display: grid;
-        grid-template-columns: 40px auto auto auto auto auto auto;
+        grid-template-columns: 40px auto auto auto auto auto auto auto;
     }
     #logo {
         display: block;
@@ -350,6 +350,8 @@ div#navi a {
     }
     div#navi a {
         display: block;
+        text-align: right;
+        margin-right: 0px;
     }
     div#navi p {
         margin-top: 0;

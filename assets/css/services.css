@@ -139,7 +139,7 @@ div#navi a {
 
 #header {
     background: linear-gradient(rgba(137, 2, 171, 0.5), rgba(128, 6, 189, 0.5)), url("../images/IMG_6514.jpg");
-    height: 60%;
+    height: 70%;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -549,7 +549,7 @@ a.links>p {
 @media only screen and (min-width:1024px) {
     #navi {
         display: grid;
-        grid-template-columns: 40px auto auto auto auto auto auto;
+        grid-template-columns: 40px auto auto auto auto auto auto auto;
     }
     #logo {
         display: block;
@@ -570,6 +570,8 @@ a.links>p {
     }
     div#navi a {
         display: block;
+        text-align: right;
+        margin-right: 0px;
     }
     .infoGrid {
         grid-template-columns: 20% 60% 20%;

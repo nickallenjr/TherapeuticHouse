@@ -45,4 +45,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
     mousedOver("naviLinks2", "#aboutLink");
     mousedOver("naviLinks3", "#serviceLink");
     mousedOver("naviLinks4", "#contactLink");
+    mousedOver("naviLinks5", "#shopLink");
 });

@@ -92,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     mousedOver("naviLinks2", "#aboutLink");
     mousedOver("naviLinks3", "#serviceLink");
     mousedOver("naviLinks4", "#contactLink");
+    mousedOver("naviLinks5", "#shopLink");
 
     //Make naviTitle1 and 2 do something when mouseing over logo
     // let mousedOver2 = function () {

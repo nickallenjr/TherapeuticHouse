@@ -8,7 +8,7 @@
 const express = require("express"),
     fs = require('fs'),
     bodyParser = require("body-parser"),
-    expressValidator = require("express-validator"),
+    { check, validationResult } = require("express-validator/check"),
     passport = require("passport"),
     mongoose = require("mongoose"),
     cors = require("cors"),
@@ -56,32 +56,46 @@ db.once("open", function() {
 });
 
 //Route for sending email to client
-app.post('/sendemail', cors(), function(req, res) {
+app.post('/order', [
+    check("username").isAlpha().withMessage("Your name must only conatin letters"),
+    check("email").isEmail().withMessage("Please enter a valid email address."),
+    check("phone").isMobilePhone(["en-US"]).withMessage("Please enter a valid phone number.")
+], cors(), function(req, res) {
+
     console.log(req.body);
-    let transporter = nodeMailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 465,
-        secure: true,
-        auth: {
-            // should be replaced with real sender's account
-            user: 'hello@gmail.com',
-            pass: 'test'
-        }
-    });
-    let mailOptions = {
-        // should be replaced with real recipient's account
-        to: 'info@gmail.com',
-        subject: req.body.subject,
-        body: req.body.message
-    };
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return console.log(error);
-        }
-        console.log('Message %s sent: %s', info.messageId, info.response);
-    });
-    // res.writeHead(301, { Location: 'index.html' });
-    // res.end();
+
+    //Check for errors and package them and send to client-side
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(422).json({
+            validate: errors.array()
+        });
+    } else {
+        let transporter = nodeMailer.createTransport({
+            host: 'smtp.gmail.com',
+            port: 465,
+            secure: true,
+            auth: {
+                // should be replaced with real sender's account
+                user: 'mrnallenjr@gmail.com',
+                pass: 'N!ckAidanAsherah'
+            }
+        });
+        let mailOptions = {
+            // should be replaced with real recipient's account
+            to: 'nicholasallenjr@gmail.com',
+            subject: "Order",
+            body: req.body
+        };
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                return console.log(error);
+            }
+            console.log('Message %s sent: %s', info.messageId, info.response);
+        });
+        // res.writeHead(301, { Location: 'index.html' });
+        // res.end();
+    }
 });
 
 app.get("/upcomingevents", cors(), function(req, res) {

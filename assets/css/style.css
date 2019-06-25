@@ -196,7 +196,7 @@ div#navi a {
 @media only screen and (min-width:1024px) {
     #navi {
         display: grid;
-        grid-template-columns: 40px auto auto auto auto auto auto;
+        grid-template-columns: 40px auto auto auto auto auto auto auto;
     }
     #logo {
         display: block;
@@ -823,6 +823,17 @@ div.aboveDivButton button {
     height: 30px;
 }
 
+
+/*Instagram Feed*/
+
+.eapps-instagram-feed-title {
+    font-family: "Lato", sans-serif !important;
+}
+
+.elfsight-app-89091e13-4e70-43f4-97b6-691522e8acf1 {
+    z-index: 0;
+}
+
 @media only screen and (max-width:800px) {
     .footer {
         grid-template-columns: auto;
@@ -853,7 +864,8 @@ div.aboveDivButton button {
         width: 80%;
     }
     iframe {
-        width: 374px;
+        width: auto;
+        margin: auto;
     }
 }
 
