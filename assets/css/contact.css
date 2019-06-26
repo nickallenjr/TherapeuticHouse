@@ -322,7 +322,7 @@ div#navi a {
         grid-template-columns: auto auto auto;
     }
     .grid-item20 {
-        display: initial;
+        display: grid;
     }
     .grid-item22 {
         display: initial;
