@@ -329,7 +329,8 @@ a.links>p {
     color: #712E71
 }
 
-#infoTitle2::after {
+
+/* #infoTitle2::after {
     content: "";
     width: 40%;
     height: 3px;
@@ -337,7 +338,7 @@ a.links>p {
     bottom: 0;
     position: absolute;
     left: 30%;
-}
+} */
 
 #infoDescrip2 {
     text-align: center;
@@ -362,7 +363,8 @@ a.links>p {
     color: #712E71
 }
 
-#infoTitle3::after {
+
+/* #infoTitle3::after {
     content: "";
     width: 40%;
     height: 3px;
@@ -370,7 +372,7 @@ a.links>p {
     bottom: 0;
     position: absolute;
     left: 30%;
-}
+} */
 
 #infoDescrip3 {
     text-align: center;
@@ -395,7 +397,8 @@ a.links>p {
     color: #712E71
 }
 
-#infoTitle4::after {
+
+/* #infoTitle4::after {
     content: "";
     width: 40%;
     height: 3px;
@@ -403,7 +406,7 @@ a.links>p {
     bottom: 0;
     position: absolute;
     left: 30%;
-}
+} */
 
 #infoDescrip4 {
     text-align: center;
@@ -427,10 +430,27 @@ a.links>p {
     font-family: "Lato", sans-serif;
 }
 
+#goShop {
+    text-align: center;
+}
+
+#shopBtn {
+    background-color: #712E71;
+    border-radius: 3px;
+    color: #ffffff;
+    cursor: pointer;
+    width: 240px;
+    height: 60px;
+    border: aliceblue;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+}
+
 .priceChange {
     font-family: "Lato", sans-serif;
     font-size: 10px;
     text-align: center;
+    margin-top: 1rem;
 }
 
 #extraInfo {
@@ -544,6 +564,10 @@ a.links>p {
     .grid-item22 {
         display: none;
     }
+    #shopBtn {
+        width: 100px;
+        height: 40px;
+    }
 }
 
 @media only screen and (min-width:1024px) {
@@ -619,6 +643,10 @@ a.links>p {
     }
     #infoTitle4 {
         display: block;
+    }
+    #shopBtn {
+        width: 240px;
+        height: 60px;
     }
 }
 

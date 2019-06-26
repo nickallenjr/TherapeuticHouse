@@ -178,7 +178,9 @@ div#header button {
     margin: auto;
 }
 
+
 /*Bootstrap Form*/
+
 .largeForm {
     padding-top: 40px;
     margin-left: 20%;
@@ -203,7 +205,9 @@ div#header button {
     font-family: "Lato", sans-serif;
 }
 
+
 /*Footer*/
+
 .grid-container10 {
     display: -ms-grid;
     display: grid;
@@ -328,6 +332,10 @@ div#header button {
         padding-left: 10px;
         padding-bottom: 10px;
     }
+    .largeForm {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
 }
 
 @media only screen and (min-width:1024px) {
@@ -356,6 +364,10 @@ div#header button {
         display: block;
         text-align: right;
         margin-right: 0px;
+    }
+    .largeForm {
+        margin-left: 20%;
+        margin-right: 20%;
     }
     .infoGrid {
         grid-template-columns: 20% 60% 20%;
