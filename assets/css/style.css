@@ -867,6 +867,20 @@ div.aboveDivButton button {
         width: auto;
         margin: auto;
     }
+    div.loading {
+        grid-template-columns: 250px 50px 200px;
+    }
+    #leftTitle {
+        margin: 20px 0px 0px 80px;
+        font-size: 40px;
+    }
+    #diamondLogo {
+        width: 30px;
+    }
+    #rightTitle {
+        margin: 20px 0px 0px 0px;
+        font-size: 40px
+    }
 }
 
 @media only screen and (min-width:768px) {
@@ -891,6 +905,24 @@ div.aboveDivButton button {
     }
     .midHeaderDiv {
         grid-template-rows: 20% 20% 10% 20%;
+    }
+    div.loading {
+        grid-template-columns: 500px auto 500px;
+    }
+
+    #leftTitle {
+        margin: auto;
+        font-size: 100px;
+    }
+
+    #diamondLogo {
+        width: 60px;
+    }
+
+    #rightTitle {
+        margin: auto;
+        font-size: 100px;
+        margin-left: 60px;
     }
 }
 

@@ -178,10 +178,32 @@ div#header button {
     margin: auto;
 }
 
+/*Bootstrap Form*/
 .largeForm {
     padding-top: 40px;
+    margin-left: 20%;
+    margin-right: 20%
 }
 
+.col-sm-1 {
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: "Lato", sans-serif;
+}
+
+.col-sm-2 {
+    font-size: 15px;
+    font-weight: bolder;
+    font-family: "Lato", sans-serif;
+}
+
+.col-sm-6 {
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: "Lato", sans-serif;
+}
+
+/*Footer*/
 .grid-container10 {
     display: -ms-grid;
     display: grid;
@@ -260,6 +282,12 @@ div#header button {
     border-color: #400F3C;
     width: 240px;
     height: 60px;
+}
+
+.priceChange {
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    text-align: center;
 }
 
 @media only screen and (min-width:375px) {

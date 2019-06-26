@@ -272,6 +272,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
         price2.innerHTML = ""
         price3.innerHTML = ""
     }
-
-
 });

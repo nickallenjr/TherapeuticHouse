@@ -614,6 +614,12 @@ a.links>p {
     #infoDescrip {
         width: 60%;
     }
+    #infoTitle3 {
+        display: block;
+    }
+    #infoTitle4 {
+        display: block;
+    }
 }
 
 @media only screen and (min-width:1440px) {

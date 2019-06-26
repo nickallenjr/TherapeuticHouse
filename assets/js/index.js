@@ -13,7 +13,7 @@ function closeNav() {
 document.addEventListener("DOMContentLoaded", function(event) {
     //do work
 
-
+    //Sets and gets cookies to decide wheter to show loading page
     function setCookie(name, value) {
         document.cookie = name + "=" + value + ";"
     };

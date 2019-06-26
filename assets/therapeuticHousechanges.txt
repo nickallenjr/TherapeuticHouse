@@ -5,3 +5,12 @@ get bios
 
 We would like to add a service: Treatment Plans (I will send over verbiage)
 Under Magnet Water and Lhamo Pads we would like to add that shipping is available or to the shop area. Whichever is best
+
+
+06/25/2019
+
+    Service page
+        Add buttons to shop page under each service
+    
+    Shop page
+        Center form in middle of page
