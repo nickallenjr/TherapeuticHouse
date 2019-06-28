@@ -22,6 +22,7 @@ const Event = require("./models/events.js")
 const app = express();
 const port = process.env.PORT || 5000;
 
+app.use(express.static("assets"));
 app.use(cors());
 app.options("/upcomingevents", cors())
 const corsOptions = {
