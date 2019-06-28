@@ -24,7 +24,7 @@ const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.options("/upcomingevents", cors())
-var corsOptions = {
+const corsOptions = {
     origin: 'http://localhost:5000',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
@@ -56,10 +56,51 @@ db.once("open", function() {
 });
 
 //Route for sending email to client
-app.post('/order', [
+app.post('/order/', [
     check("username").isAlpha().withMessage("Your name must only conatin letters"),
     check("email").isEmail().withMessage("Please enter a valid email address."),
     check("phone").isMobilePhone(["en-US"]).withMessage("Please enter a valid phone number.")
+], cors(), function(req, res) {
+
+    console.log(req.body);
+
+    //Check for errors and package them and send to client-side
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(422).json({
+            validate: errors.array()
+        });
+    } else {
+        let transporter = nodeMailer.createTransport({
+            host: 'smtp.gmail.com',
+            port: 465,
+            secure: true,
+            auth: {
+                // should be replaced with real sender's account
+                user: 'mrnallenjr@gmail.com',
+                pass: 'N!ckAidanAsherah'
+            }
+        });
+        let mailOptions = {
+            // should be replaced with real recipient's account
+            to: 'nicholasallenjr@gmail.com',
+            subject: "Order",
+            body: req.body
+        };
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                return console.log(error);
+            }
+            console.log('Message %s sent: %s', info.messageId, info.response);
+        });
+        // res.writeHead(301, { Location: 'index.html' });
+        // res.end();
+    }
+});
+
+app.post('/contact/', [
+    check("name").isAlpha().withMessage("Your name must only conatin letters"),
+    check("email").isEmail().withMessage("Please enter a valid email address."),
 ], cors(), function(req, res) {
 
     console.log(req.body);

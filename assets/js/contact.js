@@ -48,6 +48,36 @@ document.addEventListener("DOMContentLoaded", function(event) {
     mousedOver("naviLinks5", "#shopLink");
 });
 
+const sendForm = document.getElementById("submitBtn");
+const nameField = document.getElementById("formName");
+const emailField = document.getElementById("formEmail");
+const messageField = document.getElementById("formMessage");
+
+sendMail = async() => {
+
+    console.log(messageField.value)
+
+    const response = await fetch("/contact/", {
+        method: "POST",
+        body: JSON.stringify({
+            name: nameField.value,
+            email: emailField.value,
+            message: messageField.value
+        }),
+        headers: {
+            "Content-Type": 'application/json'
+        }
+    })
+
+    const res = await response.json();
+}
+
+sendForm.addEventListener("click", function(eve) {
+    eve.preventDefault();
+
+    sendMail();
+})
+
 function initMap() {
     const atlanta = { lat: 33.828600, lng: -84.366136 };
     const alpharetta = { lat: 34.055269, lng: -84.231345 };

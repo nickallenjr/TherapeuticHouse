@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         emailInput.setAttribute("class", "form-control");
         phoneInput.setAttribute("class", "form-control");
 
-        const response = await fetch("http://localhost:5000/order", {
+        const response = await fetch("/order/", {
             method: "POST",
             body: JSON.stringify(formData),
             headers: {

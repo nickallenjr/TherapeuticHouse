@@ -42,19 +42,18 @@
         <div class="formDiv">
             <h1 class="formTitle">Reach Out to Us</h1>
             <p class="formText">For any bookings, invites and/or hosting request, please fill out the form to contact us! We would love to hear from you!</p>
-            <form action="mailto:mrnallenjr@gmail.com" method="post" enctype="text/plain"
-                onsubmit="this.submit(); this.reset(); return false;" >
+            <form>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="formName" placeholder="Name">
+                    <input type="text" name="name" class="form-control" id="formName" placeholder="Name">
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" id="formEmail" aria-describedby="emailHelp" placeholder="Your Email Address">
+                    <input type="email" name="email" class="form-control" id="formEmail" aria-describedby="emailHelp" placeholder="Your Email Address">
                     <small class="formText" id="emailHelp" class="form-text text-muted">We'll never share your email with anyone.</small>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" rows="6" id="formMessage" placeholder="Message"></textarea>
+                    <textarea name="message" class="form-control" rows="6" id="formMessage" placeholder="Message"></textarea>
                 </div>
-                <button type="submit" class="btn">Submit</button>
+                <button id="submitBtn" type="submit" class="btn">Submit</button>
             </form>
         </div>
         <div class="mapDiv">
