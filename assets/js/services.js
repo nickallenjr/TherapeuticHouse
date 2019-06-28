@@ -69,20 +69,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
         },
         pictures: {
             lhamo: {
-                all: "./assets/images/IMG_6512.jpg",
-                overnight: "./assets/images/IMG_6510.jpg",
-                panty: "./assets/images/IMG_6508.jpg",
-                daily: "./assets/images/IMG_6513.jpg"
+                all: "./images/IMG_6512.jpg",
+                overnight: "./images/IMG_6510.jpg",
+                panty: "./images/IMG_6508.jpg",
+                daily: "./images/IMG_6513.jpg"
             },
-            chakra: "./assets/images/183595.jpg",
-            reflex: "./assets/images/reflex.jpeg",
-            magnet: "./assets/images/IMG_6516.jpg",
-            candle: "./assets/images/candling.png",
-            therapy: "./assets/images/magnet.jpg",
-            teas: "./assets/images/herbaltea.jpg",
-            feng: "./assets/images/fengshui.png",
-            birth: "./assets/images/baby.jpg",
-            energy: "./assets/images/sage.jpg"
+            chakra: "./images/183595.jpg",
+            reflex: "./images/reflex.jpeg",
+            magnet: "./images/IMG_6516.jpg",
+            candle: "./images/candling.png",
+            therapy: "./images/magnet.jpg",
+            teas: "./images/herbaltea.jpg",
+            feng: "./images/fengshui.png",
+            birth: "./images/baby.jpg",
+            energy: "./images/sage.jpg"
         },
         descriptions: {
             lhamo: {
