@@ -52,10 +52,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     const allServices = {
         titles: {
             lhamo: {
-                all: "LHAMO HERBAL PADS",
-                overnight: "LHAMO OVERNIGHT PADS",
-                daily: "LHAMO DAILY PADS",
-                panty: "LHAMO PANTILINER PADS"
+                all: "LHAMO FEMININE HERBAL PADS",
+                overnight: "LHAMO FEMININE OVERNIGHT PADS",
+                daily: "LHAMO FEMININE DAILY PADS",
+                panty: "LHAMO FEMININE PANTILINER PADS"
             },
             chakra: "CHAKRA ALIGNMENT",
             reflex: "FOOT / HAND REFLEXOLOGY",
@@ -65,7 +65,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
             teas: "HERBAL TEAS",
             feng: "FENG SHUI",
             birth: "NATURAL BIRTHING",
-            energy: "ENERGY CLEANSING"
+            energy: "ENERGY CLEANSING",
+            treat: "TREATMENT PLANS"
         },
         pictures: {
             lhamo: {
@@ -82,7 +83,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
             teas: "./images/herbaltea.jpg",
             feng: "./images/fengshui.png",
             birth: "./images/baby.jpg",
-            energy: "./images/sage.jpg"
+            energy: "./images/sage.jpg",
+            treat: ""
         },
         descriptions: {
             lhamo: {
@@ -100,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             feng: "a system of laws considered to govern spatial arrangement and orientation in relation to the flow of energy (qi), and whose favorable or unfavorable effects are taken into account when siting and designing buildings",
             birth: "Natural childbirth is childbirth without routine medical interventions, particularly anesthesia. Natural childbirth arose in opposition to the techno-medical model of childbirth that has recently gained popularity in industrialized societies.",
             energy: "Toxic energy from arguments or illness can accumulate in shared spaces such as living rooms, kitchens and dens. Your home can be clean and organized but still have a heavy feeling. Even if you’re not a trained Zen master, the subtle frequencies of energy can be felt if you pay attention. A cleansed and energized room should feel light, fresh, and inviting when you enter. Like anything in life, getting rid of negative energy takes daily practice, so make sage house cleaning, healing crystals, and other practices an everyday habit for the best results.",
+            treat: "We understand that life is hectic and we won’t be able to physically see everyone so we offer various treatment plans. The plan depends on your alignment and which holistic approach you would like to take. This plan is more so for mothers seeking natural birthing options, problems with pms, menstruation, cysts, fibroids, stress, and depression. It includes three consultations"
         },
         prices: {
             lhamo: {
@@ -117,7 +120,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 price2: "640z $22",
                 price3: "1gal $32"
             },
-            candle: "40 MIN EAR CANDLING SESSION: $40"
+            candle: "40 MIN EAR CANDLING SESSION: $40",
+            treat: "3 CONSULTATIONS: $50"
         }
     };
 
@@ -201,6 +205,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
             infoTitle.innerHTML = allServices.titles.energy;
             infoDescrip.innerHTML = allServices.descriptions.energy;
             servicePic.setAttribute("src", allServices.pictures.energy);
+        } else if (serviceId == "learn11") {
+            infoTitle.innerHTML = allServices.titles.treat;
+            infoDescrip.innerHTML = allServices.descriptions.treat;
+            price.innerHTML = allServices.prices.treat
         }
 
         TweenMax.to(infoDiv, 1, { yPercent: 0, height: "75%", display: "block" }, 0.1);
@@ -247,6 +255,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     let learn10 = document.getElementById("learn10");
     learn10.onclick = function() {
         moreInfo("learn10");
+    }
+    let learn11 = document.getElementById("learn11");
+    learn11.onclick = function() {
+        moreInfo("learn11");
     }
 
     //Closing Modal when clicking X symbol
