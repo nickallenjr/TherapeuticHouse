@@ -51,7 +51,7 @@ db.once("open", function() {
 });
 
 //Route for sending order emails to client
-app.post('/order/', [
+app.post('/order', [
     check("firstName").isAlpha().withMessage("Your name must only conatin letters"),
     check("lastName").isAlpha().withMessage("Your name must only conatin letters"),
     check("email").isEmail().withMessage("Please enter a valid email address."),
@@ -125,7 +125,7 @@ app.post('/order/', [
 
 
 //Route for contacting business owners
-app.post('/contact/', [
+app.post('/contact', [
     check("name").matches(/^[a-zA-Z0-9_]+( [a-zA-Z0-9_]+)*$/).withMessage("Your name must only conatin letters"),
     check("name").contains(" ").withMessage("Please enter your first and last name."),
     check("email").isEmail().withMessage("Please enter a valid email address."),

@@ -62,7 +62,7 @@ sendMail = async() => {
 
     console.log(messageField.value)
 
-    const request = await fetch("http://localhost:5000/contact/", {
+    const request = await fetch("/contact/", {
         method: "POST",
         body: JSON.stringify({
             name: nameField.value,
