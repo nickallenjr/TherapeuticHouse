@@ -76,15 +76,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 daily: "./images/IMG_6513.jpg"
             },
             chakra: "./images/183595.jpg",
-            reflex: "./images/reflex.jpeg",
+            reflex: "./images/IMG_7549.jpeg",
             magnet: "./images/IMG_6516.jpg",
-            candle: "./images/candling.png",
+            candle: "./images/IMG_7575.jpeg",
             therapy: "./images/magnet.jpg",
             teas: "./images/herbaltea.jpg",
             feng: "./images/fengshui.png",
             birth: "./images/baby.jpg",
             energy: "./images/sage.jpg",
-            treat: ""
+            treat: "./images/IMG_7555.jpeg"
         },
         descriptions: {
             lhamo: {
@@ -208,7 +208,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         } else if (serviceId == "learn11") {
             infoTitle.innerHTML = allServices.titles.treat;
             infoDescrip.innerHTML = allServices.descriptions.treat;
-            price.innerHTML = allServices.prices.treat
+            servicePic.setAttribute("src", allServices.pictures.treat);
+            price.innerHTML = allServices.prices.treat;
         }
 
         TweenMax.to(infoDiv, 1, { yPercent: 0, height: "75%", display: "block" }, 0.1);

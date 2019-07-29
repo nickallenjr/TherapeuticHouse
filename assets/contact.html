@@ -45,29 +45,30 @@
             <form>
                 <div class="form-group">
                     <input type="text" name="name" class="form-control" id="formName" placeholder="Name">
+                    <div id="nameFeedback" class="invalid-feedback">
+                        Please enter your name.
+                    </div>
                 </div>
                 <div class="form-group">
                     <input type="email" name="email" class="form-control" id="formEmail" aria-describedby="emailHelp" placeholder="Your Email Address">
+                    <div class="invalid-feedback">
+                        Please enter a valid email address.
+                    </div>
                     <small class="formText" id="emailHelp" class="form-text text-muted">We'll never share your email with anyone.</small>
                 </div>
                 <div class="form-group">
                     <textarea name="message" class="form-control" rows="6" id="formMessage" placeholder="Message"></textarea>
+                    <div class="invalid-feedback">
+                        Please enter a message.
+                    </div>
+                    <div class="valid-feedback">
+                        Your message was sent. Someone will be in contact with you shortly.
+                    </div>
                 </div>
                 <button id="submitBtn" type="submit" class="btn">Submit</button>
             </form>
         </div>
-        <div class="mapDiv">
-            <div id="map">
-
-            </div>
-            <div class="locales">
-                <div class="locale1">
-                    <h4 class="city">Alpharetta</h4>
-                    <p class="addresses">4380 Kimball Bridge Rd</p>
-                    <p class="addresses">Alpharetta, GA 30022</p>
-                </div>
-            </div>
-        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.580113681785!2d-84.23513138493522!3d34.054640380605285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f59fa92b8cb827%3A0x21a07cc426a58244!2s4380+Kimball+Bridge+Rd%2C+Alpharetta%2C+GA+30022!5e0!3m2!1sen!2sus!4v1564420573675!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
 
     <div class="grid-container10 footer">
@@ -79,18 +80,19 @@
         </div>
         <div class="grid-item22">
             <h3 class="legal">LEGAL</h3>
-            <p>Terms and Conditions</p>
-            <p>Privacy Policy</p>
-            <p>Accessibility</p>
+            <a id="legalLinks" href="./nda.html"><p>Terms and Conditions</p></a>
+            <a id="legalLinks" href="./release.html"><p>Release Form</p></a>
+            <a id="legalLinks" href="./warning.html"><p>Warning</p></a>
         </div>
         <div class="grid-item21">
             <h1 class="footertitle">FOLLOW US</h1>
             <div class="grid-container11">
                 <!--All of these will be logos-->
                 <div class="grid-item26">
-                    <a class="sociallinks" href='#'><img class="socialImgs" src="./images/instagram.png" alt="instagram"></a>
+                    <a class="sociallinks" href='https://www.instagram.com/therapeutichouse/'><img class="socialImgs"
+                            src="./images/instagram.png" alt="instagram"></a>
                 </div>
-                <div class="grid-item23">
+                <!-- <div class="grid-item23">
                     <a class="sociallinks" href='#'><img class="socialImgs" src="./images/facebook.png" alt="facebook"></a>
                 </div>
                 <div class="grid-item24">
@@ -98,12 +100,13 @@
                 </div>
                 <div class="grid-item25">
                     <a class="sociallinks" href='#'><img class="socialImgs" src="./images/youtube.png" alt="youtube"></a>
-                </div>
+                </div> -->
             </div>
         </div>
+        <p class="copyright">&copy 2019 Therapeutic House. All Rights Reserved.</p>
     </div>
 
-
+    
 
 
 
@@ -127,8 +130,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.js"></script>
 
     <script type="text/javascript" src=""></script>
-
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw3WNx7YfsHg2Ba2rA92cYEGhPBZ7njHY&callback=initMap" type="text/javascript"></script>
 
     <script type="text/javascript" src="./js/contact.js"></script>
 

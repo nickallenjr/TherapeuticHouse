@@ -71,18 +71,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     const formBtn = document.getElementById("formBtn"),
         form = document.getElementById("formData"),
-        nameInput = document.getElementById("inputName"),
+        firstNameInput = document.getElementById("inputFirstName"),
+        lastNameInput = document.getElementById("inputLastName")
         emailInput = document.getElementById("inputEmail"),
-        phoneInput = document.getElementById("inputPhone");
+        phoneInput = document.getElementById("inputPhone"),
+        hiddenInput = document.getElementById("hiddenInput");
 
-    const formData = {}
+    const formData = {};
 
+    //Function run on button click
     sendMail = async() => {
-        nameInput.setAttribute("class", "form-control");
+        firstNameInput.setAttribute("class", "form-control");
+        lastNameInput.setAttribute("class", "form-control");
         emailInput.setAttribute("class", "form-control");
         phoneInput.setAttribute("class", "form-control");
-
-        const response = await fetch("/order/", {
+        
+        //Localhost:500 for local dev just /order/ for production
+        const request = await fetch("http://localhost:5000/order/", {
             method: "POST",
             body: JSON.stringify(formData),
             headers: {
@@ -90,31 +95,42 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
         })
 
-        const res = await response.json();
+        const response = await request.json();
 
-        for (let j = 0; j < 3; j++) {
-            if (res.validate[j].param === "username") {
-                nameInput.setAttribute("class", "is-invalid form-control");
-            } else if (res.validate[j].param === "email") {
+        for (let j = 0; j < 4; j++) {
+            if(response.success) {
+                hiddenInput.setAttribute("class", "is-valid form-control");
+                firstNameInput.value = "";
+                lastNameInput.value = "";
+                emailInput.value = "";
+                phoneInput.value = "";
+            }else if (response.validate[j].param === "firstName") {
+                firstNameInput.setAttribute("class", "is-invalid form-control");
+            }else if (response.validate[j].param === "lastName") {
+                lastNameInput.setAttribute("class", "is-invalid form-control");
+            } else if (response.validate[j].param === "email") {
                 emailInput.setAttribute("class", "is-invalid form-control");
-            } else if (res.validate[j].param === "phone") {
+            } else if (response.validate[j].param === "phone") {
                 phoneInput.setAttribute("class", "is-invalid form-control");
             }
         }
     }
 
+    //Button click
     formBtn.addEventListener("click", function(event) {
 
         event.preventDefault();
 
         const formArray = serializeArray(form);
+        console.log(formArray)
 
-        formData.username = formArray[0].value;
-        formData.email = formArray[1].value;
-        formData.phone = formArray[2].value;
+        formData.firstName = formArray[0].value;
+        formData.lastName = formArray[1].value;
+        formData.email = formArray[2].value;
+        formData.phone = formArray[3].value;
 
-        if (formArray.length > 3) {
-            for (let i = 3; i < formArray.length; i++) {
+        if (formArray.length > 4) {
+            for (let i = 4; i < formArray.length; i++) {
                 formData[i] = formArray[i].name;
             }
         } else {

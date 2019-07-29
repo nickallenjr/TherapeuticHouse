@@ -52,12 +52,17 @@ const sendForm = document.getElementById("submitBtn");
 const nameField = document.getElementById("formName");
 const emailField = document.getElementById("formEmail");
 const messageField = document.getElementById("formMessage");
+const nameFeedback = document.getElementById("nameFeedback");
 
 sendMail = async() => {
 
+     nameField.setAttribute("class", "form-control");
+     emailField.setAttribute("class", "form-control");
+     messageField.setAttribute("class", "form-control");
+
     console.log(messageField.value)
 
-    const response = await fetch("/contact/", {
+    const request = await fetch("http://localhost:5000/contact/", {
         method: "POST",
         body: JSON.stringify({
             name: nameField.value,
@@ -69,7 +74,24 @@ sendMail = async() => {
         }
     })
 
-    const res = await response.json();
+    const response = await request.json();
+    console.log(response);
+
+    for (let j = 0; j < 3; j++) {
+        if (response.success) {
+            messageField.setAttribute("class", "is-valid form-control");
+            nameField.value = "";
+            emailField.value = "";
+            messageField.value = "";
+        }else if (response.validate[j].param === "name") {
+           nameField.setAttribute("class", "is-invalid form-control");
+           nameFeedback.innerHTML = response.validate[j].msg;
+        } else if (response.validate[j].param === "email") {
+            emailField.setAttribute("class", "is-invalid form-control");
+        } else if (response.validate[j].param === "message") {
+            messageField.setAttribute("class", "is-invalid form-control");
+        }
+    }
 }
 
 sendForm.addEventListener("click", function(eve) {
@@ -77,20 +99,3 @@ sendForm.addEventListener("click", function(eve) {
 
     sendMail();
 })
-
-function initMap() {
-    const atlanta = { lat: 33.828600, lng: -84.366136 };
-    const alpharetta = { lat: 34.055269, lng: -84.231345 };
-
-    const map = new google.maps.Map(document.getElementById('map'), {
-        center: atlanta,
-        zoom: 12
-    });
-
-    const marker = new google.maps.Marker({
-        position: atlanta,
-        map: map,
-        animation: google.maps.Animation.DROP,
-    });
-
-}

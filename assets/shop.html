@@ -46,9 +46,18 @@
     <div class="largeForm">
         <form id="formData">
             <div class="form-group row">
-                <label for="inputName" class="col-sm-1 col-form-label">Name:</label>
+                <label for="inputName" class="col-sm-1 col-form-label">First Name:</label>
                 <div class="col-sm-12">
-                    <input name="username" type="text" class="form-control" id="inputName" placeholder="Name" required>
+                    <input name="firstname" type="text" class="form-control" id="inputFirstName" placeholder="First Name" required>
+                    <div class="invalid-feedback">
+                        Please enter your name.
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputName" class="col-sm-1 col-form-label">Last Name:</label>
+                <div class="col-sm-12">
+                    <input name="lastname" type="text" class="form-control" id="inputLastName" placeholder="Last Name" required>
                     <div class="invalid-feedback">
                         Please enter your name.
                     </div>
@@ -80,15 +89,15 @@
             </div>
             <div class="row" id="selectRows">
                 <div class="col-sm-12 offset-sm-3 custom-control-inline custom-checkbox">
-                    <input name="dailyPads" type="checkbox" class="custom-control-input checkBoxes" id="customCheck1">
+                    <input name="Daily Pads" type="checkbox" class="custom-control-input checkBoxes" id="customCheck1">
                     <label class="custom-control-label" for="customCheck1">Daily Herbal Pads: $6.99</label>
                 </div>
                 <div class="col-sm-12 offset-sm-3 custom-control-inline custom-checkbox">
-                    <input name="pantiPads" type="checkbox" class="custom-control-input checkBoxes" id="customCheck2">
+                    <input name="Panty Pads" type="checkbox" class="custom-control-input checkBoxes" id="customCheck2">
                     <label class="custom-control-label" for="customCheck2">Pantiliner Herbal Pads: $5.99</label>
                 </div>
                 <div class="col-sm-12 offset-sm-3 custom-control-inline custom-checkbox">
-                    <input name="overnightPads" type="checkbox" class="custom-control-input checkBoxes" id="customCheck3">
+                    <input name="Overnight Pads" type="checkbox" class="custom-control-input checkBoxes" id="customCheck3">
                     <label class="custom-control-label" for="customCheck3">Overnight Herbal Pads: $6.99</label>
                 </div>
             </div>
@@ -97,15 +106,15 @@
             </div>
             <div class="row" id="selectRows">
                 <div class="col-sm-12 offset-sm-3 custom-control-inline custom-checkbox">
-                    <input name="ounce32" type="checkbox" class="custom-control-input checkBoxes" id="customCheck7">
+                    <input name="32oz Magnet Water" type="checkbox" class="custom-control-input checkBoxes" id="customCheck7">
                     <label class="custom-control-label" for="customCheck7">32oz: $10</label>
                 </div>
                 <div class="col-sm-12 offset-sm-3 custom-control-inline custom-checkbox">
-                    <input name="ounce64" type="checkbox" class="custom-control-input checkBoxes" id="customCheck8">
+                    <input name="64oz Magnet Water" type="checkbox" class="custom-control-input checkBoxes" id="customCheck8">
                     <label class="custom-control-label" for="customCheck8">64oz: $22</label>
                 </div>
                 <div class="col-sm-12 offset-sm-3 custom-control-inline custom-checkbox">
-                    <input name="gallon" type="checkbox" class="custom-control-input checkBoxes" id="customCheck9">
+                    <input name="1gal Magnet Water" type="checkbox" class="custom-control-input checkBoxes" id="customCheck9">
                     <label class="custom-control-label" for="customCheck9">1gal: $32</label>
                 </div>
             </div>
@@ -117,7 +126,7 @@
             </div>
             <div class="row" id="selectRows">
                 <div class="col-sm-12 offset-sm-3 custom-control-inline custom-checkbox">
-                    <input name="chakra" type="checkbox" class="custom-control-input checkBoxes" id="customCheck4">
+                    <input name="Chakra Alignment" type="checkbox" class="custom-control-input checkBoxes" id="customCheck4">
                     <label class="custom-control-label" for="customCheck4">1 Hour Chakra Session: $75</label>
                 </div>
             </div>
@@ -126,11 +135,11 @@
             </div>
             <div class="row" id="selectRows">
                 <div class="col-sm-12 offset-sm-3 custom-control-inline custom-checkbox">
-                    <input name="feetReflex" type="checkbox" class="custom-control-input checkBoxes" id="customCheck5">
+                    <input name="Foot Reflexology" type="checkbox" class="custom-control-input checkBoxes" id="customCheck5">
                     <label class="custom-control-label" for="customCheck5">1 Hour Feet Reflexology Session: $65</label>
                 </div>
                 <div class="col-sm-12 offset-sm-3 custom-control-inline custom-checkbox">
-                    <input name="handReflex" type="checkbox" class="custom-control-input checkBoxes" id="customCheck6">
+                    <input name="Hand Reflexology" type="checkbox" class="custom-control-input checkBoxes" id="customCheck6">
                     <label class="custom-control-label" for="customCheck6">1 Hour Hand Reflexology Session: $45</label>
                 </div>
             </div>
@@ -139,7 +148,7 @@
             </div>
             <div class="row" id="selectRows">
                 <div class="col-sm-12 offset-sm-3 custom-control-inline custom-checkbox">
-                    <input name="earCandle" type="checkbox" class="custom-control-input checkBoxes" id="customCheck10">
+                    <input name="Ear Candling" type="checkbox" class="custom-control-input checkBoxes" id="customCheck10">
                     <label class="custom-control-label" for="customCheck10">40 Minute Ear Candling Session: $40</label>
                 </div>
             </div>
@@ -148,7 +157,7 @@
             </div>
             <div class="row" id="selectRows">
                 <div class="col-sm-3 offset-sm-3 custom-control-inline custom-checkbox">
-                    <input name="magnet" type="checkbox" class="custom-control-input checkBoxes" id="customCheck11">
+                    <input name="Magnet Therapy" type="checkbox" class="custom-control-input checkBoxes" id="customCheck11">
                     <label class="custom-control-label" for="customCheck11">Magnet Therapy</label>
                 </div>
             </div>
@@ -157,7 +166,7 @@
             </div>
             <div class="row" id="selectRows">
                 <div class="col-sm-3 offset-sm-3 custom-control-inline custom-checkbox">
-                    <input name="teas" type="checkbox" class="custom-control-input checkBoxes" id="customCheck12">
+                    <input name="Herbal Teas" type="checkbox" class="custom-control-input checkBoxes" id="customCheck12">
                     <label class="custom-control-label" for="customCheck12">Herbal Teas</label>
                 </div>
             </div>
@@ -166,7 +175,7 @@
             </div>
             <div class="row" id="selectRows">
                 <div class="col-sm-3 offset-sm-3 custom-control-inline custom-checkbox">
-                    <input name="fengShui" type="checkbox" class="custom-control-input checkBoxes" id="customCheck13">
+                    <input name="Feng Shui" type="checkbox" class="custom-control-input checkBoxes" id="customCheck13">
                     <label class="custom-control-label" for="customCheck13">Feng Shui</label>
                 </div>
             </div>
@@ -175,7 +184,7 @@
             </div>
             <div class="row" id="selectRows">
                 <div class="col-sm-3 offset-sm-3 custom-control-inline custom-checkbox">
-                    <input name="birth" type="checkbox" class="custom-control-input checkBoxes" id="customCheck14">
+                    <input name="Natural Birthing" type="checkbox" class="custom-control-input checkBoxes" id="customCheck14">
                     <label class="custom-control-label" for="customCheck14">Natural Birthing</label>
                 </div>
             </div>
@@ -184,13 +193,17 @@
             </div>
             <div class="row" id="selectRows">
                 <div class="col-sm-3 offset-sm-3 custom-control-inline custom-checkbox">
-                    <input name="treat" type="checkbox" class="custom-control-input checkBoxes" id="customCheck15">
+                    <input name="Treatment Plans" type="checkbox" class="custom-control-input checkBoxes" id="customCheck15">
                     <label class="custom-control-label" for="customCheck15">Treatment Plans</label>
                 </div>
             </div>
             <div class="form-group row">
                 <div id="btnDiv" class="col-sm-10">
                     <button id="formBtn" type="submit" class="btn btn-primary">Send</button>
+                </div>
+                <input id="hiddenInput" type="text" class="form-control">
+                <div class="valid-feedback">
+                    Your order has been placed. Someone will be in contact with you shortly.
                 </div>
             </div>
         </form>
@@ -206,18 +219,19 @@
         </div>
         <div class="grid-item22">
             <h3 class="legal">LEGAL</h3>
-            <p>Terms and Conditions</p>
-            <p>Privacy Policy</p>
-            <p>Accessibility</p>
+            <a id="legalLinks" href="./nda.html"><p>Terms and Conditions</p></a>
+            <a id="legalLinks" href="./release.html"><p>Release Form</p></a>
+            <a id="legalLinks" href="./warning.html"><p>Warning</p></a>
         </div>
         <div class="grid-item21">
             <h1 class="footertitle">FOLLOW US</h1>
             <div class="grid-container11">
                 <!--All of these will be logos-->
                 <div class="grid-item26">
-                    <a class="sociallinks" href='#'><img class="socialImgs" src="./images/instagram.png" alt="instagram"></a>
+                    <a class="sociallinks" href='https://www.instagram.com/therapeutichouse/'><img class="socialImgs"
+                            src="./images/instagram.png" alt="instagram"></a>
                 </div>
-                <div class="grid-item23">
+                <!-- <div class="grid-item23">
                     <a class="sociallinks" href='#'><img class="socialImgs" src="./images/facebook.png" alt="facebook"></a>
                 </div>
                 <div class="grid-item24">
@@ -225,9 +239,10 @@
                 </div>
                 <div class="grid-item25">
                     <a class="sociallinks" href='#'><img class="socialImgs" src="./images/youtube.png" alt="youtube"></a>
-                </div>
+                </div> -->
             </div>
         </div>
+        <p class="copyright">&copy 2019 Therapeutic House. All Rights Reserved.</p>
     </div>
 
 

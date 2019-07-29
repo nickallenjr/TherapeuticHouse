@@ -1,10 +1,3 @@
-// To Do List
-// 2.Make route for accepting newsletter subscribers
-// 2a.Make route for clients to login and add events
-// 3.Make route for adding events based on user inputs
-// 4.Make route for displaying events
-// 5.Setup backend form validation
-
 const express = require("express"),
     fs = require('fs'),
     bodyParser = require("body-parser"),
@@ -14,7 +7,8 @@ const express = require("express"),
     cors = require("cors"),
     path = require("path"),
     logger = require("morgan"),
-    nodeMailer = require("nodemailer");
+    nodeMailer = require("nodemailer"),
+    key = require("./nodemailerkeys.json");
 
 
 const Event = require("./models/events.js")
@@ -56,14 +50,41 @@ db.once("open", function() {
     console.log("Mongoose connection successful.");
 });
 
-//Route for sending email to client
+//Route for sending order emails to client
 app.post('/order/', [
-    check("username").isAlpha().withMessage("Your name must only conatin letters"),
+    check("firstName").isAlpha().withMessage("Your name must only conatin letters"),
+    check("lastName").isAlpha().withMessage("Your name must only conatin letters"),
     check("email").isEmail().withMessage("Please enter a valid email address."),
     check("phone").isMobilePhone(["en-US"]).withMessage("Please enter a valid phone number.")
 ], cors(), function(req, res) {
 
-    console.log(req.body);
+    const objToArray = Object.entries(req.body);
+    console.log(objToArray);
+    const itemsOrdered = [];
+
+    for (let i = 0; i < objToArray.length; i++) {
+        console.log(isNaN(objToArray[i][0]))
+        isNaN(objToArray[i][0]) ? "dont" : itemsOrdered.push(objToArray[i][1])
+         
+    }
+    
+    console.log(itemsOrdered); 
+    
+    const orderEmailBody = `
+        <h2>You have a new order placed</h2> 
+        <h3>Contact Info</h3>
+        <ul style="list-style-type:none">
+            <li>Name: ${req.body.firstName + " " + req.body.lastName}</li>
+            <li>Email: ${req.body.email}</li>
+            <li>Phone: ${req.body.phone}</li>
+        </ul>
+        <h3>Order Details</h3>
+        <ul style="list-style-type:none">
+            ${itemsOrdered.map(item => {
+               return `<li>${item}</li>`
+            })}
+        </ul>
+    `;
 
     //Check for errors and package them and send to client-side
     const errors = validationResult(req);
@@ -78,34 +99,51 @@ app.post('/order/', [
             secure: true,
             auth: {
                 // should be replaced with real sender's account
-                user: 'mrnallenjr@gmail.com',
-                pass: 'N!ckAidanAsherah'
+                user: 'nicholasallenjr@gmail.com',
+                pass: 'nlck30o0',
+                // serviceClient: key.client_id,
+                // privateKey: key.private_key
             }
         });
         let mailOptions = {
             // should be replaced with real recipient's account
+            from: 'Order@therapeutichouse <nicholasallenjr@gmail.com>',
             to: 'nicholasallenjr@gmail.com',
-            subject: "Order",
-            body: req.body
-        };
+            subject: `${req.body.firstName + " " + req.body.lastName} has placed an order!`,
+            html: orderEmailBody
+          };
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
                 return console.log(error);
             }
             console.log('Message %s sent: %s', info.messageId, info.response);
         });
-        // res.writeHead(301, { Location: 'index.html' });
-        // res.end();
+        res.send({"success":"order placed"});
+        res.end();
     }
 });
 
+
+//Route for contacting business owners
 app.post('/contact/', [
-    check("name").isAlpha().withMessage("Your name must only conatin letters"),
+    check("name").matches(/^[a-zA-Z0-9_]+( [a-zA-Z0-9_]+)*$/).withMessage("Your name must only conatin letters"),
+    check("name").contains(" ").withMessage("Please enter your first and last name."),
     check("email").isEmail().withMessage("Please enter a valid email address."),
+    check("message").isLength({min:20}).withMessage("Please enter a message.")
 ], cors(), function(req, res) {
 
     console.log(req.body);
 
+    const contactEmailBody = `
+        <h2>You have a new contact</h2> 
+        <h3>Contact Info</h3>
+        <ul style="list-style-type:none">
+            <li>Name: ${req.body.name}</li>
+            <li>Email: ${req.body.email}</li>
+            <li>Message: ${req.body.message}</li>
+        </ul>
+    `;
+
     //Check for errors and package them and send to client-side
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -119,15 +157,16 @@ app.post('/contact/', [
             secure: true,
             auth: {
                 // should be replaced with real sender's account
-                user: 'mrnallenjr@gmail.com',
-                pass: 'N!ckAidanAsherah'
+                user: 'nicholasallenjr@gmail.com',
+                pass: 'nlck30o0'
             }
         });
         let mailOptions = {
             // should be replaced with real recipient's account
+            from: "Contact@therapeutichouse <nicholasallenjr@gmail.com>",
             to: 'nicholasallenjr@gmail.com',
-            subject: "Order",
-            body: req.body
+            subject: `You have a new contact request from ${req.body.name}`,
+            html: contactEmailBody
         };
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
@@ -135,8 +174,8 @@ app.post('/contact/', [
             }
             console.log('Message %s sent: %s', info.messageId, info.response);
         });
-        // res.writeHead(301, { Location: 'index.html' });
-        // res.end();
+        res.send({"success":"Your message was sent"});
+        res.end();
     }
 });
 

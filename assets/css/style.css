@@ -218,6 +218,9 @@ div#navi a {
     div#navi a {
         display: block;
     }
+    .copyright {
+        grid-column: 1 / 4;
+    }
 }
 
 
@@ -327,24 +330,6 @@ div#navi a {
     color: #712E71;
 }
 
-
-/* @media only screen and (max-width:1000px) {
-    .storyblock {
-        display: none;
-    }
-    .minStoryblock {
-        display: block
-    }
-    .minStory {
-        display: block;
-    }
-    .minHeaderText {
-        display: block;
-        text-align: center
-    }
-} */
-
-
 /*Are you magnetized header*/
 
 .mainDiv {
@@ -358,10 +343,11 @@ div#navi a {
 
 #magnetDiv {
     display: grid;
-    grid-template-rows: auto;
+    grid-template-rows: auto 150px auto;
     align-content: center;
     justify-content: center;
     padding-top: 120px;
+    grid-row-gap: 10px;
 }
 
 .areYou {
@@ -369,6 +355,10 @@ div#navi a {
     text-align: center;
     font-size: 100px;
     color: #712e71;
+}
+
+.video {
+    width: 100%;
 }
 
 .mainImg {
@@ -405,7 +395,8 @@ div#navi a {
     text-transform: uppercase;
     font-size: 25px;
     padding-bottom: 10px;
-    color: #712E71
+    color: #712E71;
+    margin-top: 50px;
 }
 
 .title1::after {
@@ -759,17 +750,22 @@ div.aboveDivButton button {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: auto auto auto;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 223px 223px 223px;
     -ms-flex-pack: distribute;
     justify-content: space-around;
     background-color: #400F3C;
     color: #ffffff;
-    height: 300px;
+    height: 200px;
+}
+
+.grid-item26 {
+    grid-column: 1 / 5;
 }
 
 .grid-item20 {
     display: grid;
     grid-template-rows: auto 10% 30%;
+    text-align: center;
 }
 
 .logo {
@@ -795,6 +791,7 @@ div.aboveDivButton button {
 .footertitle {
     font-family: "Lato", sans-serif;
     font-weight: bold;
+    font-size: 2em;
 }
 
 .grid-item21 {
@@ -823,9 +820,20 @@ div.aboveDivButton button {
     height: 30px;
 }
 
+#legalLinks {
+    text-decoration: none;
+}
+
+#legalLinks > p {
+    color: #ffffff;
+}
+
+.copyright {
+    text-align: center;
+    grid-column: 1 / 4;
+}
 
 /*Instagram Feed*/
-
 .eapps-instagram-feed-title {
     font-family: "Lato", sans-serif !important;
 }
@@ -839,6 +847,9 @@ div.aboveDivButton button {
         grid-template-columns: auto;
         grid-template-rows: [top] auto [bottom] auto
     }
+    .copyright {
+        grid-column: 1;
+    }
     .grid-item22 {
         display: none
     }
@@ -846,7 +857,10 @@ div.aboveDivButton button {
         display: none;
     }
     .grid-item21 {
-        grid-row: top
+        grid-row: top;
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-row-gap: 30px;
     }
     .grid-container11 {
         grid-template-columns: auto auto auto auto;
@@ -935,6 +949,6 @@ div.aboveDivButton button {
     }
     iframe {
         margin: auto;
-        width: 80%
+        width: 100%
     }
 }

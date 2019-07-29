@@ -205,6 +205,15 @@ div#header button {
     font-family: "Lato", sans-serif;
 }
 
+#hiddenInput {
+    visibility: hidden;
+}
+
+.valid-feedback {
+    margin: auto;
+    width: 90%;
+    text-align: center;
+}
 
 /*Footer*/
 
@@ -212,17 +221,22 @@ div#header button {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: auto auto auto;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 223px 223px 223px;
     -ms-flex-pack: distribute;
     justify-content: space-around;
     background-color: #400F3C;
     color: #ffffff;
-    height: 300px;
+    height: 200px;
+}
+
+.grid-item26 {
+    grid-column: 1 / 5;
 }
 
 .grid-item20 {
     display: grid;
     grid-template-rows: auto 10% 30%;
+    text-align: center;
 }
 
 .logo {
@@ -248,6 +262,7 @@ div#header button {
 .footertitle {
     font-family: "Lato", sans-serif;
     font-weight: bold;
+    font-size: 2em;
 }
 
 .grid-item21 {
@@ -274,6 +289,19 @@ div#header button {
 .socialImgs {
     width: 30px;
     height: 30px;
+}
+
+#legalLinks {
+    text-decoration: none;
+}
+
+#legalLinks>p {
+    color: #ffffff;
+}
+
+.copyright {
+    text-align: center;
+    grid-column: 1 / 4;
 }
 
 #btnDiv {
@@ -318,6 +346,9 @@ div#header button {
     .grid-container10 {
         grid-template-columns: auto
     }
+    .copyright {
+        grid-column: 1;
+    }
     .grid-item20 {
         display: none;
     }
@@ -335,6 +366,10 @@ div#header button {
     .largeForm {
         margin-left: 0%;
         margin-right: 0%;
+    }
+    .row{
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
@@ -397,6 +432,9 @@ div#header button {
     }
     #infoDescrip {
         width: 60%;
+    }
+    .copyright {
+        grid-column: 1 / 4;
     }
 }
 
