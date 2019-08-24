@@ -79,15 +79,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
         hiddenInput = document.getElementById("hiddenInput"),
         confirmName = document.getElementById("confirmName")
         confirmEmail = document.getElementById("confirmEmail")
-        confirmNumber = document.getElementById("confirmNumber");
+        confirmNumber = document.getElementById("confirmNumber"),
+        exBtn = document.getElementById("xBtn");
 
     let formArray;
-    const formData = {};
+    let formData = {};
+    let finalFormObj = {};
+    let totalItems = 0;
     let quantityHolderArray = [];
+    let nonQuantityHolArray = [];
     let quantitySelectArray = [];
+    let nonQuantitySelArray = [];
 
     //Open modal and gather info button click
-
     formBtn.addEventListener("click", function(event) {
         event.preventDefault();
 
@@ -116,61 +120,117 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 quantityHolderArray.push(formArray[h]);
             }
             else {
-                continue;
+                nonQuantityHolArray.push(formArray[h]);
             }     
         }
 
         console.log(quantityHolderArray);
+        console.log(nonQuantityHolArray);
 
         //Populate Modal with items that allow quantity
         let quantityList = document.getElementById("quantityList");
 
-        quantityHolderArray.map((item, index) => {
-            $("#quantityList").append(`<div class="input-group mb-3">
-                <select class="custom-select col-sm-3" id="inputGroupSelect${index}">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-                <div class="input-group-append">
-                    <label class="input-group-text" id="inputGroupSelectLabel${index}" for="inputGroupSelect${index}">${item.name}</label>
-                </div>
-            </div>`)
-        })
+        if(nonQuantityHolArray.length === 0){
+            quantityHolderArray.map((item, index) => {
+                $("#quantityList").append(`<div class="input-group mb-3">
+                    <select class="custom-select col-sm-3" id="inputGroupSelect${index}">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <div class="input-group-append">
+                        <label class="input-group-text" id="inputGroupSelectLabel${index}" for="inputGroupSelect${index}">${item.name}</label>
+                    </div>
+                </div>`)
+            })
+        }else if (quantityHolderArray.length === 0) {
+            nonQuantityHolArray.map((item, index) => {
+                $("#quantityList").append(`<div class="input-group mb-3">
+                    <div class="input-group-append">
+                        <label class="input-group-text" id="inputGroupSelectLabel0${index}" for="inputGroupSelect0${index}">${item.name}</label>
+                    </div>
+                </div>`)
+            })
+        }else {
+            quantityHolderArray.map((item, index) => {
+                $("#quantityList").append(`<div class="input-group mb-3">
+                    <select class="custom-select col-sm-3" id="inputGroupSelect${index}">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <div class="input-group-append">
+                        <label class="input-group-text" id="inputGroupSelectLabel${index}" for="inputGroupSelect${index}">${item.name}</label>
+                    </div>
+                </div>`)
+            })
 
-        
+            nonQuantityHolArray.map((item1, index1) => {
+                $("#quantityList").append(`<div class="input-group">
+                        <label class="input-group" id="inputGroupSelectLabel0${index1}" for="inputGroupSelect0${index1}">${item1.name}</label>
+                    </div>`)
+            })
+        }
+    })
 
-        // if (formArray.length > 4) {
-        //     for (let i = 4; i < formArray.length; i++) {
-        //         let tempObj = {
-        //             name: formArray[i].name,
-        //             qty: "1"
-        //         }
-        //         formData[i] = tempObj
-        //     }
-        // } else {
-        //     //Catch error of someone not selecting any services
-        //     return
-        // };
+    //If clicking the X on modal
+    exBtn.addEventListener("click", function(event) {
+        event.preventDefault();
 
-        // console.log(formData);
+        quantityHolderArray = [];
+        quantitySelectArray = [];
+        nonQuantityHolArray = [];
+        nonQuantitySelArray = [];
+        $(".input-group").remove();
+        $('input[type="checkbox"]:checked').prop('checked', false);
     })
 
     //Confirm info and send mail button
     placeOrderBtn.addEventListener("click", function(event) {
-
+ 
         //Grab quantities to add to object below
-        for (let j = 0; j < quantityHolderArray.length; j++) {
-            let tempoObj = {};
-            tempoObj.qty = $(`#inputGroupSelect${j}`).val();
-            tempoObj.name = document.getElementById(`inputGroupSelectLabel${j}`).innerHTML;
-            quantitySelectArray.push(tempoObj);
-        }
+        if(nonQuantityHolArray.length === 0) {
+            for (let j = 0; j < quantityHolderArray.length; j++) {
+                let tempoObj = {};
+                tempoObj.qty = $(`#inputGroupSelect${j}`).val();
+                tempoObj.name = document.getElementById(`inputGroupSelectLabel${j}`).innerHTML;
+                quantitySelectArray.push(tempoObj);
+            }
+            totalItems = quantityHolderArray.length;
+        }else if(quantityHolderArray.length === 0) {
+            for (let k = 0; k < nonQuantityHolArray.length; k++) {
+                let tempObj = {};
+                tempObj.name = document.getElementById(`inputGroupSelectLabel0${k}`).innerHTML;
+                quantitySelectArray.push(tempObj);
+            }
+            totalItems = nonQuantityHolArray.length;
+        }else {
+            for (let j = 0; j < quantityHolderArray.length; j++) {
+                let tempoObj = {};
+                tempoObj.qty = $(`#inputGroupSelect${j}`).val();
+                tempoObj.name = document.getElementById(`inputGroupSelectLabel${j}`).innerHTML;
+                quantitySelectArray.push(tempoObj);
+            }
 
+            for (let k = 0; k < nonQuantityHolArray.length; k++) {
+                let tempObj = {};
+                tempObj.name = document.getElementById(`inputGroupSelectLabel0${k}`).innerHTML;
+                quantitySelectArray.push(tempObj);
+            }
+
+            totalItems = nonQuantityHolArray.length + quantityHolderArray.length;
+        }
         console.log(quantitySelectArray);
+        console.log(totalItems);
 
         //Replaces formData object entries with quantities selected in modal
+        finalFormObj.firstName = formArray[0].value;
+        finalFormObj.lastName = formArray[1].value;
+        finalFormObj.email = formArray[2].value;
+        finalFormObj.phone = formArray[3].value;
+
         if (formArray.length > 4) {
             for (let i = 0; i < formArray.length; i++) {
                 for (let m = 0; m < quantitySelectArray.length; m++) {
@@ -214,28 +274,52 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 lastNameInput.value = "";
                 emailInput.value = "";
                 phoneInput.value = "";
+                $('input[type="checkbox"]:checked').prop('checked', false);
+                totalItems = 0;
             } else if (response.validate[j].param === "firstName") {
                 firstNameInput.setAttribute("class", "is-invalid form-control");
                 quantityHolderArray = [];
                 quantitySelectArray = [];
+                nonQuantityHolArray = [];
+                nonQuantitySelArray = [];
                 $(".input-group").remove();
+                $('input[type="checkbox"]:checked').prop('checked',false);
+                eraseObj();
             } else if (response.validate[j].param === "lastName") {
                 lastNameInput.setAttribute("class", "is-invalid form-control");
                 quantityHolderArray = [];
                 quantitySelectArray = [];
+                nonQuantityHolArray = [];
+                nonQuantitySelArray = [];
                 $(".input-group").remove();
+                $('input[type="checkbox"]:checked').prop('checked',false);
+                eraseObj();
             } else if (response.validate[j].param === "email") {
                 emailInput.setAttribute("class", "is-invalid form-control");
                 quantityHolderArray = [];
                 quantitySelectArray = [];
+                nonQuantityHolArray = [];
+                nonQuantitySelArray = [];
                 $(".input-group").remove();
+                $('input[type="checkbox"]:checked').prop('checked',false);
+                eraseObj();
             } else if (response.validate[j].param === "phone") {
                 phoneInput.setAttribute("class", "is-invalid form-control");
                 quantityHolderArray = [];
                 quantitySelectArray = [];
+                nonQuantityHolArray = [];
+                nonQuantitySelArray = [];
                 $(".input-group").remove();
+                $('input[type="checkbox"]:checked').prop('checked',false);
+                eraseObj();
             }
         }
     }
 
+    eraseObj = () => {
+        for (n = 0; n < formArray.length; n++) {
+            delete formData[n]
+        }
+        console.log(formData)
+    }
 });

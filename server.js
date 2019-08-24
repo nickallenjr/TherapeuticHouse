@@ -82,7 +82,7 @@ app.post('/order', [
         <h3>Order Details</h3>
         <ul style="list-style-type:none">
             ${itemsOrdered.map(item => {
-               return `<li>${item.qty}x ${item.name}</li>`
+               return `<li>${item.name} qty. ${!(item.qty) ? 1 : item.qty}</li>`
             }).join("")}
         </ul>
     `;
@@ -159,14 +159,14 @@ app.post('/contact', [
             secure: true,
             auth: {
                 // should be replaced with real sender's account
-                user: 'nicholasallenjr@gmail.com',
-                pass: 'nlck30o0'
+                user: 'therapeutichouse@gmail.com',
+                pass: 'Mel&Dan16'
             }
         });
         let mailOptions = {
             // should be replaced with real recipient's account
-            from: "Contact@therapeutichouse <nicholasallenjr@gmail.com>",
-            to: 'nicholasallenjr@gmail.com',
+            from: "Contact@therapeutichouse <therapeutichouse@gmail.com>",
+            to: 'therapeutichouse@gmail.com',
             subject: `You have a new contact request from ${req.body.name}`,
             html: contactEmailBody
         };

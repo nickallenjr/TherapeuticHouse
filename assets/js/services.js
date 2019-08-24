@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             feng: "./images/fengshui.png",
             birth: "./images/pregnant-black-woman.jpg",
             energy: "./images/sage.jpg",
-            treat: "./images/magnet.jpg"
+            treat: "./images/womenmeeting.jpg"
         },
         descriptions: {
             lhamo: {
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             magnet: "Magnetized water activates, cleanses, and detoxifies every part of the body. Drinking magnetized water influences the autonomic nervous system and the toxic deposits within the connective tissues of the body. The body is made up of 70% water, replenish it with water that will assist in the body’s natural way of healing.",
             candle: "Ear candling contributes to a greater sense of well-being as well as enhanced physical and mental health. It removes unwanted ear wax, impurities and toxins from the ear. By lighting the beeswax candle, a gentle suction is created and vacuum draws the wax and impurities from the ear and produces relief.",
             therapy: "Magnetic therapy is an alternative medical practice that uses static (i.e. unmoving) magnets to alleviate pain and other health concerns. So-called therapeutic magnets are typically integrated into bracelets, rings, or shoe inserts, though therapeutic magnetic mattresses and clothing are also on the market.",
-            teas: "Our selection of herbal teas includes a wide array of naturally caffeine-free teas, also called tisanes, including pure rooibos, mint, chamomile, hibiscus, rose tea and a variety of herbal tea blends. Many herbal teas are known for having medicinal qualities, such as calming, throat soothing, and sleepy teas.",
+            teas: "Our selection of herbal teas includes a wide array of naturally caffeine-free teas, also called tisanes, including pure rooibos, mint, chamomile, hibiscus, rose tea and a variety of herbal tea blends. Many herbal teas are known for having medicinal qualities, such as calming, throat soothing, and sleepy teas. If you would like to requesta a special tea please contact us so we can accommodate your specific needs.",
             feng: "a system of laws considered to govern spatial arrangement and orientation in relation to the flow of energy (qi), and whose favorable or unfavorable effects are taken into account when siting and designing buildings",
             birth: "Natural childbirth is childbirth without routine medical interventions, particularly anesthesia. Natural childbirth arose in opposition to the techno-medical model of childbirth that has recently gained popularity in industrialized societies.",
             energy: "Toxic energy from arguments or illness can accumulate in shared spaces such as living rooms, kitchens and dens. Your home can be clean and organized but still have a heavy feeling. Even if you’re not a trained Zen master, the subtle frequencies of energy can be felt if you pay attention. A cleansed and energized room should feel light, fresh, and inviting when you enter. Like anything in life, getting rid of negative energy takes daily practice, so make sage house cleaning, healing crystals, and other practices an everyday habit for the best results.",
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             chakra: "1 HOUR CHAKRA SESSION: $75",
             teas: "Three 2oz JARS $15",
             reflex: {
-                price: "1 HOUR FEET REFLEXOLOGY SESSION: $65",
+                price: "1 HOUR FOOT REFLEXOLOGY SESSION: $65",
                 price2: "1 HOUR HAND REFLEXOLOGY SESSION: $45"
             },
             magnet: {
@@ -132,11 +132,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 price4: "*Shipping $30 on liquids."
             },
             candle: "40 MIN EAR CANDLING SESSION: $40",
-            consult: "1 TREATMENT PLAN & 3 40 MIN CONSULTATIONS: $60",
-            energy: "$70",
-            birth: "$50",
-            feng: "$60",
-            therapy: "$50"
+            consult: "ONE TREATMENT PLAN & THREE 40 MINUTE CONSULTATIONS: $60",
+            energy: "ENERGY CLEANSING SESSION: $70",
+            birth: "SUGGESTED GUIDLINE & TWO 45 MINUTE CONSULTATIONS: $50",
+            feng: "FENG SHUI SESSION: $60",
+            therapy: "40 MINUTE MAGNET THERAPY SESSION: $50"
         },
         note: "*These services are done by appointment only at our spa in Alpharetta or a house call for a $25 fee."
     };
