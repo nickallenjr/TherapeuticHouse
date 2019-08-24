@@ -295,6 +295,10 @@ div#navi a {
     color: #ffffff;
 }
 
+.aboutBox2 {
+    height: 815px;
+}
+
 .aboutWords {
     font-family: "Playfair Display", serif;
     text-align: center;

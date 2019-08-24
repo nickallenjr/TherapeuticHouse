@@ -433,6 +433,13 @@ a.links>p {
     text-align: center;
 }
 
+#note {
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 1rem;
+}
+
 #shopBtn {
     background-color: #712E71;
     border-radius: 3px;
@@ -452,7 +459,15 @@ a.links>p {
     margin-top: 1rem;
 }
 
-#extraInfo {
+#extraInfo1 {
+    text-align: center
+}
+
+#extraInfo2 {
+    text-align: center
+}
+
+#extraInfo3 {
     text-align: center
 }
 

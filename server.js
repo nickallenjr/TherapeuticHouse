@@ -60,12 +60,13 @@ app.post('/order', [
 
     const objToArray = Object.entries(req.body);
     console.log(objToArray);
+
     const itemsOrdered = [];
 
+    //Put req.body entries that starts with numbers into an array for Array.mapping line 85
     for (let i = 0; i < objToArray.length; i++) {
         console.log(isNaN(objToArray[i][0]))
         isNaN(objToArray[i][0]) ? "dont" : itemsOrdered.push(objToArray[i][1])
-         
     }
     
     console.log(itemsOrdered); 
@@ -81,8 +82,8 @@ app.post('/order', [
         <h3>Order Details</h3>
         <ul style="list-style-type:none">
             ${itemsOrdered.map(item => {
-               return `<li>${item}</li>`
-            })}
+               return `<li>${item.qty}x ${item.name}</li>`
+            }).join("")}
         </ul>
     `;
 
@@ -99,16 +100,17 @@ app.post('/order', [
             secure: true,
             auth: {
                 // should be replaced with real sender's account
-                user: 'nicholasallenjr@gmail.com',
-                pass: 'nlck30o0',
+                user: 'therapeutichouse@gmail.com',
+                pass: 'Mel&Dan16',
                 // serviceClient: key.client_id,
                 // privateKey: key.private_key
             }
         });
+
         let mailOptions = {
             // should be replaced with real recipient's account
-            from: 'Order@therapeutichouse <nicholasallenjr@gmail.com>',
-            to: 'nicholasallenjr@gmail.com',
+            from: 'Order@therapeutichouse <therapeutichouse@gmail.com>',
+            to: 'therapeutichouse@gmail.com',
             subject: `${req.body.firstName + " " + req.body.lastName} has placed an order!`,
             html: orderEmailBody
           };

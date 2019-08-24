@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             feng: "FENG SHUI",
             birth: "NATURAL BIRTHING",
             energy: "ENERGY CLEANSING",
-            treat: "TREATMENT PLANS"
+            treat: "CONSULTATIONS"
         },
         pictures: {
             lhamo: {
@@ -79,12 +79,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
             reflex: "./images/IMG_7549.jpeg",
             magnet: "./images/IMG_6516.jpg",
             candle: "./images/IMG_7575.jpeg",
-            therapy: "./images/magnet.jpg",
+            therapy: "./images/IMG_7555.jpeg",
             teas: "./images/herbaltea.jpg",
             feng: "./images/fengshui.png",
-            birth: "./images/baby.jpg",
+            birth: "./images/pregnant-black-woman.jpg",
             energy: "./images/sage.jpg",
-            treat: "./images/IMG_7555.jpeg"
+            treat: "./images/magnet.jpg"
         },
         descriptions: {
             lhamo: {
@@ -108,9 +108,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
             lhamo: {
                 overnight: "Overnight Pads: $6.99",
                 daily: "Daily Pads: $6.99",
-                panty: "Pantiliner Pads: $5.99"
+                panty: "Pantiliner Pads: $5.99",
+                starter: "Starter Set (2 Overnight, 1 Daily, & 1 Pantiliner) $24.99",
+                starter2: "Starter Set 2 (2 Daily, 1 Overnight, & 1 Pantiliner) $24.99",
+                starter3: "Starter 3 (2 Heavy Long, 1 Daily, & 1 Pantiliner) $26.99",
+                starter4: "Starter 4 (2 Heavy Long, 1 Overnight, & 1 Pantiliner) $26.99",
+                deluxe: "Deluxe Set (3 Month Supply: 4 Daily, 3 Overnight, 3 Pantiliner) $56.99",
+                deluxe2: "Deluxe Set 2 (3 Month Supply: 4 Heavy Long, 3 Overnight, 3 Pantiliner) $59.99",
+                mvp: "MVP Set (6 Month Supply: 8 Daily, 6 Overnight, 6 Pantiliner) $99",
+                mvp2: "MVP Set 2 (6 Month Supply: 8 Heavy Long, 6 Daily, 6 Pantiliner) $109",
+                ship: "*Shipping $5.49"
             },
             chakra: "1 HOUR CHAKRA SESSION: $75",
+            teas: "Three 2oz JARS $15",
             reflex: {
                 price: "1 HOUR FEET REFLEXOLOGY SESSION: $65",
                 price2: "1 HOUR HAND REFLEXOLOGY SESSION: $45"
@@ -118,11 +128,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
             magnet: {
                 price: "32oz $10",
                 price2: "640z $22",
-                price3: "1gal $32"
+                price3: "1gal $32",
+                price4: "*Shipping $30 on liquids."
             },
             candle: "40 MIN EAR CANDLING SESSION: $40",
-            treat: "3 CONSULTATIONS: $50"
-        }
+            consult: "1 TREATMENT PLAN & 3 40 MIN CONSULTATIONS: $60",
+            energy: "$70",
+            birth: "$50",
+            feng: "$60",
+            therapy: "$50"
+        },
+        note: "*These services are done by appointment only at our spa in Alpharetta or a house call for a $25 fee."
     };
 
     //Opening Modal and populating it
@@ -136,9 +152,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
     let infoTitle4 = document.getElementById("infoTitle4");
     let servicePic4 = document.getElementById("serviceImg4");
     let infoDescrip = document.getElementById("infoDescrip");
+    let extra1 = document.getElementById("extraInfo1");
+    let extra2 = document.getElementById("extraInfo2");
+    let extra3 = document.getElementById("extraInfo3");
     let price = document.getElementById("price");
     let price2 = document.getElementById("price2");
     let price3 = document.getElementById("price3");
+    let price4 = document.getElementById("price4");
+    let price5 = document.getElementById("price5");
+    let price6 = document.getElementById("price6");
+    let price7 = document.getElementById("price7");
+    let price8 = document.getElementById("price8");
+    let price9 = document.getElementById("price9");
+    let price10 = document.getElementById("price10");
+    let price11 = document.getElementById("price11");
+    let price12 = document.getElementById("price12");
+    let note = document.getElementById("note");
 
 
     let moreInfo = function(service) {
@@ -151,26 +180,83 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         if (serviceId == "learn1") {
             infoTitle.innerHTML = allServices.titles.chakra;
+            extra1.style.display = "none";
+            extra2.style.display = "none";
+            extra3.style.display = "none";
+            price2.style.display = "none";
+            price3.style.display = "none";
+            price4.style.display = "none";
+            price5.style.display = "none";
+            price6.style.display = "none";
+            price7.style.display = "none";
+            price8.style.display = "none";
+            price9.style.display = "none";
+            price10.style.display = "none";
+            price11.style.display = "none";
+            price12.style.display = "none";
             infoDescrip.innerHTML = allServices.descriptions.chakra;
             price.innerHTML = allServices.prices.chakra;
+            note.innerHTML = allServices.note
             servicePic.setAttribute("src", allServices.pictures.chakra);
         } else if (serviceId == "learn2") {
             infoTitle.innerHTML = allServices.titles.reflex;
             infoDescrip.innerHTML = allServices.descriptions.reflex;
+            extra1.style.display = "none";
+            extra2.style.display = "none";
+            extra3.style.display = "none";
+            price3.style.display = "none";
+            price4.style.display = "none";
+            price5.style.display = "none";
+            price6.style.display = "none";
+            price7.style.display = "none";
+            price8.style.display = "none";
+            price9.style.display = "none";
+            price10.style.display = "none";
+            price11.style.display = "none";
+            price12.style.display = "none";
             price.innerHTML = allServices.prices.reflex.price;
             price2.innerHTML = allServices.prices.reflex.price2;
+            note.innerHTML = allServices.note
             servicePic.setAttribute("src", allServices.pictures.reflex);
         } else if (serviceId == "learn3") {
             infoTitle.innerHTML = allServices.titles.magnet;
             infoDescrip.innerHTML = allServices.descriptions.magnet;
+            extra1.style.display = "none";
+            extra2.style.display = "none";
+            extra3.style.display = "none";
             price.innerHTML = allServices.prices.magnet.price;
             price2.innerHTML = allServices.prices.magnet.price2;
             price3.innerHTML = allServices.prices.magnet.price3;
+            price4.style.display = "none";
+            price5.style.display = "none";
+            price6.style.display = "none";
+            price7.style.display = "none";
+            price8.style.display = "none";
+            price9.style.display = "none";
+            price10.style.display = "none";
+            price11.style.display = "none";
+            price12.style.display = "none";
+            note.innerHTML = allServices.prices.magnet.price4;
             servicePic.setAttribute("src", allServices.pictures.magnet);
         } else if (serviceId == "learn4") {
             infoTitle.innerHTML = allServices.titles.candle;
             infoDescrip.innerHTML = allServices.descriptions.candle;
+            extra1.style.display = "none";
+            extra2.style.display = "none";
+            extra3.style.display = "none";
             price.innerHTML = allServices.prices.candle;
+            price2.style.display = "none";
+            price3.style.display = "none";
+            price4.style.display = "none";
+            price5.style.display = "none";
+            price6.style.display = "none";
+            price7.style.display = "none";
+            price8.style.display = "none";
+            price9.style.display = "none";
+            price10.style.display = "none";
+            price11.style.display = "none";
+            price12.style.display = "none";
+            note.innerHTML = allServices.note;
             servicePic.setAttribute("src", allServices.pictures.candle);
         } else if (serviceId == "learn5") {
             infoTitle.innerHTML = allServices.titles.lhamo.all;
@@ -185,31 +271,130 @@ document.addEventListener("DOMContentLoaded", function(event) {
             price.innerHTML = allServices.prices.lhamo.daily;
             price2.innerHTML = allServices.prices.lhamo.overnight;
             price3.innerHTML = allServices.prices.lhamo.panty;
+            price4.innerHTML = allServices.prices.lhamo.starter;
+            price5.innerHTML = allServices.prices.lhamo.starter2;
+            price6.innerHTML = allServices.prices.lhamo.starter3;
+            price7.innerHTML = allServices.prices.lhamo.starter4;
+            price8.innerHTML = allServices.prices.lhamo.deluxe;
+            price9.innerHTML = allServices.prices.lhamo.deluxe2;
+            price10.innerHTML = allServices.prices.lhamo.mvp;
+            price11.innerHTML = allServices.prices.lhamo.mvp2;
+            note.innerHTML = allServices.prices.lhamo.ship;
         } else if (serviceId == "learn6") {
             infoTitle.innerHTML = allServices.titles.therapy;
             infoDescrip.innerHTML = allServices.descriptions.therapy;
+            extra1.style.display = "none";
+            extra2.style.display = "none";
+            extra3.style.display = "none";
             servicePic.setAttribute("src", allServices.pictures.therapy);
+            price.innerHTML = allServices.prices.therapy;
+            price2.style.display = "none";
+            price3.style.display = "none";
+            price4.style.display = "none";
+            price5.style.display = "none";
+            price6.style.display = "none";
+            price7.style.display = "none";
+            price8.style.display = "none";
+            price9.style.display = "none";
+            price10.style.display = "none";
+            price11.style.display = "none";
+            price12.style.display = "none";
+            note.innerHTML = allServices.note
         } else if (serviceId == "learn7") {
             infoTitle.innerHTML = allServices.titles.teas;
             infoDescrip.innerHTML = allServices.descriptions.teas;
+            extra1.style.display = "none";
+            extra2.style.display = "none";
+            extra3.style.display = "none";
             servicePic.setAttribute("src", allServices.pictures.teas);
+            price.innerHTML = allServices.prices.teas;
+            price2.style.display = "none";
+            price3.style.display = "none";
+            price4.style.display = "none";
+            price5.style.display = "none";
+            price6.style.display = "none";
+            price7.style.display = "none";
+            price8.style.display = "none";
+            price9.style.display = "none";
+            price10.style.display = "none";
+            price11.style.display = "none";
+            price12.style.display = "none";
         } else if (serviceId == "learn8") {
             infoTitle.innerHTML = allServices.titles.feng;
             infoDescrip.innerHTML = allServices.descriptions.feng;
+            extra1.style.display = "none";
+            extra2.style.display = "none";
+            extra3.style.display = "none";
             servicePic.setAttribute("src", allServices.pictures.feng);
+            price.innerHTML = allServices.prices.feng;
+            price2.style.display = "none";
+            price3.style.display = "none";
+            price4.style.display = "none";
+            price5.style.display = "none";
+            price6.style.display = "none";
+            price7.style.display = "none";
+            price8.style.display = "none";
+            price9.style.display = "none";
+            price10.style.display = "none";
+            price11.style.display = "none";
+            price12.style.display = "none";
         } else if (serviceId == "learn9") {
             infoTitle.innerHTML = allServices.titles.birth;
             infoDescrip.innerHTML = allServices.descriptions.birth;
+            extra1.style.display = "none";
+            extra2.style.display = "none";
+            extra3.style.display = "none";
             servicePic.setAttribute("src", allServices.pictures.birth);
+            price.innerHTML = allServices.prices.birth;
+            price2.style.display = "none";
+            price3.style.display = "none";
+            price4.style.display = "none";
+            price5.style.display = "none";
+            price6.style.display = "none";
+            price7.style.display = "none";
+            price8.style.display = "none";
+            price9.style.display = "none";
+            price10.style.display = "none";
+            price11.style.display = "none";
+            price12.style.display = "none";
         } else if (serviceId == "learn10") {
             infoTitle.innerHTML = allServices.titles.energy;
             infoDescrip.innerHTML = allServices.descriptions.energy;
+            extra1.style.display = "none";
+            extra2.style.display = "none";
+            extra3.style.display = "none";
             servicePic.setAttribute("src", allServices.pictures.energy);
+            price.innerHTML = allServices.prices.energy;
+            price2.style.display = "none";
+            price3.style.display = "none";
+            price4.style.display = "none";
+            price5.style.display = "none";
+            price6.style.display = "none";
+            price7.style.display = "none";
+            price8.style.display = "none";
+            price9.style.display = "none";
+            price10.style.display = "none";
+            price11.style.display = "none";
+            price12.style.display = "none";
         } else if (serviceId == "learn11") {
             infoTitle.innerHTML = allServices.titles.treat;
             infoDescrip.innerHTML = allServices.descriptions.treat;
+            extra1.style.display = "none";
+            extra2.style.display = "none";
+            extra3.style.display = "none";
             servicePic.setAttribute("src", allServices.pictures.treat);
-            price.innerHTML = allServices.prices.treat;
+            price.innerHTML = allServices.prices.consult;
+            price2.style.display = "none";
+            price3.style.display = "none";
+            price4.style.display = "none";
+            price5.style.display = "none";
+            price6.style.display = "none";
+            price7.style.display = "none";
+            price8.style.display = "none";
+            price9.style.display = "none";
+            price10.style.display = "none";
+            price11.style.display = "none";
+            price12.style.display = "none";
         }
 
         TweenMax.to(infoDiv, 1, { yPercent: 0, height: "75%", display: "block" }, 0.1);
@@ -272,17 +457,41 @@ document.addEventListener("DOMContentLoaded", function(event) {
         TweenMax.to(infoBox, 1, { yPercent: 0, height: 0, display: "none" }, 0.1);
         TweenMax.to(".allServices", 1, { filter: "opacity(1)" }, 0.1);
 
-        infoTitle.innerHTML = ""
-        infoTitle2.innerHTML = ""
-        infoTitle3.innerHTML = ""
-        infoTitle4.innerHTML = ""
-        infoDescrip.innerHTML = ""
-        servicePic.setAttribute("src", "")
-        servicePic2.setAttribute("src", "")
-        servicePic3.setAttribute("src", "")
-        servicePic4.setAttribute("src", "")
-        price.innerHTML = ""
-        price2.innerHTML = ""
-        price3.innerHTML = ""
+        infoTitle.innerHTML = "";
+        infoTitle2.innerHTML = "";
+        infoTitle3.innerHTML = "";
+        infoTitle4.innerHTML = "";
+        infoDescrip.innerHTML = "";
+        extra1.style.display = "unset";
+        extra2.style.display = "unset";
+        extra3.style.display = "unset";
+        servicePic.setAttribute("src", "");
+        servicePic2.setAttribute("src", "");
+        servicePic3.setAttribute("src", "");
+        servicePic4.setAttribute("src", "");
+        price.innerHTML = "";
+        price2.innerHTML = "";
+        price3.innerHTML = "";
+        price4.innerHTML = "";
+        price5.innerHTML = "";
+        price6.innerHTML = "";
+        price7.innerHTML = "";
+        price8.innerHTML = "";
+        price9.innerHTML = "";
+        price10.innerHTML = "";
+        price11.innerHTML = "";
+        price12.innerHTML = "";
+        price2.style.display = "unset";
+        price3.style.display = "unset";
+        price4.style.display = "unset";
+        price5.style.display = "unset";
+        price6.style.display = "unset";
+        price7.style.display = "unset";
+        price8.style.display = "unset";
+        price9.style.display = "unset";
+        price10.style.display = "unset";
+        price11.style.display = "unset";
+        price12.style.display = "unset";
+        note.innerHTML = "";
     }
 });
