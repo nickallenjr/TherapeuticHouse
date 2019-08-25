@@ -295,9 +295,9 @@ div#navi a {
     color: #ffffff;
 }
 
-.aboutBox2 {
+/* .aboutBox2 {
     height: 815px;
-}
+} */
 
 .aboutWords {
     font-family: "Playfair Display", serif;
@@ -318,10 +318,10 @@ div#navi a {
 .daniName {
     font-family: "Parisienne", cursive;
     position: relative;
-    left: -140px;
+    /* left: -140px; */
     font-size: 90px;
     color: #B47EB3;
-    top: -50px;
+    /* top: -50px; */
 }
 
 .aboutImg {
@@ -476,7 +476,7 @@ div#navi a {
     }
     .daniName {
         top: 0px;
-        left: -110px;
+        left: -20px;
         text-align: center;
     }
     .infoGrid {

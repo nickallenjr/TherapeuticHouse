@@ -82,7 +82,7 @@ app.post('/order', [
         <h3>Order Details</h3>
         <ul style="list-style-type:none">
             ${itemsOrdered.map(item => {
-               return `<li>${item.name} qty. ${!(item.qty) ? 1 : item.qty}</li>`
+               return `<li>${item.name}     qty. ${!(item.qty) ? 1 : item.qty}</li>`
             }).join("")}
         </ul>
     `;

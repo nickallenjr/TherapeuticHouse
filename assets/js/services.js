@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 ship: "*Shipping $5.49"
             },
             chakra: "1 HOUR CHAKRA SESSION: $75",
-            teas: "Three 2oz JARS $15",
+            teas: "Three 2OZ JARS $15",
             reflex: {
                 price: "1 HOUR FOOT REFLEXOLOGY SESSION: $65",
                 price2: "1 HOUR HAND REFLEXOLOGY SESSION: $45"
