@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     //do work	
     const nav = document.getElementById("navi");
 
+    //On scroll change header background
     window.addEventListener('scroll', function() {
         const winTop = window.pageYOffset
 
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
     })
 
+    //Animation of nav links
     let mousedOver = function(navlink, eachlink) {
         let link = document.getElementById(navlink);
 
@@ -82,22 +84,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
         confirmNumber = document.getElementById("confirmNumber"),
         exBtn = document.getElementById("xBtn");
 
-    let formArray;
-    let formData = {};
-    let finalFormObj = {};
-    let totalItems = 0;
-    let quantityHolderArray = [];
-    let nonQuantityHolArray = [];
-    let quantitySelectArray = [];
-    let nonQuantitySelArray = [];
-
+    let formArray,
+        formData = {},
+        quantityHolderArray = [],
+        nonQuantityHolArray = [],
+        quantitySelectArray = [];
+        
     //Open modal and gather info button click
     formBtn.addEventListener("click", function(event) {
         event.preventDefault();
-
+        
+        //Loops through form and grabs inputs and checkbox selections
         formArray = serializeArray(form);
         console.log(formArray);
-
+        
+        //Populate formData object with input fields for name email and phone #
         formData.firstName = formArray[0].value;
         formData.lastName = formArray[1].value;
         formData.email = formArray[2].value;
@@ -178,19 +179,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
     //If clicking the X on modal
     exBtn.addEventListener("click", function(event) {
         event.preventDefault();
-
+        //Clear services selected and uncheck checkboxes
         quantityHolderArray = [];
         quantitySelectArray = [];
         nonQuantityHolArray = [];
-        nonQuantitySelArray = [];
         $(".input-group").remove();
-        $('input[type="checkbox"]:checked').prop('checked', false);
+        //$('input[type="checkbox"]:checked').prop('checked', false);
     })
 
-    //Confirm info and send mail button
+    //Puts services selected into array first then add to object
     placeOrderBtn.addEventListener("click", function(event) {
  
-        //Grab quantities to add to object below
+        //If only quantity based services are selected
         if(nonQuantityHolArray.length === 0) {
             for (let j = 0; j < quantityHolderArray.length; j++) {
                 let tempoObj = {};
@@ -198,15 +198,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 tempoObj.name = document.getElementById(`inputGroupSelectLabel${j}`).innerHTML;
                 quantitySelectArray.push(tempoObj);
             }
-            totalItems = quantityHolderArray.length;
-        }else if(quantityHolderArray.length === 0) {
+        }else if(quantityHolderArray.length === 0) { //If only non quantity based services are selected
             for (let k = 0; k < nonQuantityHolArray.length; k++) {
                 let tempObj = {};
                 tempObj.name = document.getElementById(`inputGroupSelectLabel0${k}`).innerHTML;
                 quantitySelectArray.push(tempObj);
             }
-            totalItems = nonQuantityHolArray.length;
-        }else {
+        }else {//If both quantity and non quantity based services are selected
             for (let j = 0; j < quantityHolderArray.length; j++) {
                 let tempoObj = {};
                 tempoObj.qty = $(`#inputGroupSelect${j}`).val();
@@ -219,18 +217,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 tempObj.name = document.getElementById(`inputGroupSelectLabel0${k}`).innerHTML;
                 quantitySelectArray.push(tempObj);
             }
-
-            totalItems = nonQuantityHolArray.length + quantityHolderArray.length;
         }
+
         console.log(quantitySelectArray);
-        console.log(totalItems);
 
         //Replaces formData object entries with quantities selected in modal
-        finalFormObj.firstName = formArray[0].value;
-        finalFormObj.lastName = formArray[1].value;
-        finalFormObj.email = formArray[2].value;
-        finalFormObj.phone = formArray[3].value;
-
         if (formArray.length > 4) {
             for (let i = 0; i < formArray.length; i++) {
                 for (let m = 0; m < quantitySelectArray.length; m++) {
@@ -249,7 +240,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         sendMail();
     })
 
-    //Function run on place button click
+    //Function run on place order button click to send email
     sendMail = async () => {
         firstNameInput.setAttribute("class", "form-control");
         lastNameInput.setAttribute("class", "form-control");
@@ -257,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         phoneInput.setAttribute("class", "form-control");
 
         //Localhost:5000 for local dev just /order/ for production
-        const request = await fetch("http://localhost:5000/order/", {
+        const request = await fetch("/order/", {
             method: "POST",
             body: JSON.stringify(formData),
             headers: {
@@ -266,7 +257,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
         })
 
         const response = await request.json();
-
+        
+        //If Http success clear input fields and uncheck checkboxes
+        //If Http failure clear selection and empty input-group modal
         for (let j = 0; j < 4; j++) {
             if (response.success) {
                 hiddenInput.setAttribute("class", "is-valid form-control");
@@ -275,13 +268,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 emailInput.value = "";
                 phoneInput.value = "";
                 $('input[type="checkbox"]:checked').prop('checked', false);
-                totalItems = 0;
             } else if (response.validate[j].param === "firstName") {
                 firstNameInput.setAttribute("class", "is-invalid form-control");
                 quantityHolderArray = [];
                 quantitySelectArray = [];
                 nonQuantityHolArray = [];
-                nonQuantitySelArray = [];
                 $(".input-group").remove();
                 $('input[type="checkbox"]:checked').prop('checked',false);
                 eraseObj();
@@ -290,7 +281,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 quantityHolderArray = [];
                 quantitySelectArray = [];
                 nonQuantityHolArray = [];
-                nonQuantitySelArray = [];
                 $(".input-group").remove();
                 $('input[type="checkbox"]:checked').prop('checked',false);
                 eraseObj();
@@ -299,7 +289,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 quantityHolderArray = [];
                 quantitySelectArray = [];
                 nonQuantityHolArray = [];
-                nonQuantitySelArray = [];
                 $(".input-group").remove();
                 $('input[type="checkbox"]:checked').prop('checked',false);
                 eraseObj();
@@ -308,7 +297,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 quantityHolderArray = [];
                 quantitySelectArray = [];
                 nonQuantityHolArray = [];
-                nonQuantitySelArray = [];
                 $(".input-group").remove();
                 $('input[type="checkbox"]:checked').prop('checked',false);
                 eraseObj();
@@ -316,6 +304,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
     }
 
+    //Erase formData object
     eraseObj = () => {
         for (n = 0; n < formArray.length; n++) {
             delete formData[n]
