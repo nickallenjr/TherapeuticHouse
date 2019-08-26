@@ -222,7 +222,8 @@ div#navi a {
         top: 40px;
     }
     #pics {
-        width: 90%
+        width: 90%;
+        height: 770px;
     }
     .meetUs {
         display: none !important;
@@ -265,8 +266,9 @@ div#navi a {
     margin-left: auto;
     margin-right: auto;
     background: url("../images/IMG_6625.jpg");
-    background-position: top;
+    background-position: -360px 0px;
     background-size: cover;
+    background-repeat: no-repeat;
     height: 100%;
 }
 
@@ -318,10 +320,10 @@ div#navi a {
 .daniName {
     font-family: "Parisienne", cursive;
     position: relative;
-    /* left: -140px; */
+    left: -140px;
     font-size: 90px;
     color: #B47EB3;
-    /* top: -50px; */
+    top: -50px;
 }
 
 .aboutImg {
@@ -476,12 +478,14 @@ div#navi a {
     }
     .daniName {
         top: 0px;
-        left: -20px;
+        left: -110px;
         text-align: center;
     }
     .infoGrid {
         grid-template-columns: 20% 60% 20%;
-        height: -webkit-fill-available;
+    }
+    .aboutBox1 {
+        height: 100%;
     }
     .jobTitle {
         font-size: 40px
@@ -500,6 +504,13 @@ div#navi a {
     }
     .copyright {
         grid-column: 1 / 4;
+    }
+}
+
+@media only screen and (min-width:1050px ) {
+    .meetUs {
+        display: block !important;
+        background-position: top;
     }
 }
 
