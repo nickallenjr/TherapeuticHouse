@@ -258,8 +258,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         const response = await request.json();
         
-        //If Http success clear input fields and uncheck checkboxes
-        //If Http failure clear selection and empty input-group modal
+        //If HTTP success clear input fields and uncheck checkboxes
+        //If HTTP failure clear selection and empty input-group modal
         for (let j = 0; j < 4; j++) {
             if (response.success) {
                 hiddenInput.setAttribute("class", "is-valid form-control");
