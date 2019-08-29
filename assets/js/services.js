@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             candle: "40 MIN EAR CANDLING SESSION: $40",
             consult: "ONE TREATMENT PLAN & THREE 40 MINUTE CONSULTATIONS: $60",
             energy: "ENERGY CLEANSING SESSION: $70",
-            birth: "SUGGESTED GUIDLINE & TWO 45 MINUTE CONSULTATIONS: $50",
+            birth: "SUGGESTED GUIDELINE & TWO 45 MINUTE CONSULTATIONS: $50",
             feng: "FENG SHUI SESSION: $60",
             therapy: "40 MINUTE MAGNET THERAPY SESSION: $50"
         },
