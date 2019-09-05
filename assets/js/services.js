@@ -55,7 +55,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 all: "LHAMO FEMININE HERBAL PADS",
                 overnight: "LHAMO FEMININE OVERNIGHT PADS",
                 daily: "LHAMO FEMININE DAILY PADS",
-                panty: "LHAMO FEMININE PANTILINER PADS"
+                panty: "LHAMO FEMININE PANTILINER PADS",
+                heavy: "LHAMO FEMININE HEAVY LONG PADS"
             },
             chakra: "CHAKRA ALIGNMENT",
             reflex: "FOOT / HAND REFLEXOLOGY",
@@ -73,7 +74,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 all: "./images/IMG_6512.jpg",
                 overnight: "./images/IMG_6510.jpg",
                 panty: "./images/IMG_6508.jpg",
-                daily: "./images/IMG_6513.jpg"
+                daily: "./images/IMG_6513.jpg",
+                heavy: ""
             },
             chakra: "./images/183595.jpg",
             reflex: "./images/IMG_7549.jpeg",
@@ -92,16 +94,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 overnight: "",
                 daily: "",
                 panty: "",
+                heavy: ""
             },
             chakra: "Chakras are spinning wheels of energy and are aligned starting at the base of your spine and move up to the crown of your head. They regulate the energy flow of your body. Depending on which chakra(s) are blocked you may experience symptoms such as low energy, being emotional, feeling stuck/unmotivated, to name few. The benefits range from removing bad energy from the body, unblocks the blockages that could be causing discomfort or pain, and allows energy to flow freely. Remove any blockages that you have to get your energy flowing again. Allow your 7 major chakras to operate holistically creating balance in your life.",
-            reflex: "Magnetism has become a means for many people who are seeking relief for nagging pain. Applying magnetism to the hands and feet promotes increased blood flow and oxygen levels to the magnetized area, aligning of cells in the magnetic field.",
+            reflex: "Magnetism has become a means for many people who are seeking relief for nagging pain. Applying magnetism to the hands and feet promotes increased blood flow and increased oxygen levels to the Magnetized area. This movement in the body allows the cells to align to the magnetic field.",
             magnet: "Magnetized water activates, cleanses, and detoxifies every part of the body. Drinking magnetized water influences the autonomic nervous system and the toxic deposits within the connective tissues of the body. The body is made up of 70% water, replenish it with water that will assist in the body’s natural way of healing.",
-            candle: "Ear candling contributes to a greater sense of well-being as well as enhanced physical and mental health. It removes unwanted ear wax, impurities and toxins from the ear. By lighting the beeswax candle, a gentle suction is created and vacuum draws the wax and impurities from the ear and produces relief.",
-            therapy: "Magnetic therapy is an alternative medical practice that uses static (i.e. unmoving) magnets to alleviate pain and other health concerns. So-called therapeutic magnets are typically integrated into bracelets, rings, or shoe inserts, though therapeutic magnetic mattresses and clothing are also on the market.",
-            teas: "Our selection of herbal teas includes a wide array of naturally caffeine-free teas, also called tisanes, including pure rooibos, mint, chamomile, hibiscus, rose tea and a variety of herbal tea blends. Many herbal teas are known for having medicinal qualities, such as calming, throat soothing, and sleepy teas. If you would like to requesta a special tea please contact us so we can accommodate your specific needs.",
-            feng: "a system of laws considered to govern spatial arrangement and orientation in relation to the flow of energy (qi), and whose favorable or unfavorable effects are taken into account when siting and designing buildings",
+            candle: "Ear candling contributes to a greater sense of well-being as well as enhanced physical and mental health. It removes unwanted ear wax, impurities and toxins from the ear. By lighting the beeswax candle, a gentle suction is created and vacuum draws the wax and impurities from the ear and produces relief. For those with severe sinus issues, wax build up, and drainage we recommend multiple ear candling at one time to provide immediate relief.",
+            therapy: "Magnetic therapy is an alternative medical practice that uses static (i.e. unmoving) magnets to alleviate pain and other health concerns. Magnets are placed directly on the area of the body that is causing issues and pain. Magnets can’t be applied to pregnant women, people who use electrical implants, metal, steel, pacemakers, defibrillators, or insulin pumps.",
+            teas: "Our selection of herbal teas includes a wide array of naturally caffeine-free teas, also called tisanes, including pure rooibos, mint, chamomile, hibiscus, rose tea and a variety of herbal tea blends. Many herbal teas are known for having medicinal qualities, such as calming, throat soothing, and sleepy teas. If you would like to request a special tea please contact us so we can accommodate your specific needs.",
+            feng: "A system of laws considered to govern spatial arrangement and orientation in relation to the flow of energy (qi), and whose favorable or unfavorable effects are taken into account when buildings are designed. We believe the same details in how things are positioned and placed in buildings should also be in the home or areas that we frequently occupy.",
             birth: "As a woman we should have the ability to birth our babies in the comfort of our own space without being hassled by indifferent nurses, doctors, and people. Birthing is a natural thing and should be honored as such. Before making a decision make sure you take the time to research all your choices to make sure it fits your desires. We can help you reach your goal whether it's water birth, home birth, birthing house, incorporating a midwife and/or doula, and/or including natural herbs. This service includes a suggested guideline and two 45 minute consultations.",
-            energy: "Toxic energy from arguments or illness can accumulate in shared spaces such as living rooms, kitchens and dens. Your home can be clean and organized but still have a heavy feeling. Even if you’re not a trained Zen master, the subtle frequencies of energy can be felt if you pay attention. A cleansed and energized room should feel light, fresh, and inviting when you enter. A cleansed and energized room should feel light, fresh, and inviting when you enter. Like anything in life, getting rid of old or negative energy takes daily practice. This service is best for new beginnings, important meetings, and cleansing new spaces.",
+            energy: "Toxic energy from arguments or illness can accumulate in shared spaces such as living rooms, kitchens and dens. Your home can be clean and organized but still have a heavy feeling. Even if you’re not a trained Zen master, the subtle frequencies of energy can be felt if you pay attention. A cleansed and energized room should feel light, fresh, and inviting when you enter. Like anything in life, getting rid of old or negative energy takes daily practice. This service is best for new beginnings, important meetings, and cleansing new spaces.",
             treat: "We understand that life is hectic and we won’t be able to physically see everyone so we offer various treatment plans. The plan depends on your alignment and which holistic approach you would like to take. This plan is more so for mothers seeking natural birthing options, problems with pms, menstruation, cysts, fibroids, stress, and depression. It includes three consultations"
         },
         prices: {
@@ -109,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 overnight: "Overnight Pads: $6.99",
                 daily: "Daily Pads: $6.99",
                 panty: "Pantiliner Pads: $5.99",
+                heavy: "Heavy Long Pads: $6.99",
                 starter: "Starter Set (2 Overnight, 1 Daily, & 1 Pantiliner) $24.99",
                 starter2: "Starter Set 2 (2 Daily, 1 Overnight, & 1 Pantiliner) $24.99",
                 starter3: "Starter 3 (2 Heavy Long, 1 Daily, & 1 Pantiliner) $26.99",
@@ -120,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 ship: "*Shipping $5.49"
             },
             chakra: "1 HOUR CHAKRA SESSION: $75",
-            teas: "Three 2oz JARS $15",
+            teas: "Three 2oz JARS $10",
             reflex: {
                 price: "1 HOUR FOOT REFLEXOLOGY SESSION: $65",
                 price2: "1 HOUR HAND REFLEXOLOGY SESSION: $45"
@@ -129,9 +133,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 price: "32oz $10",
                 price2: "640z $22",
                 price3: "1gal $32",
-                price4: "*Shipping $30 on liquids."
+                price4: "*Shipping $30 on liquids or you can request a drop off/pickup by sending an email."
             },
-            candle: "40 MIN EAR CANDLING SESSION: $40",
+            candle: {
+                price: "40 MIN EAR CANDLING SESSION: $40",
+                price2: "THREE EAR CANDLING SESSIONS: $75"
+            },
             consult: "ONE TREATMENT PLAN & THREE 40 MINUTE CONSULTATIONS: $60",
             energy: "ENERGY CLEANSING SESSION: $70",
             birth: "SUGGESTED GUIDELINE & TWO 45 MINUTE CONSULTATIONS: $50",
@@ -244,8 +251,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
             extra1.style.display = "none";
             extra2.style.display = "none";
             extra3.style.display = "none";
-            price.innerHTML = allServices.prices.candle;
-            price2.style.display = "none";
+            price.innerHTML = allServices.prices.candle.price;
+            price2.innerHTML = allServices.prices.candle.price2;
             price3.style.display = "none";
             price4.style.display = "none";
             price5.style.display = "none";
@@ -271,14 +278,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
             price.innerHTML = allServices.prices.lhamo.daily;
             price2.innerHTML = allServices.prices.lhamo.overnight;
             price3.innerHTML = allServices.prices.lhamo.panty;
-            price4.innerHTML = allServices.prices.lhamo.starter;
-            price5.innerHTML = allServices.prices.lhamo.starter2;
-            price6.innerHTML = allServices.prices.lhamo.starter3;
-            price7.innerHTML = allServices.prices.lhamo.starter4;
-            price8.innerHTML = allServices.prices.lhamo.deluxe;
-            price9.innerHTML = allServices.prices.lhamo.deluxe2;
-            price10.innerHTML = allServices.prices.lhamo.mvp;
-            price11.innerHTML = allServices.prices.lhamo.mvp2;
+            price4.innerHTML = allServices.prices.lhamo.heavy;
+            price5.innerHTML = allServices.prices.lhamo.starter;
+            price6.innerHTML = allServices.prices.lhamo.starter2;
+            price7.innerHTML = allServices.prices.lhamo.starter3;
+            price8.innerHTML = allServices.prices.lhamo.starter4;
+            price9.innerHTML = allServices.prices.lhamo.deluxe;
+            price10.innerHTML = allServices.prices.lhamo.deluxe2;
+            price11.innerHTML = allServices.prices.lhamo.mvp;
+            price12.innerHTML = allServices.prices.lhamo.mvp2;
             note.innerHTML = allServices.prices.lhamo.ship;
         } else if (serviceId == "learn6") {
             infoTitle.innerHTML = allServices.titles.therapy;
