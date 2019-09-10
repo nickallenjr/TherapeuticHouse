@@ -379,7 +379,9 @@ div#navi a {
 }
 
 .carousel-control-prev-icon {
-    background-image: url("../images/iconfinder_29-Arrow-Left_4892279.svg")
+    background-image: url("../images/iconfinder_29-Arrow-Left_4892279.svg");
+    height: 100px;
+    width: 100px;
 }
 
 .carousel-control-next {
@@ -388,6 +390,8 @@ div#navi a {
 
 .carousel-control-next-icon {
     background-image: url("../images/iconfinder_30-Arrow-Right_4892280.svg");
+    height: 100px;
+    width: 100px;
 }
 
 /*Code for homepage content*/
@@ -480,19 +484,27 @@ div#navi a {
     }
 
     .carousel-control-next {
-        right: 100px;
-        top: 295px;
+        right: 120px;
+        top: 320px;
     }
 
     .carousel-control-prev {
         left: 100px;
-        top: 295px;
+        top: 320px;
+    }
+
+    #useArrowsText {
+        text-align: center;
+        position: relative;
+        top: -60px;
+        font-family: "Lato", sans-serif;
+        font-size: 25px;
     }
 }
 
 @media only screen and (min-width:768px) {
     .mainDiv {
-        grid-row-gap: 100px;
+        grid-row-gap: 60px;
     }
     #content {
         grid-template-columns: auto;
@@ -529,11 +541,15 @@ div#navi a {
         left: -60px;
         top:0
     }
+
+    #useArrowsText {
+        top: -60px;  
+    }
 }
 
 @media only screen and (min-width:1024px) {
     .mainDiv {
-        grid-row-gap: 200px;
+        grid-row-gap: 40px;
     }
     #content {
         display: grid;
@@ -575,6 +591,10 @@ div#navi a {
     .carousel-control-prev {
         left: -60px;
         top: 0
+    }
+
+    #useArrowsText {
+        top: -30px;
     }
 }
 
