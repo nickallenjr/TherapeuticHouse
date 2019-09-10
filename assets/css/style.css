@@ -969,7 +969,7 @@ div.aboveDivButton button {
         width: 80%;
     }
     iframe {
-        width: auto;
+        width: 100%;
         margin: auto;
     }
     div.loading {
@@ -991,7 +991,7 @@ div.aboveDivButton button {
 @media only screen and (min-width:768px) {
     iframe {
         margin: auto;
-        width: auto
+        width: 100%;
     }
 }
 
