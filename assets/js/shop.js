@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         hiddenInputInvalid.setAttribute("class", "form-control");
 
         //Localhost:5000 for local dev just /order/ for production
-        const request = await fetch("http://localhost:5000/order/", {
+        const request = await fetch("/order/", {
             method: "POST",
             body: JSON.stringify(formData),
             headers: {
