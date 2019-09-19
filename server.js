@@ -53,7 +53,7 @@ db.once("open", function() {
 //Route for sending order emails to client
 app.post('/order', [
     check("firstName").isAlpha().withMessage("Your name must only conatin letters"),
-    check("lastName").isAlpha().withMessage("Your name must only conatin letters"),
+    check("lastName").matches(/^[a-zA-Z '.-]+$/).withMessage("Your last name may only include ''', '.', or '-'"),
     check("email").isEmail().withMessage("Please enter a valid email address."),
     check("phone").isMobilePhone(["en-US"]).withMessage("Please enter a valid phone number.")
 ], cors(), function(req, res) {

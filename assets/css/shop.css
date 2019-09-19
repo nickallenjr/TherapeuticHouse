@@ -209,14 +209,23 @@ div#header button {
     visibility: hidden;
 }
 
+#hiddenInputInvalid {
+    visibility: hidden;
+}
+
 .valid-feedback {
     margin: auto;
     width: 90%;
     text-align: center;
 }
 
-/*Footer*/
+.invalid-feedback {
+    margin: auto;
+    width: 90%;
+    text-align: center;
+}
 
+/*Footer*/
 .grid-container10 {
     display: -ms-grid;
     display: grid;

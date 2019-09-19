@@ -59,7 +59,7 @@
                 <div class="col-sm-12">
                     <input name="lastname" type="text" class="form-control" id="inputLastName" placeholder="Last Name" required>
                     <div class="invalid-feedback">
-                        Please enter your name.
+                        Your last name may only include letters, ' , . , and/or -
                     </div>
                 </div>
             </div>
@@ -264,6 +264,10 @@
                 <input id="hiddenInput" type="text" class="form-control">
                 <div class="valid-feedback">
                     Your order has been placed. You'll receive an invoice via email.
+                </div>
+                <input id="hiddenInputInvalid" type="text" class="form-control">
+                <div class="invalid-feedback">
+                    Your order was not placed. Please correct the highlight field(s) above.
                 </div>
             </div>
         </form>
