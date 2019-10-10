@@ -473,6 +473,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         infoTitle2.innerHTML = "";
         infoTitle3.innerHTML = "";
         infoTitle4.innerHTML = "";
+        infoTitle5.innerHTML = "";
         infoDescrip.innerHTML = "";
         extra1.style.display = "unset";
         extra2.style.display = "unset";
