@@ -160,7 +160,9 @@ div#navi p {
 }
 
 div#navi a {
-    margin: auto;
+    margin-top: auto;
+    margin-left: auto;
+    margin-bottom: auto;
     text-decoration: none;
     font-family: "Great Vibes", cursive;
     font-size: 2em;

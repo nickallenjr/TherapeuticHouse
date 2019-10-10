@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 overnight: "./images/IMG_6510.jpg",
                 panty: "./images/IMG_6508.jpg",
                 daily: "./images/IMG_6513.jpg",
-                heavy: ""
+                heavy: "./images/IMG-8465.JPG"
             },
             chakra: "./images/183595.jpg",
             reflex: "./images/IMG_7549.jpeg",
@@ -158,6 +158,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     let servicePic3 = document.getElementById("serviceImg3");
     let infoTitle4 = document.getElementById("infoTitle4");
     let servicePic4 = document.getElementById("serviceImg4");
+    let infoTitle5 = document.getElementById("infoTitle5");
+    let servicePic5 = document.getElementById("serviceImg5");
     let infoDescrip = document.getElementById("infoDescrip");
     let extra1 = document.getElementById("extraInfo1");
     let extra2 = document.getElementById("extraInfo2");
@@ -270,11 +272,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
             infoTitle2.innerHTML = allServices.titles.lhamo.daily;
             infoTitle3.innerHTML = allServices.titles.lhamo.overnight;
             infoTitle4.innerHTML = allServices.titles.lhamo.panty;
+            infoTitle5.innerHTML = allServices.titles.lhamo.heavy;
             infoDescrip.innerHTML = allServices.descriptions.lhamo.main;
             servicePic.setAttribute("src", allServices.pictures.lhamo.all);
             servicePic2.setAttribute("src", allServices.pictures.lhamo.daily);
             servicePic3.setAttribute("src", allServices.pictures.lhamo.overnight);
             servicePic4.setAttribute("src", allServices.pictures.lhamo.panty);
+            servicePic5.setAttribute("src", allServices.pictures.lhamo.heavy);
             price.innerHTML = allServices.prices.lhamo.daily;
             price2.innerHTML = allServices.prices.lhamo.overnight;
             price3.innerHTML = allServices.prices.lhamo.panty;
@@ -477,6 +481,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         servicePic2.setAttribute("src", "");
         servicePic3.setAttribute("src", "");
         servicePic4.setAttribute("src", "");
+        servicePic5.setAttribute("src", "");
         price.innerHTML = "";
         price2.innerHTML = "";
         price3.innerHTML = "";
