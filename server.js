@@ -60,7 +60,6 @@ app.post('/order', [
 ], cors(), function(req, res) {
 
     const objToArray = Object.entries(req.body);
-    console.log(objToArray);
 
     const itemsOrdered = [];
 
