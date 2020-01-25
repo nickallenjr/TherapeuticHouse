@@ -39,7 +39,7 @@ app.use(bodyParser.json());
 // Database configuration with mongoose
 mongoose.Promise = Promise;
 
-mongoose.connect("mongodb://localhost/therapeutichouse"), { useMongoClient: true, useNewUrlParser: true };
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/therapeutichouse"), { useMongoClient: true, useNewUrlParser: true };
 var db = mongoose.connection;
 
 db.on("error", function(error) {
