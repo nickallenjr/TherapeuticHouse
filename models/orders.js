@@ -14,31 +14,19 @@ const orderSchema = new Schema({
     },
 
     email: {
-        imageType: {
-            type: String,
-            required: true
-        },
-        imagePath: {
-            type: String,
-            required: true
-        }
-    },
-
-    date: {
-        type: Date,
-        default: Date.now,
-        required: true,
-    },
-
-    phone: {
         type: String,
         required: true
     },
-
-    order: {
-        type: Array,
+    
+    phone: {
+        type: Number,
         required: true
-    }
+    },
+
+    itemsOrdered: {
+        type: Array,
+        required: true,
+    },
 })
 
 const Order = mongoose.model("Order", orderSchema);
