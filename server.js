@@ -11,7 +11,8 @@ const express = require("express"),
     key = require("./nodemailerkeys.json");
 
 
-const Event = require("./models/events.js")
+const Event = require("./models/events.js");
+const Order = require("./models/orders.js");
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -53,7 +54,7 @@ db.once("open", function() {
 //Route for sending order emails to client
 app.post('/order', [
     check("firstName").isAlpha().withMessage("Your name must only conatin letters"),
-    check("lastName").matches(/^[a-zA-Z '.-]+$/).withMessage("Your last name may only include ''', '.', or '-'"),
+    check("lastName").isAlpha().withMessage("Your name must only conatin letters"),
     check("email").isEmail().withMessage("Please enter a valid email address."),
     check("phone").isMobilePhone(["en-US"]).withMessage("Please enter a valid phone number.")
 ], cors(), function(req, res) {
@@ -65,11 +66,10 @@ app.post('/order', [
 
     //Put req.body entries that starts with numbers into an array for Array.mapping line 85
     for (let i = 0; i < objToArray.length; i++) {
-        console.log(isNaN(objToArray[i][0]))
         isNaN(objToArray[i][0]) ? "dont" : itemsOrdered.push(objToArray[i][1])
     }
     
-    console.log(itemsOrdered); 
+    console.log("items ordered--", itemsOrdered); 
     
     const orderEmailBody = `
         <h2>You have a new order placed</h2> 
@@ -86,6 +86,35 @@ app.post('/order', [
             }).join("")}
         </ul>
     `;
+
+    let itemsOrderedWithQty = [];
+    
+    itemsOrdered.forEach(item => {
+        if(item.qty === undefined) {
+            item.qty = '1';
+            itemsOrderedWithQty.push(item);
+        }else {
+            itemsOrderedWithQty.push(item);
+        }
+    })
+
+    let orderEntry = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        phone: req.body.phone,
+        itemsOrdered: itemsOrderedWithQty
+    }
+
+    let newOrder = new Order(orderEntry);
+
+    newOrder.save(function(err, doc) {
+        if(err) {
+            console.log(err);
+        }else {
+            console.log(doc);
+        }
+    })
 
     //Check for errors and package them and send to client-side
     const errors = validationResult(req);
@@ -181,32 +210,33 @@ app.post('/contact', [
     }
 });
 
-app.get("/upcomingevents", cors(), function(req, res) {
-    Event.find().sort({ _id: -1 }).limit(1).exec(function(err, doc) {
-        if (err) {
-            throw err
-        }
-        res.send(doc);
 
-    })
-})
+// app.get("/upcomingevents", cors(), function(req, res) {
+//     Event.find().sort({ _id: -1 }).limit(1).exec(function(err, doc) {
+//         if (err) {
+//             throw err
+//         }
+//         res.send(doc);
 
-app.get("/pastevents", cors(), function(req, res) {
-    Event.count().exec(function(error, num) {
-        if (error) throw error;
-        var number = num;
-        console.log(number)
+//     })
+// })
 
-        Event.find().sort({ _id: 1 }).limit(number - 1).exec(function(err, docs) {
-            if (err) {
-                throw err
-            }
-            res.send(docs)
-        })
+// app.get("/pastevents", cors(), function(req, res) {
+//     Event.count().exec(function(error, num) {
+//         if (error) throw error;
+//         var number = num;
+//         console.log(number)
 
-    })
+//         Event.find().sort({ _id: 1 }).limit(number - 1).exec(function(err, docs) {
+//             if (err) {
+//                 throw err
+//             }
+//             res.send(docs)
+//         })
 
-})
+//     })
+
+// })
 
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
