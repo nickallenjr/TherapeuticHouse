@@ -79,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         emailInput = document.getElementById("inputEmail"),
         phoneInput = document.getElementById("inputPhone"),
         hiddenInput = document.getElementById("hiddenInput"),
-        hiddenInputInvalid = document.getElementById("hiddenInputInvalid"),
         confirmName = document.getElementById("confirmName")
         confirmEmail = document.getElementById("confirmEmail")
         confirmNumber = document.getElementById("confirmNumber"),
@@ -246,9 +245,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         firstNameInput.setAttribute("class", "form-control");
         lastNameInput.setAttribute("class", "form-control");
         emailInput.setAttribute("class", "form-control");
-        hiddenInput.setAttribute("class", "form-control");
         phoneInput.setAttribute("class", "form-control");
-        hiddenInputInvalid.setAttribute("class", "form-control");
 
         //Localhost:5000 for local dev just /order/ for production
         const request = await fetch("/order/", {
@@ -276,7 +273,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 quantityHolderArray = [];
                 quantitySelectArray = [];
                 nonQuantityHolArray = [];
-                hiddenInputInvalid.setAttribute("class", "is-invalid form-control");
                 $(".input-group").remove();
                 $('input[type="checkbox"]:checked').prop('checked',false);
                 eraseObj();
@@ -285,7 +281,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 quantityHolderArray = [];
                 quantitySelectArray = [];
                 nonQuantityHolArray = [];
-                hiddenInputInvalid.setAttribute("class", "is-invalid form-control");
                 $(".input-group").remove();
                 $('input[type="checkbox"]:checked').prop('checked',false);
                 eraseObj();
@@ -294,7 +289,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 quantityHolderArray = [];
                 quantitySelectArray = [];
                 nonQuantityHolArray = [];
-                hiddenInputInvalid.setAttribute("class", "is-invalid form-control");
                 $(".input-group").remove();
                 $('input[type="checkbox"]:checked').prop('checked',false);
                 eraseObj();
@@ -303,7 +297,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 quantityHolderArray = [];
                 quantitySelectArray = [];
                 nonQuantityHolArray = [];
-                hiddenInputInvalid.setAttribute("class", "is-invalid form-control");
                 $(".input-group").remove();
                 $('input[type="checkbox"]:checked').prop('checked',false);
                 eraseObj();
