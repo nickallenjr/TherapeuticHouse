@@ -1,7 +1,10 @@
 const express = require("express"),
     fs = require('fs'),
     bodyParser = require("body-parser"),
-    { check, validationResult } = require("express-validator/check"),
+    {
+        check,
+        validationResult
+    } = require("express-validator/check"),
     passport = require("passport"),
     mongoose = require("mongoose"),
     cors = require("cors"),
@@ -39,15 +42,18 @@ app.use(bodyParser.json());
 // Database configuration with mongoose
 mongoose.Promise = Promise;
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/therapeutichouse"), { useMongoClient: true, useNewUrlParser: true };
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/therapeutichouse"), {
+    useMongoClient: true,
+    useNewUrlParser: true
+};
 var db = mongoose.connection;
 
-db.on("error", function(error) {
+db.on("error", function (error) {
     console.log("Database Error:", error);
 });
 
 // Once logged in to the db through mongoose, log a success message
-db.once("open", function() {
+db.once("open", function () {
     console.log("Mongoose connection successful.");
 });
 
@@ -57,7 +63,7 @@ app.post('/order', [
     check("lastName").isAlpha().withMessage("Your name must only conatin letters"),
     check("email").isEmail().withMessage("Please enter a valid email address."),
     check("phone").isMobilePhone(["en-US"]).withMessage("Please enter a valid phone number.")
-], cors(), function(req, res) {
+], cors(), function (req, res) {
 
     const objToArray = Object.entries(req.body);
 
@@ -67,9 +73,9 @@ app.post('/order', [
     for (let i = 0; i < objToArray.length; i++) {
         isNaN(objToArray[i][0]) ? "dont" : itemsOrdered.push(objToArray[i][1])
     }
-    
-    console.log("items ordered--", itemsOrdered); 
-    
+
+    console.log("items ordered--", itemsOrdered);
+
     const orderEmailBody = `
         <h2>You have a new order placed</h2> 
         <h3>Contact Info</h3>
@@ -87,12 +93,12 @@ app.post('/order', [
     `;
 
     let itemsOrderedWithQty = [];
-    
+
     itemsOrdered.forEach(item => {
-        if(item.qty === undefined) {
+        if (item.qty === undefined) {
             item.qty = '1';
             itemsOrderedWithQty.push(item);
-        }else {
+        } else {
             itemsOrderedWithQty.push(item);
         }
     })
@@ -107,10 +113,10 @@ app.post('/order', [
 
     let newOrder = new Order(orderEntry);
 
-    newOrder.save(function(err, doc) {
-        if(err) {
+    newOrder.save(function (err, doc) {
+        if (err) {
             console.log(err);
-        }else {
+        } else {
             console.log(doc);
         }
     })
@@ -141,14 +147,16 @@ app.post('/order', [
             to: 'therapeutichouse@gmail.com',
             subject: `${req.body.firstName + " " + req.body.lastName} has placed an order!`,
             html: orderEmailBody
-          };
+        };
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
                 return console.log(error);
             }
             console.log('Message %s sent: %s', info.messageId, info.response);
         });
-        res.send({"success":"order placed"});
+        res.send({
+            "success": "order placed"
+        });
         res.end();
     }
 });
@@ -159,8 +167,10 @@ app.post('/contact', [
     check("name").matches(/^[a-zA-Z0-9_]+( [a-zA-Z0-9_]+)*$/).withMessage("Your name must only conatin letters"),
     check("name").contains(" ").withMessage("Please enter your first and last name."),
     check("email").isEmail().withMessage("Please enter a valid email address."),
-    check("message").isLength({min:20}).withMessage("Please enter a message.")
-], cors(), function(req, res) {
+    check("message").isLength({
+        min: 20
+    }).withMessage("Please enter a message.")
+], cors(), function (req, res) {
 
     console.log(req.body);
 
@@ -204,7 +214,9 @@ app.post('/contact', [
             }
             console.log('Message %s sent: %s', info.messageId, info.response);
         });
-        res.send({"success":"Your message was sent"});
+        res.send({
+            "success": "Your message was sent"
+        });
         res.end();
     }
 });
