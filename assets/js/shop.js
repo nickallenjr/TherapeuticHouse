@@ -120,6 +120,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
             else if (formArray[h].name.includes("Water")) {
                 quantityHolderArray.push(formArray[h]);
             }
+            else if (formArray[h].name.includes("Mask")) {
+                quantityHolderArray.push(formArray[h]);
+            }
             else {
                 nonQuantityHolArray.push(formArray[h]);
             }     
