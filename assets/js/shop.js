@@ -137,12 +137,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if(nonQuantityHolArray.length === 0){
             quantityHolderArray.map((item, index) => {
                 $("#quantityList").append(`<div class="input-group mb-3">
-                    <select class="custom-select col-sm-3" id="inputGroupSelect${index}">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
+                    <input class="custom-input col-sm-3" value="1" min="1" max="250" type="number" id="inputGroupSelect${index}" />
+                        
+                  
                     <div class="input-group-append">
                         <label class="input-group-text" id="inputGroupSelectLabel${index}" for="inputGroupSelect${index}">${item.name}</label>
                     </div>
@@ -159,12 +156,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }else {
             quantityHolderArray.map((item, index) => {
                 $("#quantityList").append(`<div class="input-group mb-3">
-                    <select class="custom-select col-sm-3" id="inputGroupSelect${index}">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
+                    <input class="custom-input col-sm-3" value="1" min="1" max="250" type="number" id="inputGroupSelect${index}" />
                     <div class="input-group-append">
                         <label class="input-group-text" id="inputGroupSelectLabel${index}" for="inputGroupSelect${index}">${item.name}</label>
                     </div>
@@ -230,6 +222,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 for (let m = 0; m < quantitySelectArray.length; m++) {
                     if (formArray[i].name === quantitySelectArray[m].name) {
                         formData[i] = quantitySelectArray[m];
+                        console.log('in form')
                     }
                 }
             }
