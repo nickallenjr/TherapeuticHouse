@@ -123,9 +123,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 ship: "*Shipping $5.49"
             },
             knmask: {
-                price: "1 MASK: $5.50",
-                price1: "10 MASK: $51",
-                price2: "50 MASK: $250"
+                price: "5 Mask: $40",
+                price2: "10 Mask: $80",
+                price3: "20 Mask: $160",
+                price4: "*Shipping $5.49"
             },
             chakra: "1 HOUR CHAKRA SESSION: $75",
             teas: "Three 2oz JARS: $15",
@@ -411,8 +412,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
             extra3.style.display = "none";
             servicePic.setAttribute("src", allServices.pictures.knmask);
             price.innerHTML = allServices.prices.knmask.price;
-            price2.innerHTML = allServices.prices.knmask.price1;
-            price3.innerHTML = allServices.prices.knmask.price2;
+            price2.innerHTML = allServices.prices.knmask.price2;
+            price3.innerHTML = allServices.prices.knmask.price3;
             price4.style.display = "none";
             price5.style.display = "none";
             price6.style.display = "none";
@@ -422,6 +423,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             price10.style.display = "none";
             price11.style.display = "none";
             price12.style.display = "none";
+            note.innerHTML = allServices.prices.knmask.price4;
         }
 
         TweenMax.to(infoDiv, 1, { yPercent: 0, height: "75%", display: "block" }, 0.1);
