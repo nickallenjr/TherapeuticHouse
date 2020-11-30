@@ -80,7 +80,7 @@ h1.title {
 }
 
 #header {
-    background-image: url("../images/IMG_6569-5modded.jpg");
+    background-image: url("../images/IMG_3983.jpg");
     height: 100%;
     width: 100%;
     background-repeat: no-repeat;
@@ -89,15 +89,15 @@ h1.title {
 
 @media only screen and (min-width:375px) {
     #header {
-        background-image: url("../images/IMG_6569-4modded.jpg");
+        background-image: url("../images/8Y6A0693_2.jpg");
         background-position: center;
     }
 }
 
 @media only screen and (min-width:768px) {
     #header {
-        background-image: url("../images/IMG_6569-5modded.jpg");
-        background-position: top;
+        background-image: url("../images/8Y6A0693_1.jpg");
+        background-position: center;
     }
 }
 
