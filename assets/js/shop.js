@@ -1,4 +1,4 @@
-/* Set the width of the side navigation to 250px */
+ /* Set the width of the side navigation to 250px */
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("hamburger").style.visibility = "hidden"
@@ -243,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         emailInput.setAttribute("class", "form-control");
         phoneInput.setAttribute("class", "form-control");
 
-        //Localhost:5000 for local dev just /order/ for production
+        //http://localhost:5000 for local dev just /order/ for production
         const request = await fetch("/order/", {
             method: "POST",
             body: JSON.stringify(formData),
