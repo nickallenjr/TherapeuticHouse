@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         phoneInput.setAttribute("class", "form-control");
 
         //http://localhost:5000 for local dev just /order/ for production
-        const request = await fetch("/order/", {
+        const request = await fetch("/api/order/", {
             method: "POST",
             body: JSON.stringify(formData),
             headers: {

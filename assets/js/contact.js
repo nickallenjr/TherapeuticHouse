@@ -62,7 +62,7 @@ sendMail = async() => {
 
     console.log(messageField.value)
 
-    const request = await fetch("/contact/", {
+    const request = await fetch("/api/contact/", {
         method: "POST",
         body: JSON.stringify({
             name: nameField.value,
