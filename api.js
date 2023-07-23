@@ -1,26 +1,28 @@
-import serverless from "serverless-http";
-import express, { Router } from "express";
-import fs from "require";
-import bodyParser from "body-parser";
-import mongoose from "mongoose";
-import cors from "cors";
-import logger from "morgan";
-import nodeMailer from "nodemailer";
-import pkg from 'express-validator';
-const {query, validationResult} = pkg
-// const fs = require('fs'),
-//     bodyParser = require("body-parser"),
-//     {
-//         check,
-//         validationResult
-//     } = require("express-validator/check"),
-//     passport = require("passport"),
-//     mongoose = require("mongoose"),
-//     cors = require("cors"),
-//     path = require("path"),
-//     logger = require("morgan"),
-//     nodeMailer = require("nodemailer"),
-//     key = require("./nodemailerkeys.json");
+// import serverless from "serverless-http";
+// import express, { Router } from "express";
+// // import fs from "require";
+// import bodyParser from "body-parser";
+// import mongoose from "mongoose";
+// import cors from "cors";
+// import logger from "morgan";
+// import nodeMailer from "nodemailer";
+// import check from 'express-validator';
+// import validationResult from "express-validator";
+const express = require("express"),
+    fs = require('fs'),
+    bodyParser = require("body-parser"),
+    {
+        check,
+        validationResult
+    } = require("express-validator/check"),
+    passport = require("passport"),
+    mongoose = require("mongoose"),
+    cors = require("cors"),
+    path = require("path"),
+    logger = require("morgan"),
+    nodeMailer = require("nodemailer"),
+    key = require("./nodemailerkeys.json");
+    serverless = require("serverless-http")
 
 
 // const Event = require("./models/events.js");
@@ -29,7 +31,7 @@ const {query, validationResult} = pkg
 // import { Order } from "./models/orders";
 
 const app = express();
-const router = Router()
+const router = express.Router()
 const port = process.env.PORT || 5000;
 
 app.use(express.static("assets"));
@@ -52,7 +54,7 @@ app.use(bodyParser.json());
 
 
 // Database configuration with mongoose
-mongoose.Promise = Promise;
+// mongoose.Promise = Promise;
 
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/therapeutichouse"), {
 //     useMongoClient: true,
@@ -75,10 +77,10 @@ mongoose.Promise = Promise;
 
 //Route for sending order emails to client
 router.post('/order', [
-    query("firstName").isAlpha().withMessage("Your name must only conatin letters"),
-    query("lastName").isAlpha().withMessage("Your name must only conatin letters"),
-    query("email").isEmail().withMessage("Please enter a valid email address."),
-    query("phone").isMobilePhone(["en-US"]).withMessage("Please enter a valid phone number.")
+    check("firstName", "Your name must only conatin letters").isAlpha(),
+    check("lastName", "Your name must only conatin letters").isAlpha(),
+    check("email", "Please enter a valid email address.").isEmail(),
+    check("phone", "Please enter a valid phone number.").isMobilePhone(["en-US"])
 ], cors(), function (req, res) {
 
     const objToArray = Object.entries(req.body);
@@ -180,12 +182,12 @@ router.post('/order', [
 
 //Route for contacting business owners
 router.post('/contact', [
-    query("name").matches(/^[a-zA-Z0-9_]+( [a-zA-Z0-9_]+)*$/).withMessage("Your name must only conatin letters"),
-    query("name").contains(" ").withMessage("Please enter your first and last name."),
-    query("email").isEmail().withMessage("Please enter a valid email address."),
-    query("message").isLength({
+    check("name", "Your name must only conatin letters").matches(/^[a-zA-Z0-9_]+( [a-zA-Z0-9_]+)*$/),
+    check("name", "Please enter your first and last name.").contains(" "),
+    check("email", "Please enter a valid email address.").isEmail(),
+    check("message", "Please enter a message.").isLength({
         min: 20
-    }).withMessage("Please enter a message.")
+    })
 ], cors(), function (req, res) {
 
     console.log(req.body);
@@ -239,4 +241,4 @@ router.post('/contact', [
 
 app.use('/api', router)
 
-export const handler = serverless(app)
+exports.handler = serverless(app)
