@@ -239,6 +239,6 @@ router.post('/contact', [
     }
 });
 
-app.use('/api', router)
+app.use('/api/', router)
 
 exports.handler = serverless(app)
