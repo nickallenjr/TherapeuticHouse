@@ -1,13 +1,4 @@
-// import serverless from "serverless-http";
-// import express, { Router } from "express";
-// // import fs from "require";
-// import bodyParser from "body-parser";
-// import mongoose from "mongoose";
-// import cors from "cors";
-// import logger from "morgan";
-// import nodeMailer from "nodemailer";
-// import check from 'express-validator';
-// import validationResult from "express-validator";
+
 const express = require("express"),
     fs = require('fs'),
     bodyParser = require("body-parser"),
@@ -22,13 +13,11 @@ const express = require("express"),
     logger = require("morgan"),
     nodeMailer = require("nodemailer"),
     key = require("./nodemailerkeys.json");
-    serverless = require("serverless-http")
+    serverless = require("serverless-http");
+    SMTPClient = require("emailjs")
 
 
-// const Event = require("./models/events.js");
-// import { Event } from "./models/events.js";
-// const Order = require("./models/orders.js");
-// import { Order } from "./models/orders";
+    
 
 const app = express();
 const router = express.Router()
@@ -42,38 +31,11 @@ const corsOptions = {
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
-// app.use(express.static("src"));
-
-// Use morgan and body parser with our app
 app.use(logger("dev"));
 app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(bodyParser.json());
-
-
-
-// Database configuration with mongoose
-// mongoose.Promise = Promise;
-
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/therapeutichouse"), {
-//     useMongoClient: true,
-//     useNewUrlParser: true
-// };
-// mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://Nicholas:XX6kWX3uEHtVvC2@cluster0.hhmti.mongodb.net/TherapeuticHouse?retryWrites=true&w=majority"), {
-//     useMongoClient: true,
-//     useNewUrlParser: true
-// };
-// var db = mongoose.connection;
-
-// db.on("error", function (error) {
-//     console.log("Database Error:", error);
-// });
-
-// // Once logged in to the db through mongoose, log a success message
-// db.once("open", function () {
-//     console.log("Mongoose connection successful.");
-// });
 
 //Route for sending order emails to client
 router.post('/order', [
@@ -81,7 +43,7 @@ router.post('/order', [
     check("lastName", "Your name must only conatin letters").isAlpha(),
     check("email", "Please enter a valid email address.").isEmail(),
     check("phone", "Please enter a valid phone number.").isMobilePhone(["en-US"])
-], cors(), function (req, res) {
+], cors(), async function (req, res) {
 
     const objToArray = Object.entries(req.body);
 
@@ -128,17 +90,7 @@ router.post('/order', [
         phone: req.body.phone,
         itemsOrdered: itemsOrderedWithQty
     }
-
-    // let newOrder = new Order(orderEntry);
-
-    // newOrder.save(function (err, doc) {
-    //     if (err) {
-    //         console.log(err);
-    //     } else {
-    //         console.log(doc);
-    //     }
-    // })
-
+    
     //Check for errors and package them and send to client-side
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -146,17 +98,23 @@ router.post('/order', [
             validate: errors.array()
         });
     } else {
-        let transporter = nodeMailer.createTransport({
+        // let transporter = nodeMailer.createTransport({
+        //     host: 'smtp.gmail.com',
+        //     port: 465,
+        //     secure: true,
+        //     auth: {
+        //         // should be replaced with real sender's account
+        //         user: 'therapeutichouse@gmail.com',
+        //         pass: 'sjexjdaevtlhaedm',
+        //         // serviceClient: key.client_id,
+        //         // privateKey: key.private_key
+        //     }
+        // });
+        const client = new SMTPClient({
+            user: 'therapeutichouse@gmail.com',
+            password: 'sjexjdaevtlhaedm',
             host: 'smtp.gmail.com',
-            port: 465,
-            secure: true,
-            auth: {
-                // should be replaced with real sender's account
-                user: 'therapeutichouse@gmail.com',
-                pass: 'sjexjdaevtlhaedm',
-                // serviceClient: key.client_id,
-                // privateKey: key.private_key
-            }
+            ssl: true,
         });
 
         let mailOptions = {
@@ -166,12 +124,24 @@ router.post('/order', [
             subject: `${req.body.firstName + " " + req.body.lastName} has placed an order!`,
             html: orderEmailBody
         };
-        transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                console.log(error);
-            }
-            console.log('Message %s sent: %s', info.messageId, info.response);
+        try {
+            const message = await client.sendAsync({
+            // should be replaced with real recipient's account
+            from: 'Order@therapeutichouse <therapeutichouse@gmail.com>',
+            to: 'therapeutichouse@gmail.com',
+            subject: `${req.body.firstName + " " + req.body.lastName} has placed an order!`,
+            html: orderEmailBody
         });
+            console.log(message);
+        } catch (err) {
+            console.error(err);
+        }
+        // transporter.sendMail(mailOptions, (error, info) => {
+        //     if (error) {
+        //         return console.log(error);
+        //     }
+        //     console.log('Message %s sent: %s', info.messageId, info.response);
+        // });
         res.send({
             "success": "order placed"
         });
