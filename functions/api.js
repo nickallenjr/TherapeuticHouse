@@ -153,7 +153,7 @@ router.post('/order', [
             auth: {
                 // should be replaced with real sender's account
                 user: 'therapeutichouse@gmail.com',
-                pass: 'Mel&Dan16',
+                pass: 'sjexjdaevtlhaedm',
                 // serviceClient: key.client_id,
                 // privateKey: key.private_key
             }
@@ -216,7 +216,7 @@ router.post('/contact', [
             auth: {
                 // should be replaced with real sender's account
                 user: 'therapeutichouse@gmail.com',
-                pass: 'Mel&Dan16'
+                pass: 'sjexjdaevtlhaedm'
             }
         });
         let mailOptions = {
