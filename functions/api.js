@@ -13,8 +13,8 @@ const express = require("express"),
     logger = require("morgan"),
     nodeMailer = require("nodemailer"),
     key = require("./nodemailerkeys.json"),
-    serverless = require("serverless-http"),
-    {SMTPClient} = require("emailjs")
+    serverless = require("serverless-http");
+    // {SMTPClient} = require("emailjs")
 
 
     
@@ -98,24 +98,24 @@ router.post('/order', [
             validate: errors.array()
         });
     } else {
-        // let transporter = nodeMailer.createTransport({
-        //     host: 'smtp.gmail.com',
-        //     port: 465,
-        //     secure: true,
-        //     auth: {
-        //         // should be replaced with real sender's account
-        //         user: 'therapeutichouse@gmail.com',
-        //         pass: 'sjexjdaevtlhaedm',
-        //         // serviceClient: key.client_id,
-        //         // privateKey: key.private_key
-        //     }
-        // });
-        const client = new SMTPClient({
-            user: 'therapeutichouse@gmail.com',
-            password: 'sjexjdaevtlhaedm',
+        let transporter = await nodeMailer.createTransport({
             host: 'smtp.gmail.com',
-            ssl: true,
+            port: 465,
+            secure: true,
+            auth: {
+                // should be replaced with real sender's account
+                user: 'therapeutichouse@gmail.com',
+                pass: 'sjexjdaevtlhaedm',
+                // serviceClient: key.client_id,
+                // privateKey: key.private_key
+            }
         });
+        // const client = new SMTPClient({
+        //     user: 'therapeutichouse@gmail.com',
+        //     password: 'sjexjdaevtlhaedm',
+        //     host: 'smtp.gmail.com',
+        //     ssl: true,
+        // });
 
         let mailOptions = {
             // should be replaced with real recipient's account
@@ -124,24 +124,24 @@ router.post('/order', [
             subject: `${req.body.firstName + " " + req.body.lastName} has placed an order!`,
             html: orderEmailBody
         };
-        try {
-            const message = await client.sendAsync({
-            // should be replaced with real recipient's account
-            from: 'Order@therapeutichouse <therapeutichouse@gmail.com>',
-            to: 'therapeutichouse@gmail.com',
-            subject: `${req.body.firstName + " " + req.body.lastName} has placed an order!`,
-            html: orderEmailBody
-        });
-            console.log(message);
-        } catch (err) {
-            console.error(err);
-        }
-        // transporter.sendMail(mailOptions, (error, info) => {
-        //     if (error) {
-        //         return console.log(error);
-        //     }
-        //     console.log('Message %s sent: %s', info.messageId, info.response);
+        // try {
+        //     const message = await client.sendAsync({
+        //     // should be replaced with real recipient's account
+        //     from: 'Order@therapeutichouse <therapeutichouse@gmail.com>',
+        //     to: 'therapeutichouse@gmail.com',
+        //     subject: `${req.body.firstName + " " + req.body.lastName} has placed an order!`,
+        //     html: orderEmailBody
         // });
+        //     console.log(message);
+        // } catch (err) {
+        //     console.error(err);
+        // }
+        await transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                return console.log(error);
+            }
+            console.log('Message %s sent: %s', info.messageId, info.response);
+        });
         res.send({
             "success": "order placed"
         });
