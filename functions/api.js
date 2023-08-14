@@ -12,9 +12,9 @@ const express = require("express"),
     path = require("path"),
     logger = require("morgan"),
     nodeMailer = require("nodemailer"),
-    key = require("./nodemailerkeys.json");
-    serverless = require("serverless-http");
-    SMTPClient = require("emailjs")
+    key = require("./nodemailerkeys.json"),
+    serverless = require("serverless-http"),
+    {SMTPClient} = require("emailjs")
 
 
     
