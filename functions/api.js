@@ -145,7 +145,7 @@ router.post('/order', [
         res.send({
             "success": "order placed"
         });
-        res.end();
+        // res.end();
     }
 });
 
